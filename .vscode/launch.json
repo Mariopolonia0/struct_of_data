@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch InvertirPalabras",
+            "request": "launch",
+            "mainClass": "EjercicioJava.Ejercicio_Invertir_Palabras.InvertirPalabras",
+            "projectName": "Estrutura_De_Dato_5a46a426"
+        },
+        {
+            "type": "java",
+            "name": "Launch TriaguloPascal",
+            "request": "launch",
+            "mainClass": "EjercicioJava.Ejercicio3_2.TriaguloPascal",
+            "projectName": "Estrutura_De_Dato_5a46a426"
+        },
+        {
+            "type": "java",
             "name": "Launch AppEjercicio1",
             "request": "launch",
             "mainClass": "AppEjercicio1",
