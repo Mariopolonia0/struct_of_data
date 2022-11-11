@@ -27,3 +27,7 @@ fun invertirOracion( oracion : String){
     println(resultado)
 }
 
+
+
+
+
