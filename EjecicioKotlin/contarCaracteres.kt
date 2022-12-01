@@ -2,10 +2,12 @@ package EjecicioKotlin
 
 fun main() {
     println(sumaTablaTres())
-    cantidadCaracter("abcdefd")
-    println(mayorCuatroNumero(5, 6, 9, 8))
-    println(mayorCuatroNumero(8, 10, 6, 2))
+    println(sumaTablaTresWhile())
+//    cantidadCaracter("abcdefd")
+//    println(mayorCuatroNumero(5, 6, 9, 8))
+//    println(mayorCuatroNumero(8, 10, 6, 2))
 }
+
 //2.5. Diseñar un algoritmo que visualice y sume la serie de
 //números 3, 6, 9, 12…, 99.
 private fun sumaTablaTres(): Double {
@@ -16,6 +18,19 @@ private fun sumaTablaTres(): Double {
     }
 
     return suma
+}
+
+private fun sumaTablaTresWhile(): String {
+
+    var veces = 0
+    var suma = 1
+
+    while (veces <= 33) {
+        suma += (3 * veces)
+        veces++
+    }
+
+    return suma.toString()
 }
 
 //2.6. Escribir un algoritmo que lea cuatro números
