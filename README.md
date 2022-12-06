@@ -1,5 +1,4 @@
-# Estrutura_De_Dato
-Estrutura de dato 2020-1
+# Ejercicios de estrutura de dato 2020-1 en C++
 
 ## Ejercicios del libro de FUNDAMENTOS DE PROGRAMACIÓN
 ## Autor : Luis Joyanes Aguilar
