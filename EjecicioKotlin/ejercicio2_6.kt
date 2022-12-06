@@ -26,6 +26,9 @@ fun main() {
     longitudAreaCircunferencia(90.0)
     longitudAreaCircunferencia(5.5)
     longitudAreaCircunferencia(6.1)
+    
+    println("salario semanal:" + salarioSemanal(15,8*6))
+    println("salario semanal:" + salarioSemanal(15,4*6))
 }
 
 private fun calcularVelocidad(tiempo: Float, metro: Int): String {
@@ -44,4 +47,14 @@ private fun longitudAreaCircunferencia(radio : Double){
     println("La logitud de la circunferencia es $longitud")
     println("El área de la circunferencia es $area")
     println("--------------------------------------------")
+}
+
+/*
+ * Escribir un algoritmo que encuentre el salario 
+ * semanal de un trabajador,
+ * dada la tarifa horaria y 
+ * el número de horas trabajadas diariamente.
+ */
+private fun salarioSemanal(tarifaHoraria:Int,horasTrabajadas:Int):Int{
+    return tarifaHoraria * horasTrabajadas
 }
