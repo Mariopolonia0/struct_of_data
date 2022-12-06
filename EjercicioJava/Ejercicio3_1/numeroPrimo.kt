@@ -1,7 +1,12 @@
-
 fun main() {
-   for(contador in 2..500)
-       numeroPrimos(contador)
+    println("Superfice Triagulo : "+superficeTriagulo(5,5))
+
+    for (contador in 2..500)
+        numeroPrimos(contador)
+}
+
+private fun superficeTriagulo(base: Int, altura: Int): Int {
+    return (base * altura) / 2
 }
 
 private fun numeroPrimos(numero: Int) {
@@ -13,7 +18,7 @@ private fun numeroPrimos(numero: Int) {
             esPrimo = false
     }
 
-    if(esPrimo)
+    if (esPrimo)
         println("numero $numero es primo")
     else
         println("numero $numero no es primo")
