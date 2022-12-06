@@ -29,6 +29,10 @@ fun main() {
     
     println("salario semanal:" + salarioSemanal(15,8*6))
     println("salario semanal:" + salarioSemanal(15,4*6))
+    
+    println(esPalindromo("radar"))
+    println(esPalindromo("mario"))
+    println(esPalindromo("sagas"))
 }
 
 private fun calcularVelocidad(tiempo: Float, metro: Int): String {
@@ -57,4 +61,25 @@ private fun longitudAreaCircunferencia(radio : Double){
  */
 private fun salarioSemanal(tarifaHoraria:Int,horasTrabajadas:Int):Int{
     return tarifaHoraria * horasTrabajadas
+}
+
+//Escribir un algoritmo que indique si una palabra leída 
+//del teclado es un palíndromo. Un palíndromo (capicúa)
+//es una palabra que se lee igual en ambos sentidos 
+//como “radar” ,"somos","sagas","orero".
+private fun esPalindromo(palabra:String):Boolean{
+    
+    var contador1 = 0 
+    var contador2 = palabra.count() - 1
+    var esPalindromo = true
+    
+    while (contador1 <= contador2){
+        if(palabra[contador1] != palabra[contador2]){
+             esPalindromo = false
+        }
+        
+        contador1++
+        contador2--
+    }
+    return esPalindromo
 }
