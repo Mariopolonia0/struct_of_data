@@ -20,6 +20,7 @@ fun main() {
     pairOfSumToTarget(numbers, 5).forEach { println(it) }
     println(sumarLista(numbers))
     quitarNumeroRepetido(numberos)
+
 }
 
 private fun quitarNumeroRepetido(numeros: Array<Int>) {
