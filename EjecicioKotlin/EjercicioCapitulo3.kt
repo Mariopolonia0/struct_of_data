@@ -10,23 +10,25 @@ fun main() {
 //(el último número de la serie es –99) y obtener el número
 //mayor. Como resultado se debe visualizar el número
 //mayor y un mensaje de indicación de número negativo,
-//caso de que se haya leído un número negativo.
+//caso de que se haya leído un número negativo.
 private fun ejercicio3_13() {
     var parar = false
     var numeroMayor = 0
     var numeroNegativo = 0
 
     while (!parar) {
-        print("Digiste un numero :")
+        print("Digite un numero :")
         val read = readln().toInt()
-        if (read > 0 ){
-            if(read > numeroMayor)
+
+        if (read > 0) {
+            if (read > numeroMayor)
                 numeroMayor = read
 
-        }else if (read < 0){
-            if(read < numeroNegativo)
-                numeroNegativo=read
-        }else{
+        } else if (read < 0) {
+            if (read < numeroNegativo)
+                numeroNegativo = read
+
+        } else {
             println("no puede digitar 0")
         }
 
@@ -34,7 +36,7 @@ private fun ejercicio3_13() {
             parar = true
     }
 
-    println("numero mayor fue : $numeroMayor y el numero negativo fue :$numeroNegativo")
+    println("numero mayor fue : $numeroMayor y el numero negativo fue :$numeroNegativo\n")
 }
 
 //Se desea calcular independiente la suma de los números
