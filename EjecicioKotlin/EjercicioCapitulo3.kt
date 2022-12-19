@@ -6,6 +6,14 @@ fun main() {
     sumarNumeroHasta(400)
 }
 
+//Dados tres números deducir cuál es el central.
+private fun numeroCentral(numeroUno: Int, numeroDos: Int, numeroTres: Int) {
+    var central = 0
+    if (numeroUno > numeroDos) {
+        if (numeroTres<)
+    }
+}
+
 //leer una serie de números distintos de cero
 //(el último número de la serie es –99) y obtener el número
 //mayor. Como resultado se debe visualizar el número
