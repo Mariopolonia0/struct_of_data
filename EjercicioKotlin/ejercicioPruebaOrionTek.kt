@@ -1,4 +1,4 @@
-package EjecicioKotlin
+package EjercicioKotlin
 
 import java.util.*
 

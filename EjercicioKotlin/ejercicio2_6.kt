@@ -1,7 +1,6 @@
-package EjecicioKotlin
+package EjercicioKotlin
 
 import kotlin.math.pow
-import kotlin.math.round
 
 //Diseñar un algoritmo para calcular la velocidad (en
 //m/s) de los corredores de la carrera de 1.500 metros.

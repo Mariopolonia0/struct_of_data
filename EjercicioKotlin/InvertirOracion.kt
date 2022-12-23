@@ -1,6 +1,4 @@
-package EjecicioKotlin
-
-import javax.print.attribute.standard.PrinterInfo
+package EjercicioKotlin
 
 fun main() {
     capitalTotalAcumulado(capital = 10000.0, interes = 18, dias = 365)
