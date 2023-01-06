@@ -39,8 +39,7 @@ private fun calcularVelocidad(tiempo: Float, metro: Int): String {
 }
 
 //LONGITUD de la CIRCUNFERENCIA = 2 · radio · π 
-//ÁREA del CÍRCULO = π · radio al cuadrado = π · r2 
- 
+//ÁREA del CÍRCULO = π · radio al cuadrado = π · r2
 private fun longitudAreaCircunferencia(radio : Double){
     
     var longitud = 2 * radio * 3.14
