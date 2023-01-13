@@ -1,17 +1,130 @@
 package EjercicioKotlin
 
 fun main() {
-    //  ejercicio5_5()
-    ejercicio5_8()
-    // ejercicio5_6()
-//    println(ejercicio5_1(lista = listOf(6, 11, 7)).toString())
-//    println(ejercicio5_1(lista = listOf(3, 7, 5, 13, 20, 23, 39, 23, 40, 23, 14, 12, 56, 23, 29)).toString())
+    //ejercicio5_5()
+    ejercicio5_13()
+    //ejercicio5_9()
+    //ejercicio5_7()
+    //ejercicio5_8()
+    //ejercicio5_6()
+    //println(ejercicio5_1(lista = listOf(6, 11, 7)).toString())
+    //println(ejercicio5_1(lista = listOf(3, 7, 5, 13, 20, 23, 39, 23, 40, 23, 14, 12, 56, 23, 29)).toString())
+}
+
+//Se pretende leer todos los empleados de una empresa
+//—situados en un archivo EMPRESA— y a la terminación
+//de la lectura del archivo se debe visualizar
+//un mensaje «existen trabajadores mayores de 65
+//años en un número de ...» y el número de trabajadores mayores de 65 años.
+private fun ejercicio5_13() {
+    var terminar = false
+    var totalTrabajadore = 0
+    var trabajadoresMayor = 0
+
+    do {
+        menu5_13()
+        if (readln().toInt() == 1) {
+
+            println("Registro De Trabajador")
+            print("Digite Nombre :")
+            readln()
+            print("Digite Edad: ")
+            val edad = readln().toInt()
+            totalTrabajadore++
+            if (edad > 65)
+                trabajadoresMayor++
+
+        } else
+            terminar = true
+
+    } while (!terminar)
+
+    println("Resultado")
+    println("Total de trabajadores:$totalTrabajadore")
+    println("Total de trabajadores mayor a 64 : $trabajadoresMayor")
+}
+
+private fun menu5_13() {
+    println("\nOpciones")
+    println("1.Digitar trabajador")
+    println("3.Terminar")
+    print("Seleccione opcion:")
+}
+
+private fun ejercicio5_9() {
+    var terminar = false
+    var numeroExistenteA = 0
+    var numeroExistenteB = 0
+
+    print("Digite Precio Del Articulo A:")
+    val precioArticuloA = readln().toInt()
+
+    print("Digite Precio Del Articulo B:")
+    val precioArticuloB = readln().toInt()
+
+    do {
+        menu5_9()
+        val seleccion = readln().toInt()
+
+        when (seleccion) {
+            1 -> {
+                numeroExistenteA++
+            }
+
+            2 -> {
+                numeroExistenteB++
+            }
+
+            3 -> {
+                terminar = true
+            }
+        }
+    } while (!terminar)
+
+    println("Total numero de articulo A: $numeroExistenteA")
+    println("Total numero de articulo B: $numeroExistenteB")
+    val totaImporteA = numeroExistenteA * precioArticuloA
+    val totaImporteB = numeroExistenteB * precioArticuloB
+    println("Total de importe articulo A: $totaImporteA")
+    println("Total de importe articulo B: $totaImporteB")
+}
+
+private fun menu5_9() {
+    println("\nOpciones")
+    println("1.Articulo A")
+    println("2.Articulo B")
+    println("3.Terminar")
+    print("Seleccione opcion:")
+}
+
+private fun ejercicio5_7() {
+
+    var terminar = false
+    do {
+        menu5_7()
+        if (readln().toInt() == 1) {
+            print("\nDigite Nota:")
+            val notaDigitada = readln().toInt()
+            if (notaDigitada >= 7 && notaDigitada < 9)
+                println("Esta nota es NOTABLES")
+        } else
+            terminar = true
+
+    } while (terminar == false)
+}
+
+private fun menu5_7() {
+    println("\nOpciones")
+    println("1.Digita Estudiante")
+    println("2.Terminar")
+    print("Seleccione opcion:")
 }
 
 //Ejercicio 5.8
 //Leer 100 números. Determinar la media de los números positivos
 //y la media de los números negativos.
 private fun ejercicio5_8() {
+
     var cantidadNumero = 0
     var cantidadNumeroNegativo = 0
     var sumaNumero = 0
