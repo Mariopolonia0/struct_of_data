@@ -2,13 +2,37 @@ package EjercicioKotlin
 
 fun main() {
     //ejercicio5_5()
-    ejercicio5_13()
+    ejercicio5_14()
+   // ejercicio5_13()
     //ejercicio5_9()
     //ejercicio5_7()
     //ejercicio5_8()
     //ejercicio5_6()
     //println(ejercicio5_1(lista = listOf(6, 11, 7)).toString())
     //println(ejercicio5_1(lista = listOf(3, 7, 5, 13, 20, 23, 39, 23, 40, 23, 14, 12, 56, 23, 29)).toString())
+}
+
+//Un capital C está situado a un tipo de interés R.
+//¿Al término de cuántos años se doblará?
+private  fun ejercicio5_14(){
+    var capital = 0.0
+    var interes = 0
+
+    print("Digite Capital:")
+    capital = readln().toDouble()
+    print("Digite Interés:")
+    interes = readln().toInt()
+
+    var calculo = 0.0
+    var tiempo = 1
+
+    while ((capital * 2) >= calculo){
+        calculo = capital *(1 + interes/100) * tiempo
+        tiempo++
+    }
+
+    print("en $tiempo años se doblo el capital")
+
 }
 
 //Se pretende leer todos los empleados de una empresa
