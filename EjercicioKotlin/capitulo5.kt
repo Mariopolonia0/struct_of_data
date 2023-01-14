@@ -2,8 +2,9 @@ package EjercicioKotlin
 
 fun main() {
     //ejercicio5_5()
-    ejercicio5_14()
-   // ejercicio5_13()
+    ejercicio5_16()
+    //ejercicio5_14()
+    // ejercicio5_13()
     //ejercicio5_9()
     //ejercicio5_7()
     //ejercicio5_8()
@@ -11,10 +12,30 @@ fun main() {
     //println(ejercicio5_1(lista = listOf(6, 11, 7)).toString())
     //println(ejercicio5_1(lista = listOf(3, 7, 5, 13, 20, 23, 39, 23, 40, 23, 14, 12, 56, 23, 29)).toString())
 }
+/*
+ * Imprimir una tabla de multiplicar como
+ * 1 2 3 4 ... 15
+ * ** ** ** ** ** ... **
+ * 1* 1 2 3 4 ... 15
+ * 2* 2 4 6 8 ... 30
+ * 3* 3 6 9 12 ... 45
+ * 4* 4 8 12 16 ... 60
+ * .
+ * 15* 15 30 45 60 ... 225
+ */
+private fun ejercicio5_16() {
+    for (contadorUno in 1..1500) {
+        for (contadorDos in 1..1500) {
+            print("${contadorUno * contadorDos} ")
+        }
+        println("")
+    }
+}
+
 
 //Un capital C está situado a un tipo de interés R.
 //¿Al término de cuántos años se doblará?
-private  fun ejercicio5_14(){
+private fun ejercicio5_14() {
     var capital = 0.0
     var interes = 0
 
@@ -26,8 +47,8 @@ private  fun ejercicio5_14(){
     var calculo = 0.0
     var tiempo = 1
 
-    while ((capital * 2) >= calculo){
-        calculo = capital *(1 + interes/100) * tiempo
+    while ((capital * 2) >= calculo) {
+        calculo = capital * (1 + interes / 100) * tiempo
         tiempo++
     }
 
