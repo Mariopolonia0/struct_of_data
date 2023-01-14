@@ -1,4 +1,4 @@
-# Ejercicios de estrutura de dato 2020-1 en C++
+## Ejercicios de estrutura de dato 2020-1 en C++
 
 ## Ejercicios del libro de FUNDAMENTOS DE PROGRAMACIÓN
 ## Autor : Luis Joyanes Aguilar
@@ -18,6 +18,6 @@
 * Grafos
 
 ***
-## ejercicios con UI
+# Ejercicios con UI
 ***
 ![ejercicio](https://user-images.githubusercontent.com/65502311/212482293-4b42e8d4-212b-4073-9b6b-3722af0cd4f9.PNG)
