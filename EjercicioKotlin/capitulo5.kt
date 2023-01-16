@@ -2,7 +2,7 @@ package EjercicioKotlin
 
 fun main() {
     //ejercicio5_5()
-    ejercicio5_16()
+    //ejercicio5_16()
     //ejercicio5_14()
     // ejercicio5_13()
     //ejercicio5_9()
