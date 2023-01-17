@@ -4,6 +4,7 @@ var cubierto = 5
 var cuchara  = 6
 var cucharapostre = 4
 var cuchillo  = 6
+
 //esta en la lista de los cliente con una clase de tipo cliente
 var listacliente = listOf<Cliente>(Cliente(1,"Mario")
     ,Cliente(1,"Tony")
@@ -17,7 +18,7 @@ var listacliente = listOf<Cliente>(Cliente(1,"Mario")
     ,Cliente(3,"Pricila")
 )
 
-fun main(args: Array<String>) {
+fun main() {
     entrarclienter()
 }
 
