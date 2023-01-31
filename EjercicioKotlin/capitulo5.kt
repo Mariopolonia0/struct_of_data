@@ -1,6 +1,7 @@
 package EjercicioKotlin
 
 fun main() {
+    ejercicio5_5()
     //ejercicio5_5()
     //ejercicio5_16()
     //ejercicio5_14()
@@ -12,6 +13,7 @@ fun main() {
     //println(ejercicio5_1(lista = listOf(6, 11, 7)).toString())
     //println(ejercicio5_1(lista = listOf(3, 7, 5, 13, 20, 23, 39, 23, 40, 23, 14, 12, 56, 23, 29)).toString())
 }
+
 /*
  * Imprimir una tabla de multiplicar como
  * 1 2 3 4 ... 15
@@ -207,14 +209,37 @@ private fun ejercicio5_1(lista: List<Int>): Double {
     return (total / lista.size).toDouble()
 }
 
-//Imprimir todos los números primos entre 2 y 1.000
+//Imprimir todos los números par entre 2 y 500
 //inclusive.
 private fun ejercicio5_5() {
 
-    for (contador in 2..1000)
+    for (contador in 2..120)
         if (contador % 2 == 0)
             print("$contador ")
 
+    println()
+
+    for (contador in 2..120) {
+        if (numeroEsPrimo(contador))
+            print("$contador ")
+    }
+
+    //if (contador % 2 != 0 && contador % 3 != 0 && contador % 5 != 0 && contador % 7 != 0 && contador % 11 != 0 )
+
+}
+
+fun numeroEsPrimo(numero: Int): Boolean {
+    var contado = 2
+
+    if (numero == 2) return true
+    if (numero % 2 == 0) return false
+
+    while (contado * contado <= numero) {
+        contado++
+        if (numero % contado == 0)
+            return false
+    }
+    return true
 }
 
 //Se desea leer las calificaciones de una clase de informática

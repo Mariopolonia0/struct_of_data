@@ -1,7 +1,6 @@
 class ejemplodehilos {
 
-    fun main(args: Array<String>) {
-
+    fun main() {
         iniciar()
         createhilo()
     }

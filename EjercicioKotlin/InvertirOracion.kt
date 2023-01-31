@@ -3,7 +3,6 @@ package EjercicioKotlin
 fun main() {
     capitalTotalAcumulado(capital = 10000.0, interes = 18, dias = 365)
     capitalTotalAcumulado(capital = 20000.0, interes = 18, dias = 728)
-
 }
 //muchos bancos y cajas de ahorro calculan los intereses de las cantidades depositadas por los clientes
 //diariamente según las premisas siguientes. Un capital
