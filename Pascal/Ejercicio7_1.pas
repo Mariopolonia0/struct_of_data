@@ -1,7 +1,7 @@
 program Ejercicio7_1;
 
 var
-    (* un array del 1 al 10 *)
+   (* un array del 1 al 10 *)
    arrayEnteros: array [1..10] of integer;   
    i, j: integer;
 
