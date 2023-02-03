@@ -3,11 +3,6 @@ package EjercicioKotlin
 fun main() {
     ejercicio7_5(arrayOf(4, 6, 9, 8, 5, 6, 2))
     ejercicio7_5(arrayOf(14, 16, 12, 12, 10, 18,20,14))
-    //ejercicio7_1()
-    //ejercicio7_2(listaNumero = arrayOf(1, 55, -6, 66, -85, 0, 0))
-    //println("\n----------------")
-    //ejercicio7_3()
-    //ejercicio7_4()
 }
 
 // Cálculo de la suma de todos los elementos de un vector, así como la media aritmética
@@ -18,6 +13,17 @@ private fun ejercicio7_5(array: Array<Int>) {
     }
     println("la suma es $suma y la media aritmética ${suma / array.size}")
 }
+
+
+
+
+
+
+
+
+
+
+
 
 /*
  * Leer una matriz de 3 por 3 elementos y calcular la
