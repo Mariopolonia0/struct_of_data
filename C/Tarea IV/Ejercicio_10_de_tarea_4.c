@@ -5,18 +5,18 @@ int main(){
     
     int dianac, mesnac, anac, diaact, mesact, total, aact;
     
-    printf ("Digite dia de fecha de nacimiento para conocer la edad :");
-    scanf ("%i", &dianac);
-    printf ("Digite numero de mes de nacimiento                     :");
-    scanf ("%i", &mesnac);
-    printf ("Digite a%co de nacimiento                               :", 164);
-    scanf ("%i", &anac);
-    printf ("Digite dia actual                                      :");
-    scanf ("%i", &diaact);
-    printf ("Digite mes actual                                      :");
-    scanf ("%i", &mesact);
-    printf ("Digite a%co de actual                                   :", 164);
-    scanf ("%i", &aact);
+    printf("Digite dia de fecha de nacimiento para conocer la edad :");
+    scanf("%i", &dianac);
+    printf("Digite numero de mes de nacimiento                     :");
+    scanf("%i", &mesnac);
+    printf("Digite a%co de nacimiento                               :", 164);
+    scanf("%i", &anac);
+    printf("Digite dia actual                                      :");
+    scanf("%i", &diaact);
+    printf("Digite mes actual                                      :");
+    scanf("%i", &mesact);
+    printf("Digite a%co de actual                                   :", 164);
+    scanf("%i", &aact);
   
     total = aact - anac;
     
