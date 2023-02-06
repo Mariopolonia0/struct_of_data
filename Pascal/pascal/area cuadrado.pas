@@ -1,15 +1,14 @@
 program area_del_cudrado;
-            uses crt;
+uses crt;
 
-            var
-            a:integer   ;
-begin
+var
+a:integer;
 
-    writeln ('diga el unos de los lado del cuadrado');
+begin 
+    writeLn ('');
+    write ('diga el unos de los lado del cuadrado:');
     readln (a);
-       a:=a*a;
-       WriteLn('');     gotoxy(20,8)   ;
-       writeln (a,' cm es el area del cuadrado');
-   readkey
-
+    a:= a * a;
+    writeLn ('');
+    writeln (a, ' cm es el area del cuadrado');
 end.
