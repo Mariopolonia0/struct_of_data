@@ -1,12 +1,27 @@
 package EjercicioKotlin
 
 fun main() {
-
-    ejercicio7_6(arrayOf(-5, -9, 9, 0, 5, 6, 2))
-    println("\n----------------")
-    ejercicio7_6(arrayOf(4, -6, 9, 0, 5, 0, 0))
-    //ejercicio7_5(arrayOf(4, 6, 9, 8, 5, 6, 2))
-    //ejercicio7_5(arrayOf(14, 16, 12, 12, 10, 18, 20, 14))
+    ejercicio7_7(
+        arrayOf(
+            intArrayOf(5, 5, 6, 9),
+            intArrayOf(2, 2, 6, 9),
+            intArrayOf(2, 5, 3, 9),
+            intArrayOf(2, 5, 6, 5),
+        )
+    )
+    ejercicio7_7(
+        arrayOf(
+            intArrayOf(8, 5, 6, 9),
+            intArrayOf(2, 2, 6, 9),
+            intArrayOf(2, 5, 3, 9),
+            intArrayOf(2, 5, 6, 5),
+        )
+    )
+//    ejercicio7_6(arrayOf(-5, -9, 9, 0, 5, 6, 2))
+//    println("\n----------------")
+//    ejercicio7_6(arrayOf(4, -6, 9, 0, 5, 0, 0))
+//    ejercicio7_5(arrayOf(4, 6, 9, 8, 5, 6, 2))
+//    ejercicio7_5(arrayOf(14, 16, 12, 12, 10, 18, 20, 14))
     //ejercicio7_1()
     //ejercicio7_2(listaNumero = arrayOf(1, 55, -6, 66, -85, 0, 0))
     //println("\n----------------")
@@ -14,9 +29,26 @@ fun main() {
     //ejercicio7_4()
 }
 
+//7.7. Calcular la suma de los elementos de la diagonal principal de una matriz cuatro por cuatro (4 × 4)
+private fun ejercicio7_7(array: Array<IntArray>) {
+    var position = 0
+    val stop = array.size
+    var suma = 0
+
+    while (position < stop) {
+        suma += array[position][position]
+        position++
+    }
+
+    for (item in array)
+        println(item.contentToString())
+
+    print("\nla suma de la diagona es $suma\n\n")
+}
+
 //  Calcular el número de elementos negativos, cero y
 //  positivos de un vector dado de sesenta elementos.
-fun ejercicio7_6(array: Array<Int>) {
+private fun ejercicio7_6(array: Array<Int>) {
     var elementosNegativo = 0
     var elementosPositivos = 0
     var elementosCeros = 0
