@@ -29,7 +29,7 @@ public class Solution {
                 System.out.printf("Not Weird");
             } else if(numero >= 6 && numero <= 20){
                 System.out.printf("Weird");
-            }else if(numero >20){
+            } else if(numero > 20){
                 System.out.printf("Not Weird");
             }
         }
