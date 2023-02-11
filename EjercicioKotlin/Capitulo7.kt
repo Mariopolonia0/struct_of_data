@@ -29,6 +29,27 @@ fun main() {
     //ejercicio7_4()
 }
 
+/*
+ * 7.8. 
+ * Se dispone de una tabla T de cincuenta números reales 
+ * distintos de cero. Crear una nueva tabla en la que todos 
+ * sus elementos resulten de dividir los elementos de la 
+ * tabla T por el elemento T[K], siendo K un valor dado.
+ * 
+ */
+private fun ejercicio7_8(numero:Int){
+	val tabla = Array(50, { rand(1,100) * numero})
+    
+    for(item in tabla){
+        println(item.toString())
+    }
+}
+
+private fun rand(start: Int, end: Int): Int {
+    require(start <= end) { "Illegal Argument" }
+    return (start..end).random()
+}
+
 //7.7. Calcular la suma de los elementos de la diagonal principal de una matriz cuatro por cuatro (4 × 4)
 private fun ejercicio7_7(array: Array<IntArray>) {
     var position = 0
