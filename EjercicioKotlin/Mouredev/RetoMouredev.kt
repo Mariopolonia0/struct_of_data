@@ -52,7 +52,7 @@ fun octenerPunto(punto: Int): String {
     }
 }
 
-fun rand(start: Int, end: Int): Int {
+private fun rand(start: Int, end: Int): Int {
     require(start <= end) { "Illegal Argument" }
     return (start..end).random()
 }
