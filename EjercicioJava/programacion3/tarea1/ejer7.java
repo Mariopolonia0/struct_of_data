@@ -1,4 +1,4 @@
-package EjercicioJava.programacion3;
+package EjercicioJava.programacion3.tarea1;
 
 import java.io.*;
 
