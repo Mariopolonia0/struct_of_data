@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="QuickSort">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/EjercicioKotlin/QuickSort.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
