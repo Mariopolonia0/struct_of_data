@@ -1,22 +1,23 @@
 package EjercicioKotlin
 
 fun main() {
-    ejercicio7_7(
-        arrayOf(
-            intArrayOf(5, 5, 6, 9),
-            intArrayOf(2, 2, 6, 9),
-            intArrayOf(2, 5, 3, 9),
-            intArrayOf(2, 5, 6, 5),
-        )
-    )
-    ejercicio7_7(
-        arrayOf(
-            intArrayOf(8, 5, 6, 9),
-            intArrayOf(2, 2, 6, 9),
-            intArrayOf(2, 5, 3, 9),
-            intArrayOf(2, 5, 6, 5),
-        )
-    )
+    ejercicio7_9(6)
+//    ejercicio7_7(
+//        arrayOf(
+//            intArrayOf(5, 5, 6, 9),
+//            intArrayOf(2, 2, 6, 9),
+//            intArrayOf(2, 5, 3, 9),
+//            intArrayOf(2, 5, 6, 5),
+//        )
+//    )
+//    ejercicio7_7(
+//        arrayOf(
+//            intArrayOf(8, 5, 6, 9),
+//            intArrayOf(2, 2, 6, 9),
+//            intArrayOf(2, 5, 3, 9),
+//            intArrayOf(2, 5, 6, 5),
+//        )
+//    )
 //   ejercicio7_6(arrayOf(-5, -9, 9, 0, 5, 6, 2))
 //   println("\n----------------")
 //   ejercicio7_6(arrayOf(4, -6, 9, 0, 5, 0, 0))
@@ -27,6 +28,30 @@ fun main() {
     //println("\n----------------")
     //ejercicio7_3()
     //ejercicio7_4()
+}
+
+/*
+ * Se dispone de una lista (vector) de N elementos. Se
+ * desea diseñar un algoritmo que permita insertar el
+ * valor x en el lugar k-ésimo de la mencionada lista.
+ *
+ * k-ésimo es el mayor de la lista en excel = K.ESIMO.MAYOR(A1:A10, 1)
+ */
+private fun ejercicio7_9(numero:Int){
+    val lista = arrayOf(2,6,9,8,6,5)
+    var mayor = 0
+    var posicionMayor = 0
+
+    for(contador in 0..lista.size -1){
+        if (lista[contador] > mayor){
+            mayor = lista[contador]
+            posicionMayor = contador
+        }
+    }
+    print(lista.contentToString())
+    print(" el valor k-esimo es : ${lista[posicionMayor]} ")
+    lista[posicionMayor] = numero
+    println("y se cambio por el numero ingresado que es : ${lista[posicionMayor]}")
 }
 
 /*
