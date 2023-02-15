@@ -1,7 +1,7 @@
 package EjercicioKotlin
 
 fun main() {
-    ejercicio7_9(6)
+    //ejercicio7_9(6)
 //    ejercicio7_7(
 //        arrayOf(
 //            intArrayOf(5, 5, 6, 9),
@@ -28,7 +28,68 @@ fun main() {
     //println("\n----------------")
     //ejercicio7_3()
     //ejercicio7_4()
+    ejercicio7_10()
+}
 
+/*
+ * Se desea realizar un algoritmo que permita controlar
+ * las reservas de plazas de un vuelo MADRID-CARACAS, de acuerdo con las siguientes normas de la
+ * compañía aérea:
+ *
+ * Número de plazas del avión: 300.
+ * Plazas numeradas de 1 a 100: fumadores.
+ * Plazas numeradas de 101 a 300: no fumadores.
+ *
+ * Se debe realizar la reserva a petición del pasajero y cerrar la reserva cuando no haya plazas libres o
+ * el avión esté próximo a despegar. Como ampliación
+ * de este algoritmo, considere la opción de anulaciones imprevistas de reservas
+ */
+
+private fun ejercicio7_10() {
+    var avionLLeno = false
+    var numeroMontadosFumadores = 0
+    var numeroMontadosNoFumadores = 0
+
+    while (!avionLLeno) {
+
+        if (numeroMontadosFumadores >= 100 && numeroMontadosNoFumadores >= 300)
+            avionLLeno = true
+
+
+        when (rand(1, 3)) {
+            1 -> {
+                println("\nopcion seleccionada: Reserva en plaza de fumadores")
+                if (numeroMontadosFumadores >= 100){
+                    println("no hay reserva disponible en la plaza fumadora")
+                }else{
+                    println("Reserva realizada en la plaza fumadora")
+                    numeroMontadosFumadores++
+                }
+            }
+
+            2 -> {
+                println("\nopcion seleccionada: Reserva en la plaza de no fumadores")
+                if (numeroMontadosFumadores >= 100){
+                    println("no hay reserva disponible en la plaza de no fumadora")
+                }else{
+                    println("Reserva realizada en la plaza no fumadora")
+                    numeroMontadosNoFumadores++
+                }
+            }
+
+            3 -> {
+                if(rand(1,2) == 1){
+                    println("\nopcion seleccionada: cancelar reserva en la plaza de fumadores")
+                    println("elimina una reserva en la plaza de fumadora")
+                    numeroMontadosFumadores--
+                }else{
+                    println("\nopcion seleccionada: cancelar reserva en la plaza de no fumadores")
+                    println("elimina una reserva en la plaza de no fumadora")
+                    numeroMontadosNoFumadores--
+                }
+            }
+        }
+    }
 }
 
 /*
@@ -38,13 +99,13 @@ fun main() {
  *
  * k-ésimo es el mayor de la lista en excel = K.ESIMO.MAYOR(A1:A10, 1)
  */
-private fun ejercicio7_9(numero:Int){
-    val lista = arrayOf(2,6,9,8,6,5)
+private fun ejercicio7_9(numero: Int) {
+    val lista = arrayOf(2, 6, 9, 8, 6, 5)
     var mayor = 0
     var posicionMayor = 0
 
-    for(contador in 0..lista.size -1){
-        if (lista[contador] > mayor){
+    for (contador in 0..lista.size - 1) {
+        if (lista[contador] > mayor) {
             mayor = lista[contador]
             posicionMayor = contador
         }
@@ -63,10 +124,10 @@ private fun ejercicio7_9(numero:Int){
  * tabla T por el elemento T[K], siendo K un valor dado.
  * 
  */
-private fun ejercicio7_8(numero:Int){
-	val tabla = Array(50, { rand(1,100) * numero})
-    
-    for(item in tabla){
+private fun ejercicio7_8(numero: Int) {
+    val tabla = Array(50, { rand(1, 100) * numero })
+
+    for (item in tabla) {
         println(item.toString())
     }
 }
