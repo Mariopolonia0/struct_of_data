@@ -1,0 +1,27 @@
+package EjercicioKotlin.HackerRank
+
+/*
+ * Complete the 'aVeryBigSum' function below.
+ *
+ * The function is expected to return a LONG_INTEGER.
+ * The function accepts LONG_INTEGER_ARRAY ar as parameter.
+ */
+
+fun aVeryBigSum(ar: Array<Long>): Long {
+    // Write your code here
+    var suma : Long = 0
+
+    for(item in ar){
+        suma += item
+    }
+
+    return suma
+}
+
+fun main() {
+    val ar = readLine()!!.trimEnd().split(" ").map{ it.toLong() }.toTypedArray()
+
+    val result = aVeryBigSum(ar)
+
+    println(result)
+}
