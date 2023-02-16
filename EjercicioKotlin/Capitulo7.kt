@@ -2,33 +2,46 @@ package EjercicioKotlin
 
 fun main() {
     //ejercicio7_9(6)
-//    ejercicio7_7(
-//        arrayOf(
-//            intArrayOf(5, 5, 6, 9),
-//            intArrayOf(2, 2, 6, 9),
-//            intArrayOf(2, 5, 3, 9),
-//            intArrayOf(2, 5, 6, 5),
-//        )
-//    )
-//    ejercicio7_7(
-//        arrayOf(
-//            intArrayOf(8, 5, 6, 9),
-//            intArrayOf(2, 2, 6, 9),
-//            intArrayOf(2, 5, 3, 9),
-//            intArrayOf(2, 5, 6, 5),
-//        )
-//    )
-//   ejercicio7_6(arrayOf(-5, -9, 9, 0, 5, 6, 2))
-//   println("\n----------------")
-//   ejercicio7_6(arrayOf(4, -6, 9, 0, 5, 0, 0))
-//   ejercicio7_5(arrayOf(4, 6, 9, 8, 5, 6, 2))
-//   ejercicio7_5(arrayOf(14, 16, 12, 12, 10, 18, 20, 14))
+    //ejercicio7_7(
+    //    arrayOf(
+    //        intArrayOf(5, 5, 6, 9),
+    //        intArrayOf(2, 2, 6, 9),
+    //        intArrayOf(2, 5, 3, 9),
+    //        intArrayOf(2, 5, 6, 5),
+    //    )
+    //)
+    //ejercicio7_6(arrayOf(-5, -9, 9, 0, 5, 6, 2))
+    //println("\n----------------")
+    //ejercicio7_6(arrayOf(4, -6, 9, 0, 5, 0, 0))
+    //ejercicio7_5(arrayOf(4, 6, 9, 8, 5, 6, 2))
+    //ejercicio7_5(arrayOf(14, 16, 12, 12, 10, 18, 20, 14))
     //ejercicio7_1()
     //ejercicio7_2(listaNumero = arrayOf(1, 55, -6, 66, -85, 0, 0))
     //println("\n----------------")
     //ejercicio7_3()
     //ejercicio7_4()
-    ejercicio7_10()
+    //ejercicio7_10()
+    ejercicio7_12()
+}
+
+//Escribir un algoritmo que permita calcular el cuadrado
+//de los 100 primeros números enteros y a continuación
+//escribir una tabla que contenga dichos cuadrados.
+private fun ejercicio7_12(){
+
+    var contador = 1
+
+    println("Estos son los cuadrados")
+
+    for(item in 1..100){
+        if (contador > 10){
+            contador = 1
+            println()
+        }
+
+        contador++
+        print("$item=${item * item}, ")
+    }
 }
 
 /*
