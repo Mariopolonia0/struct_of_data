@@ -1,6 +1,7 @@
 package EjercicioKotlin
 
 fun main() {
+
     //ejercicio7_9(6)
     //ejercicio7_7(
     //    arrayOf(
@@ -21,7 +22,7 @@ fun main() {
     //ejercicio7_3()
     //ejercicio7_4()
     //ejercicio7_10()
-    ejercicio7_12()
+    //ejercicio7_12()
 }
 
 //Escribir un algoritmo que permita calcular el cuadrado
