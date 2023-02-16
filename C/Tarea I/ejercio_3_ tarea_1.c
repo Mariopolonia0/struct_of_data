@@ -1,5 +1,9 @@
 #include<stdio.h>
-
+/*
+Hacer un algoritmo que calcule y diga el monto total pagado por una persona en un restaurante 
+que compró una hamburguesa, un refresco y dos órdenes de papa. En el restaurant se debe pagar 
+el 18% de ITBIS y un 10% de propina legal.
+*/
 
 void main ()
 {
@@ -18,8 +22,6 @@ void main ()
   a = total * 0.28;
   total = total + a;
   printf ("\n%.3f es el total por la compra\n", total);
-
-
 
   system ("pause");
 }
