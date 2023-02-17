@@ -26,7 +26,6 @@ public class Cuadrado {
         }
     }
 
-
     float getArea() {
         return lado * lado;
     }
