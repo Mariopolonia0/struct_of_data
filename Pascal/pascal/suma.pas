@@ -1,47 +1,55 @@
-    program    suma;
-         uses CRT;
-var  a,b,c : integer;
 
-begin
-        writeln('  Sumar Numero  ');
-         writeln();
-        write('diga el numero    ');
+Program    suma;
+
+Uses CRT;
+
+Var  a,b,c : integer;
+
+Begin
+  writeln('  Sumar Numero  ');
+  writeln();
+  write('diga el numero    ');
   read (a);
   write('diga el numero    ');
   readln (b);
-  c:=a+b ;
+  c := a+b ;
   write('resultado    ');
   writeln (c)  ;
 
-     writeln();   writeln ('  Restar Numero')  ;   writeln();
+  writeln();
+  writeln ('  Restar Numero')  ;
+  writeln();
   write('diga el numero    ');
   read (a);
   write('diga el numero    ');
   readln (b);
-  c:=a-b ;
+  c := a-b ;
   write('resultado    ');
   write  (c)  ;
-                               writeln();  writeln();
-               writeln ('  multiplicar Numero  ');
+  writeln();
+  writeln();
+  writeln ('  multiplicar Numero  ');
 
-        write('diga el numero    ');
+  write('diga el numero    ');
   read (a);
   write('diga el numero    ');
   readln (b);
-  c:=a*b ;
+  c := a*b ;
   write('resultado    ');
   writeln (c)  ;
 
 
-   writeln();  write('  dividir Numero  ');         writeln();
-        write('diga el numero    ');
+  writeln();
+  write('  dividir Numero  ');
+  writeln();
+  write('diga el numero    ');
   read (a);
   write('diga el numero    ');
   readln (b);
-  c:=(a)DIV(b);
+  c := (a)Div(b);
   write('resultado    ');
   writeln (c)  ;
 
-      readkey
+  readkey
 
-end.
+End.

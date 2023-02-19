@@ -1,21 +1,17 @@
-program mayorr;
-     uses CRT;
-        var   e:integer  ;
 
-begin
+Program mayorr;
 
+Uses CRT;
 
+Var   e: integer  ;
 
+Begin
 
-if e>17 then
+  If e>17 Then
+    write ('usted es mayor');
+  Else
+    writeln('usted es menor');
 
-write ('usted es mayor')
+  readkey;
 
-
-
- else
-          writeln('usted es menor')  ;
-
-        readkey    ;
-
-end.
+End.

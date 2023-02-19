@@ -1,17 +1,19 @@
-program area_del_cudrado;
-            uses crt;
 
-            var
-            a,h,b:integer   ;
-begin
+Program area_cuadrado;
 
-    writeln ('diga la haltura del triangulo');
-    readln (h);
-    writeln ('diga la base del triangulo');
-    readln (b);
-       a:=(b*h)div(2)    ;
-       WriteLn('');
-       writeln (a,'cm es el area del triangulo');
-   readkey
+Uses crt;
 
-end.
+Var 
+  a,h,b: integer   ;
+Begin
+
+  writeln ('diga la haltura del triangulo');
+  readln (h);
+  writeln ('diga la base del triangulo');
+  readln (b);
+  a := (b*h)Div(2)    ;
+  WriteLn('');
+  writeln (a,'cm es el area del triangulo');
+  readkey
+
+End.

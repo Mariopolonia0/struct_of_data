@@ -10,9 +10,9 @@ begin
    
     For contador:= 0 to 8 do
     begin
-        arrayEntero[contador] := random(10);{esto generará Nº de 0 a 10}
+        arrayEntero[contador] := random(10); {esto generará Nº de 0 a 10}
     end;
-       
+    
     For contador:= 0 to 8 do
     begin
         suma := suma + arrayEntero[contador];
