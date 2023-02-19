@@ -1,29 +1,32 @@
-program numeros_par;
+Program numeros_par;
 
-    uses crt;
+Uses crt;
 
- var  p:integer;
-     n: integer;
-     v:integer ;
- begin
-         v:=0;
-       Repeat
+Var  p: integer;
+  n: integer;
+  v: integer ;
+Begin
+  v := 0;
+  Repeat
 
-       v:= v+1;
-          write('diga numero para decirle si es par = ') ;
-         read(  n) ; writeln('') ;
-         if ((n mod 2 = 0))   then   begin
-              p:=n  ;
-             writeln(p,' es un numero par') ;  writeln('') ;
-             end
-      else  begin
-            write('');
-              writeln(n,' no es un numero par');writeln('') ;
-               end;
-       Until  v>=50  ;
+    v := v+1;
+    write('diga numero para decirle si es par = ') ;
+    read(  n) ;
+    writeln('') ;
+    If ((n Mod 2 = 0))   Then
+      Begin
+        p := n  ;
+        writeln(p,' es un numero par') ;
+        writeln('') ;
+      End
+    Else
+      Begin
+        write('');
+        writeln(n,' no es un numero par');
+        writeln('');
+      End;
+  Until  v>=50;
 
-
-
-          writeln('precione cualquier tecla para terminar') ;                      readkey
-     end.
-
+  writeln('precione cualquier tecla para terminar') ;
+  readkey
+End.

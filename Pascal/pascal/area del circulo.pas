@@ -14,5 +14,3 @@ Begin
 	p := r/3;
 	WriteLn(p,' es el promedio del estudiamte');
 End.
-
-
