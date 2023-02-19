@@ -1,5 +1,5 @@
 
-Program menu;
+Program mario;
 
 Uses crt;
 

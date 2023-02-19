@@ -1,5 +1,5 @@
 
-Program area_del_cudrado;
+Program area_cuadrado;
 
 Uses crt;
 

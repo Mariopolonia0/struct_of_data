@@ -1,5 +1,5 @@
-Program sin_titulo;
-        uses crt ;
+Program area_circulo;
+	uses crt ;
 Var
 	n1: SIN_TIPO;
 	n2: SIN_TIPO;
