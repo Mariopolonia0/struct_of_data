@@ -1,5 +1,4 @@
-
-Program pedir_50_numero_y_decir_el_mayor ;
+Program pedir_50_numero_y_decir_el_mayor;
 
 Uses crt;
 
