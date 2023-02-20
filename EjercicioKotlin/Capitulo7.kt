@@ -1,7 +1,6 @@
 package EjercicioKotlin
 
 fun main() {
-
     //ejercicio7_9(6)
     //ejercicio7_7(
     //    arrayOf(
@@ -23,32 +22,41 @@ fun main() {
     //ejercicio7_4()
     //ejercicio7_10()
     //ejercicio7_12()
-//    ejercicio7_13(arrayOf(10, 20, 22, 22, 23, 18, 19))
-//    ejercicio7_13(arrayOf(6, 11, 18, 20, 19))
+    ejercicio7_13(arrayOf(10, 20, 22, 22, 23, 18, 19))
+    ejercicio7_13(arrayOf(6, 11, 18, 20, 19))
     ejercicio7_15(arrayOf(6, 11, 18, 20, 19))
-    ejercicio7_15(arrayOf(10,2,3))
+    ejercicio7_15(arrayOf(10, 2, 3))
 }
+
 
 //Dada una lista L de N elementos, diseñar un algoritmo
 //que calcule de forma independiente la suma de
 //los números pares y la suma de los números impares.
 //Diseñar un algoritmo que calcule el mayor valor de
 //una lista L de N elementos
-private fun ejercicio7_15(array: Array<Int>){
+private fun ejercicio7_15(array: Array<Int>) {
     var sumaImpares = 0
     var sumaPares = 0
     var suma = 0
 
-    for (item in array){
+    array.map { item ->
         suma += item
-        if(item % 2 == 0)
+        if (item % 2 == 0)
             sumaPares += item
         else
             sumaImpares += item
     }
 
+//    for (item in array) {
+//        suma += item
+//        if (item % 2 == 0)
+//            sumaPares += item
+//        else
+//            sumaImpares += item
+//    }
+
     println(array.contentToString())
-    print("suma de los pares :$sumaPares,suma de los Impares:$sumaImpares,suma de todos :$suma\n\n")
+    print("suma de los pares :$sumaPares \nsuma de los Impares:$sumaImpares   \nsuma de todos :$suma\n\n")
 
 }
 
@@ -76,15 +84,11 @@ private fun ejercicio7_13(array: Array<Int>) {
     println("la media es : $media")
 
     print("temperatura mayor a la media: ")
-    for (item in result[0])
-        if (item != 0)
-            print("$item ")
+    result[0].filter { it != 0 }.map { print("$it ") }
 
     println("")
     print("temperatura menores a la media: ")
-    for (item in result[1])
-        if (item != 0)
-            print("$item ")
+    result[1].filter { it != 0 }.map { print("$it ") }
 
     println("\n\n")
 }
