@@ -1,4 +1,4 @@
-Algoritmo sin_titulo
+Algoritmo ejercicio7_15
 	Dimension lista[3]
 	lista[1] = 10
 	lista[2] = 2
