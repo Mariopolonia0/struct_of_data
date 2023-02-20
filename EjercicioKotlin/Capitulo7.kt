@@ -23,8 +23,33 @@ fun main() {
     //ejercicio7_4()
     //ejercicio7_10()
     //ejercicio7_12()
-    ejercicio7_13(arrayOf(10, 20, 22, 22, 23, 18, 19))
-    ejercicio7_13(arrayOf(6, 11, 18, 20, 19))
+//    ejercicio7_13(arrayOf(10, 20, 22, 22, 23, 18, 19))
+//    ejercicio7_13(arrayOf(6, 11, 18, 20, 19))
+    ejercicio7_15(arrayOf(6, 11, 18, 20, 19))
+    ejercicio7_15(arrayOf(10,2,3))
+}
+
+//Dada una lista L de N elementos, diseñar un algoritmo
+//que calcule de forma independiente la suma de
+//los números pares y la suma de los números impares.
+//Diseñar un algoritmo que calcule el mayor valor de
+//una lista L de N elementos
+private fun ejercicio7_15(array: Array<Int>){
+    var sumaImpares = 0
+    var sumaPares = 0
+    var suma = 0
+
+    for (item in array){
+        suma += item
+        if(item % 2 == 0)
+            sumaPares += item
+        else
+            sumaImpares += item
+    }
+
+    println(array.contentToString())
+    print("suma de los pares :$sumaPares,suma de los Impares:$sumaImpares,suma de todos :$suma\n\n")
+
 }
 
 //Se dispone de N temperaturas almacenadas en un
