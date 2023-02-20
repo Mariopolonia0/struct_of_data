@@ -23,19 +23,59 @@ fun main() {
     //ejercicio7_4()
     //ejercicio7_10()
     //ejercicio7_12()
+    ejercicio7_13(arrayOf(10, 20, 22, 22, 23, 18, 19))
+    ejercicio7_13(arrayOf(6, 11, 18, 20, 19))
 }
+
+//Se dispone de N temperaturas almacenadas en un
+//array. Se desea calcular su media y obtener el número
+//de temperaturas mayores o iguales que la media
+private fun ejercicio7_13(array: Array<Int>) {
+    var suma = 0
+
+    for (item in array) {
+        suma += item
+    }
+
+    val media = suma / array.size
+
+    val result = arrayOf(Array(array.size, { 0 }), Array(array.size, { 0 }))
+
+    for (item in 0..array.size - 1)
+        if (media < array[item])
+            result[0][item] = array[item]
+        else
+            result[1][item] = array[item]
+
+    println("las temperaturas son:${array.contentToString()}")
+    println("la media es : $media")
+
+    print("temperatura mayor a la media: ")
+    for (item in result[0])
+        if (item != 0)
+            print("$item ")
+
+    println("")
+    print("temperatura menores a la media: ")
+    for (item in result[1])
+        if (item != 0)
+            print("$item ")
+
+    println("\n\n")
+}
+
 
 //Escribir un algoritmo que permita calcular el cuadrado
 //de los 100 primeros números enteros y a continuación
 //escribir una tabla que contenga dichos cuadrados.
-private fun ejercicio7_12(){
+private fun ejercicio7_12() {
 
     var contador = 1
 
     println("Estos son los cuadrados")
 
-    for(item in 1..100){
-        if (contador > 10){
+    for (item in 1..100) {
+        if (contador > 10) {
             contador = 1
             println()
         }
@@ -73,9 +113,9 @@ private fun ejercicio7_10() {
         when (rand(1, 3)) {
             1 -> {
                 println("\nopcion seleccionada: Reserva en plaza de fumadores")
-                if (numeroMontadosFumadores >= 100){
+                if (numeroMontadosFumadores >= 100) {
                     println("no hay reserva disponible en la plaza fumadora")
-                }else{
+                } else {
                     println("Reserva realizada en la plaza fumadora")
                     numeroMontadosFumadores++
                 }
@@ -83,20 +123,20 @@ private fun ejercicio7_10() {
 
             2 -> {
                 println("\nopcion seleccionada: Reserva en la plaza de no fumadores")
-                if (numeroMontadosFumadores >= 100){
+                if (numeroMontadosFumadores >= 100) {
                     println("no hay reserva disponible en la plaza de no fumadora")
-                }else{
+                } else {
                     println("Reserva realizada en la plaza no fumadora")
                     numeroMontadosNoFumadores++
                 }
             }
 
             3 -> {
-                if(rand(1,2) == 1){
+                if (rand(1, 2) == 1) {
                     println("\nopcion seleccionada: cancelar reserva en la plaza de fumadores")
                     println("elimina una reserva en la plaza de fumadora")
                     numeroMontadosFumadores--
-                }else{
+                } else {
                     println("\nopcion seleccionada: cancelar reserva en la plaza de no fumadores")
                     println("elimina una reserva en la plaza de no fumadora")
                     numeroMontadosNoFumadores--
