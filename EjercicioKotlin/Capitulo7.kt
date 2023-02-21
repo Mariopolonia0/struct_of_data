@@ -22,10 +22,41 @@ fun main() {
     //ejercicio7_4()
     //ejercicio7_10()
     //ejercicio7_12()
-    ejercicio7_13(arrayOf(10, 20, 22, 22, 23, 18, 19))
-    ejercicio7_13(arrayOf(6, 11, 18, 20, 19))
-    ejercicio7_15(arrayOf(6, 11, 18, 20, 19))
-    ejercicio7_15(arrayOf(10, 2, 3))
+//    ejercicio7_13(arrayOf(10, 20, 22, 22, 23, 18, 19))
+//    ejercicio7_13(arrayOf(6, 11, 18, 20, 19))
+//    ejercicio7_15(arrayOf(6, 11, 18, 20, 19))
+//    ejercicio7_15(arrayOf(10, 2, 3))
+    ejercicio7_17()
+}
+
+//Escribir el algoritmo que permita escribir el contenido de una tabla de dos dimensiones (3 × 4)
+private fun ejercicio7_17() {
+    val array = arrayOf(
+        Array(3) { 0 },
+        Array(3) { 0 },
+        Array(3) { 0 },
+        Array(3) { 0 }
+    )
+
+    val contador = array.size - 1
+
+    for (it in 0..contador) {
+        println("")
+
+        val contadorDos = array[contador].size - 1
+
+        for (item in 0..contadorDos) {
+            print("ingrese la posicion [$it][$item] : ")
+            array[it][item] = readLine()!!.toInt()
+        }
+    }
+
+    array.map {
+        print("\n")
+        it.map {
+            print(" $it")
+        }
+    }
 }
 
 
@@ -72,23 +103,31 @@ private fun ejercicio7_13(array: Array<Int>) {
 
     val media = suma / array.size
 
-    val result = arrayOf(Array(array.size, { 0 }), Array(array.size, { 0 }))
-
-    for (item in 0..array.size - 1)
-        if (media < array[item])
-            result[0][item] = array[item]
-        else
-            result[1][item] = array[item]
-
-    println("las temperaturas son:${array.contentToString()}")
+    println("las temperaturas son: ${array.contentToString()}")
     println("la media es : $media")
 
+//  val result = arrayOf(Array(array.size, { 0 }), Array(array.size, { 0 }))
     print("temperatura mayor a la media: ")
-    result[0].filter { it != 0 }.map { print("$it ") }
+    array.filter { it > media }.map { print("$it ") }
 
-    println("")
-    print("temperatura menores a la media: ")
-    result[1].filter { it != 0 }.map { print("$it ") }
+    print("\ntemperatura menor a la media: ")
+    array.filter { it < media }.map { print("$it ") }
+
+//    for (item in 0..array.size - 1)
+//        if (media < array[item])
+//            result[0][item] = array[item]
+//        else
+//            result[1][item] = array[item]
+
+//    println("las temperaturas son:${array.contentToString()}")
+//    println("la media es : $media")
+//
+//    print("temperatura mayor a la media: ")
+//    result[0].filter { it != 0 }.map { print("$it ") }
+//
+//    println("")
+//    print("temperatura menores a la media: ")
+//    result[1].filter { it != 0 }.map { print("$it ") }
 
     println("\n\n")
 }
