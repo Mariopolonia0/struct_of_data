@@ -32,10 +32,10 @@ fun main() {
 //Escribir el algoritmo que permita escribir el contenido de una tabla de dos dimensiones (3 × 4)
 private fun ejercicio7_17() {
     val array = arrayOf(
-        Array(3, { 0 }),
-        Array(3, { 0 }),
-        Array(3, { 0 }),
-        Array(3, { 0 })
+        Array(3) { 0 },
+        Array(3) { 0 },
+        Array(3) { 0 },
+        Array(3) { 0 }
     )
 
     val contador = array.size - 1
