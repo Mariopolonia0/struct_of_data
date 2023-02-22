@@ -26,7 +26,83 @@ fun main() {
 //    ejercicio7_13(arrayOf(6, 11, 18, 20, 19))
 //    ejercicio7_15(arrayOf(6, 11, 18, 20, 19))
 //    ejercicio7_15(arrayOf(10, 2, 3))
-    ejercicio7_17()
+    //ejercicio7_19(arrayOf(-6, 0, 20, 20, -6))
+    ejercicio7_11()
+}
+// 7.11. Cada alumno de una clase de licenciatura en Ciencias de la Computación tiene notas correspondientes
+// a ocho asignaturas diferentes, pudiendo no tener
+// califica ción en alguna asignatura. A cada asignatura
+// le corresponde un determinado coeficiente. Escribir
+// un algoritmo que permita calcular la media de cada
+// alumno.
+// Modificar el algoritmo para obtener las siguientes medias:
+// • general de la clase
+// • de la clase en cada asignatura
+// • porcenaje de faltas (no presentado a examen)
+private fun ejercicio7_11() {
+
+    print("introduzca el numero de asignatura del alumno:")
+    val numeroAsignatura = readLine()!!.toInt()
+    val notasAsignaturas = Array(numeroAsignatura) { Array(4) { 0 } }
+    val notasAsignaturasNombre = Array(numeroAsignatura) { "" }
+
+    for (item in 0..numeroAsignatura - 1) {
+
+        print("\nIngrese el nombre de la asignatura:")
+        notasAsignaturasNombre[item] = readLine()!!.toString()
+
+        print("Ingrese Nota Examen 1:")
+        notasAsignaturas[item][0] = readLine()!!.toInt()
+
+        print("Ingrese Nota Examen 2:")
+        notasAsignaturas[item][1] = readLine()!!.toInt()
+
+        print("Ingrese Nota Examen 3:")
+        notasAsignaturas[item][2] = readLine()!!.toInt()
+
+        print("Ingrese Nota de participacion:")
+        notasAsignaturas[item][3] = readLine()!!.toInt()
+    }
+
+    var mediaTotal = 0
+    var porcentajeFaltas = 0
+    for (item in 0..numeroAsignatura - 1) {
+        val nota =
+            notasAsignaturas[item][0] + notasAsignaturas[item][1] + notasAsignaturas[item][2] + notasAsignaturas[item][3]
+        val media = nota / 4
+        mediaTotal += nota
+
+        notasAsignaturas[item].map {
+            if (it == 0)
+                porcentajeFaltas++
+        }
+
+        print("\n\nMateria :${notasAsignaturasNombre[item]}, Examen 1: ${notasAsignaturas[item][0]}, ")
+        print("Examen 2: ${notasAsignaturas[item][1]}, Examen 3: ${notasAsignaturas[item][2]}, ")
+        print("Asistencia: ${notasAsignaturas[item][3]}, nota: $nota, media de la nota: $media")
+    }
+
+    println("/n media de todas las notas : ${mediaTotal / numeroAsignatura}")
+
+    val totalNota = 3 * numeroAsignatura
+    println("total porcenaje de faltas: ${(porcentajeFaltas * 100) / totalNota}")
+}
+
+//  7.19. Escribir un algoritmo que permita sumar el número
+//  de elementos positivos y el de negativos de una tabla
+//  T de n filas y m columnas.
+private fun ejercicio7_19(array: Array<Int>) {
+    var sumaPositivos = 0
+    var sumaNegativo = 0
+
+    array.map {
+        if (it > 0)
+            sumaPositivos += it
+        else
+            sumaNegativo += it
+    }
+
+    print("suma de los positivos : $sumaPositivos, suma de los negativos : $sumaNegativo")
 }
 
 //Escribir el algoritmo que permita escribir el contenido de una tabla de dos dimensiones (3 × 4)
