@@ -22,7 +22,8 @@ main (){
 	printf("diga el monto para pagar el articulo :");
 	scanf("%i",&m);
 
-	to=p*c; d=m-to;
+	to = p * c;
+	d = m - to;
 
 	printf("\n%i esta es la debuelta\n\n",d);
 	system("pause");
