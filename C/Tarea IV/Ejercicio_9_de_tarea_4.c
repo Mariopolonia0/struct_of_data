@@ -1,6 +1,6 @@
 #include <stdio.h>
 /* Ejercicio 9 de tarea 4  */
-
+//Hacer un algoritmo que pida tres números y lo imprima de mayor a menor
 int main (){
 	int n1, n2, n3;
 	

@@ -1,7 +1,8 @@
 #include<stdio.h>
 
 /* Ejercicio 5 de tarea 4 */
-
+//Hacer un algoritmo que pida tres números y determine si uno de ellos es igual a la suma de los
+//otros dos.
 int main (){
 
 	float n1,n2,n3;

@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 //Ejercicio_2_de_tarea_4 
-
+//Hacer un algoritmo que pida un año y determine si el año es bisiesto.
 int main(){
     
     int a;
