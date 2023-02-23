@@ -1,5 +1,8 @@
 #include <stdio.h>
+
 /*Ejercicio 10 de tarea 4*/
+//Hacer un algoritmo que pida el día, mes y año de nacimiento de una persona y el día, mes y año
+//actual, y con estos datos, calcule e imprima la edad de una persona
 
 int main(){
     
