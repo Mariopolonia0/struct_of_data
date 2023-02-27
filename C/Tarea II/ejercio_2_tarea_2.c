@@ -1,31 +1,31 @@
-#include<stdio.h>
+#include <stdio.h>
 
-/* 
- * hacer un programa que al recibir el precio de un artículo, la cantidad comprada y 
- * el monto de dinero pagado por el cliente calcule la devuelta.
- */
-main (){
-	/*
-		p es el precio del articulo,c es la cantidad
-		m es el monto del dinero pagado,to es el total, d es la delvuelta
-	*/
-	int p,c,m,to,d; 
+/* Hacer un programa que al recibir el precio de un artículo, la cantidad comprada y 
+el monto de dinero pagado por el cliente calcule la devuelta. */
 
-	printf("este programa le dice la devuelta de un articulo comprado\n\n");
+int main() {
+    int p, c, m, to, d;
+    // p es el precio del artículo
+    //c es la cantidad
+    //m es el monto del dinero pagado
+    //to es el total y d es la devolución.
 
-	printf("diga el precio del articulo          :");
-	scanf("%i",&p);
+    printf("Este programa le dice la devolución de un artículo comprado\n\n");
 
-	printf("diga el cantidad del articulo        :");
-	scanf("%i",&c);
+    printf("Diga el precio del artículo: ");
+    scanf("%i", &p);
 
-	printf("diga el monto para pagar el articulo :");
-	scanf("%i",&m);
+    printf("Diga la cantidad del artículo: ");
+    scanf("%i", &c);
 
-	to = p * c;
-	d = m - to;
+    printf("Diga el monto para pagar el artículo: ");
+    scanf("%i", &m);
 
-	printf("\n%i esta es la debuelta\n\n",d);
-	system("pause");
-	
+    to = p * c; 
+    d = m - to;
+
+    printf("\n%i es la devolución\n\n", d);
+
+    system("pause");
+    return 0;
 }
