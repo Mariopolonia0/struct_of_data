@@ -11,6 +11,10 @@ h1 {
 
 form {
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
 }
 
 label {
