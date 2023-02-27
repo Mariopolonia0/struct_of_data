@@ -7,6 +7,7 @@ body {
 
 h1 {
   text-align: center;
+  font-size: 10vw;
 }
 
 form {
@@ -20,15 +21,16 @@ form {
 label {
   display: block;
   margin-bottom: 5px;
-  font-size: 5vw;
+  font-size: 10vw;
 }
 
 input {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  width: 50vw;
+  padding: 3vw;
+  border: 2vw solid #ccc;
+  border-radius: 5vw;
+  margin-bottom: 5vw;
+  font-size: 5vw;
 }
 
 button {
@@ -38,6 +40,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 10vw;
 }
 
 button:hover {
