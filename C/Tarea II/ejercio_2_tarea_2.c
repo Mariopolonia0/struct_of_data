@@ -1,27 +1,31 @@
-#include<stdio.h>
-/*hacer un programa que al recibir el precio de un art�culo, la cantidad comprada y 
-el monto de dinero pagado por el cliente calcule la devuelta.*/
-main (){
-	int p,c,m,to,d; /*p es el precio del articulo,c es la cantidad
-	m es el monto del dinero pagado,to es el total, d es la delvuelta*/
-	printf("este programa le dice la devuelta de un articulo comprado\n\n");
-	printf("diga el precio del articulo          :");scanf("%i",&p);
-	printf("diga el cantidad del articulo        :");scanf("%i",&c);
-	printf("diga el monto para pagar el articulo :");scanf("%i",&m);
-	to=p*c; d=m-to;printf("\n%i esta es la debuelta\n\n",d);
-	system("pause");/*hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario 
-	hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario 
-	hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario 
-	hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario 	hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario
-		hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario
-			hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario
-				hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario
-					hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario
-						hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario
-							hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario
-								hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario
-									hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario
-										hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario
-											hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario hola soy mario
-											*/
+#include <stdio.h>
+
+/* Hacer un programa que al recibir el precio de un artículo, la cantidad comprada y 
+el monto de dinero pagado por el cliente calcule la devuelta. */
+
+int main() {
+    int p, c, m, to, d;
+    // p es el precio del artículo
+    //c es la cantidad
+    //m es el monto del dinero pagado
+    //to es el total y d es la devolución.
+
+    printf("Este programa le dice la devolución de un artículo comprado\n\n");
+
+    printf("Diga el precio del artículo: ");
+    scanf("%i", &p);
+
+    printf("Diga la cantidad del artículo: ");
+    scanf("%i", &c);
+
+    printf("Diga el monto para pagar el artículo: ");
+    scanf("%i", &m);
+
+    to = p * c; 
+    d = m - to;
+
+    printf("\n%i es la devolución\n\n", d);
+
+    system("pause");
+    return 0;
 }
