@@ -48,5 +48,11 @@ button:hover {
 }
 
 #output {
-  margin: 5vw;
+  margin: 2vw;
+  padding: 5vw;
+  font-size: 8vw;
+  border: 2vw solid #00ffff;
+  background: cyan;
+  box-shadow: 5px 5px 3vw cyan;
+  border-radius: 3vw;
 }
