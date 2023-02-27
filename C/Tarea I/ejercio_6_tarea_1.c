@@ -18,5 +18,4 @@ void main (){
 
     printf("\n\nes la cantridad de block que se utilizara para la pared :%i \n\n",resultado);
     system("pause");
-		        
 }

@@ -21,3 +21,5 @@
 # Ejercicios con UI
 ***
 ![ejercicio](https://user-images.githubusercontent.com/65502311/212482293-4b42e8d4-212b-4073-9b6b-3722af0cd4f9.PNG)
+![diagrama de 7_15](https://user-images.githubusercontent.com/65502311/220147974-b645f7d3-5d2b-4aa0-a849-d0755043825e.PNG)
+![algoritmo de 7_15](https://user-images.githubusercontent.com/65502311/220148183-bf49703e-1af2-48ed-94d1-46d11932e7b4.PNG)

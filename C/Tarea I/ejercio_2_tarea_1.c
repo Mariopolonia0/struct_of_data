@@ -1,5 +1,8 @@
 #include<stdio.h>
-
+/*
+    Hacer un algoritmo para calcular el monto que tiene que pagar una persona que compra un 
+    producto en la tienda en línea de Amazon.
+*/
 void main(){
 
 	int prar,pecv,precio1,premo,precio2,pe,total;
@@ -19,7 +22,7 @@ void main(){
 	scanf("%i",&pe);	
 	precio2 = precio2*pe;
 	total = precio1+precio2	;
-    printf("\nEl monto total de la compra es: %i\n\n",total);  
+        printf("\nEl monto total de la compra es: %i\n\n",total);  
 	system("pause")  ;
 	
 }
