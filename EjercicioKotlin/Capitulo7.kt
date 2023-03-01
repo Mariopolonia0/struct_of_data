@@ -27,8 +27,34 @@ fun main() {
 //    ejercicio7_15(arrayOf(6, 11, 18, 20, 19))
 //    ejercicio7_15(arrayOf(10, 2, 3))
     //ejercicio7_19(arrayOf(-6, 0, 20, 20, -6))
-    ejercicio7_11()
+    //ejercicio7_11()
+    ejercicio7_21()
 }
+
+// 7.21. Una empresa tiene diez almacenes y necesita crear
+// un algoritmo que lea las ventas mensuales de los diez
+// almacenes, calcular la media de ventas y obtener un
+// listado de los almacenes cuyas ventas mensuales son
+// superiores a la media
+private fun ejercicio7_21() {
+    val ventas = readLine()!!.split(" ").map { it.toInt() }
+    var suma = 0
+
+    ventas.map {
+        suma += it
+    }
+
+    val media = suma / ventas.size
+
+    println("la media de ventas es : $media")
+    print("ventas mayor a la media : ")
+
+    ventas.map {
+        if (it > media)
+            print("$it,")
+    }
+}
+
 // 7.11. Cada alumno de una clase de licenciatura en Ciencias de la Computación tiene notas correspondientes
 // a ocho asignaturas diferentes, pudiendo no tener
 // califica ción en alguna asignatura. A cada asignatura

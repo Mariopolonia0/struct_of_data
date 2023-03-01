@@ -25,7 +25,7 @@ fun main() {
     }
 }
 
-//suma los numero multipolo del 3 y del 5 hasta el numero que se le pase
+//suma los numero múltiplos del 3 y del 5 hasta el numero que se le pase
 fun sumar(hasta:Int):Int{
     var suma = 0
 
