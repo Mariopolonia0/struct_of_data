@@ -19,9 +19,11 @@ function plusMinus(arr) {
       let resultCopie = result;
       result = "";
 
-      for (let it = 0; it <= 7; it++) result += resultCopie[it];
+      for (let it = 0; it <= 7; it++) 
+        result += resultCopie[it];
     } else {
-      for (let it = 0; it <= 7 - array[item].length; it++) result += "0";
+      for (let it = 0; it <= 7 - array[item].length; it++)
+        result += "0";
     }
 
     document.getElementById("output").innerHTML += `<p>${result}</p>`;
