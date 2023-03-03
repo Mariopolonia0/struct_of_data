@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 5_26</title>
+    <title>Ejercicio 7.26</title>
 </head>
 <style>
     body {
         display: flex;
         justify-content: center;
         background: darkseagreen;
+        flex-direction: column;
     }
 
     label {
@@ -28,6 +29,21 @@
         display: flex;
         flex-direction: column;
     }
+
+    table {
+        border: 1px solid #333;
+        margin-top: 4vw;
+    }
+
+    td {
+        border: 1px solid #333;
+    }
+
+    thead,
+    tfoot {
+        background-color: #333;
+        color: #fff;
+    }
 </style>
 
 <body>
@@ -40,6 +56,27 @@
             <input type="submit" value="Agregar">
         </form>
     </div>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Ratings</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>mario</td>
+                <td>50</td>
+            </tr>
+            <tr id="trId">
+                <td>jeuri</td>
+                <td>90</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
+
+<script>
+    
+</script>
 
 </html>
