@@ -1,31 +1,36 @@
 body {
   font-family: Arial, sans-serif;
   display: flex;
-  font-family: Arial, sans-serif;
   flex-direction: column;
   align-items: center;
 }
 
 h1 {
   text-align: center;
-
+  font-size: 10vw;
 }
 
 form {
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
 }
 
 label {
   display: block;
   margin-bottom: 5px;
+  font-size: 10vw;
 }
 
 input {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  width: 70vw;
+  padding: 3vw;
+  border: 2vw solid #ccc;
+  border-radius: 5vw;
+  margin-bottom: 5vw;
+  font-size: 5vw;
 }
 
 button {
@@ -35,6 +40,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 10vw;
 }
 
 button:hover {
@@ -42,5 +48,11 @@ button:hover {
 }
 
 #output {
-  margin: 20px;
+  margin: 10vw;
+  padding: 5vw;
+  font-size: 8vw;
+  border: 2vw solid #00ffff;
+  background: cyan;
+  box-shadow: 5px 5px 3vw cyan;
+  border-radius: 3vw;
 }
