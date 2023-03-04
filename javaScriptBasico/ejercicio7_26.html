@@ -18,6 +18,7 @@
     label {
         font-size: 6vw;
         margin-top: 2vw;
+        margin-right: 2vw;
     }
 
     input {
@@ -63,17 +64,25 @@
         color: white;
         box-shadow: 0px 0px 8px #0064ff;
     }
+
+    .resultado {
+        display: flex;
+    }
 </style>
 
 <body>
     <div>
         <form>
-            <label for="fname">Name:</label>
+            <label for="fname">Name</label>
             <input type="text" id="nombre" name="fname">
             <label for="fname">Qualification</label>
             <input type="text" id="calificacion" name="fname">
             <button type="button" onclick="ingresarDato()">Agregar</button>
         </form>
+    </div>
+    <div class="resultado">
+        <label>calificacion media: </label>
+        <label id="calificacionMedia">0</label>
     </div>
     <table>
         <thead>
@@ -86,28 +95,57 @@
         </tbody>
     </table>
     <script>
-        var media
+        const isNumber = n => (typeof (n) === 'number' || n instanceof Number);
+        var totalCalificacion = 0;
+        class estudiante {
+            constructor(nombre, calificacion) {
+                this.nombre = nombre,
+                    this.calificacion = calificacion
+            }
+        }
+        var lista = []
+
         function ingresarDato() {
 
             const tablaBody = document.getElementById('tbody');
             var inputNombre = document.getElementById("nombre").value;
+            var labelCalificacionMedia = document.getElementById("calificacionMedia");
             var inputCalificacion = document.getElementById("calificacion").value;
+            var numeroCalificacion = parseInt(inputCalificacion, 10);
 
-            if (inputNombre != "" && inputCalificacion != "") {
-                let nombreTd = `<td> ${inputNombre}</td> `;
-                var calificacionTd;
-                if (inputCalificacion > 30) {
-                    calificacionTd =
-                        `<td style =" color: blue;"> ${inputCalificacion} </td>`;
-                } else {
-                    calificacionTd =
-                        `<td> ${inputCalificacion}</td>`;
-                }
+            if (inputNombre != "" && numeroCalificacion > 0) {
 
-                tablaBody.innerHTML += `<tr>${nombreTd + calificacionTd}</tr>`;
-                console.log("agregado");
-            }
+                lista.push(new estudiante(inputNombre, inputCalificacion))
+                totalCalificacion += numeroCalificacion;
+                console.log(totalCalificacion + "/" + lista.length);
 
+                labelCalificacionMedia.innerHTML =
+                    `<label style =" color: white; ">
+                        ${(totalCalificacion / lista.length).toFixed(2)}
+                    </label>`;
+
+                var tr = `
+                    <tr>
+                        <td style =" color: white;">Estudiante</td>
+                        <td style =" color: white;">Calificación</td>
+                    </tr>`;
+
+                lista.map(function (estudiante) {
+                    let nombreTd = `<td> ${estudiante.nombre}</td> `;
+                    var calificacionTd;
+                    if (estudiante.calificacion > (totalCalificacion / lista.length)) {
+                        calificacionTd =
+                            `<td style =" color: blue;"> ${estudiante.calificacion} </td>`;
+                    } else {
+                        calificacionTd =
+                            `<td> ${estudiante.calificacion}</td>`;
+                    }
+                    tr += `<tr>${nombreTd + calificacionTd}</tr>`
+                    //tablaBody.innerHTML = `<tr>${nombreTd + calificacionTd}</tr>`;
+                })
+                tablaBody.innerHTML = tr;
+            } else
+                alert("Los campos están vacíos o incorrectos");
         }
     </script>
 </body>
