@@ -23,6 +23,7 @@
     input {
         font-size: 6vw;
         margin-top: 2vw;
+        border-radius: 2vw;
     }
 
     form {
@@ -44,6 +45,24 @@
         background-color: #333;
         color: #fff;
     }
+
+    td {
+        color: black;
+        font-weight: bold;
+        font-size: 6vw;
+    }
+
+    button {
+        align-self: center;
+        padding: 2vw;
+        margin-top: 2vw;
+        font-size: x-large;
+        border-width: medium;
+        border-radius: 3vw;
+        background: url();
+        color: white;
+        box-shadow: 0px 0px 8px #0064ff;
+    }
 </style>
 
 <body>
@@ -53,7 +72,7 @@
             <input type="text" id="nombre" name="fname">
             <label for="fname">Qualification</label>
             <input type="text" id="calificacion" name="fname">
-            <input type="submit" value="Agregar">
+            <button type="button" onclick="ingresarDato()">Agregar</button>
         </form>
     </div>
     <table>
@@ -62,21 +81,35 @@
                 <th colspan="2">Ratings</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>mario</td>
-                <td>50</td>
-            </tr>
-            <tr id="trId">
-                <td>jeuri</td>
-                <td>90</td>
-            </tr>
+        <tbody id="tbody">
+
         </tbody>
     </table>
-</body>
+    <script>
+        var media
+        function ingresarDato() {
 
-<script>
-    
-</script>
+            const tablaBody = document.getElementById('tbody');
+            var inputNombre = document.getElementById("nombre").value;
+            var inputCalificacion = document.getElementById("calificacion").value;
+
+            if (inputNombre != "" && inputCalificacion != "") {
+                let nombreTd = `<td> ${inputNombre}</td> `;
+                var calificacionTd;
+                if (inputCalificacion > 30) {
+                    calificacionTd =
+                        `<td style =" color: blue;"> ${inputCalificacion} </td>`;
+                } else {
+                    calificacionTd =
+                        `<td> ${inputCalificacion}</td>`;
+                }
+
+                tablaBody.innerHTML += `<tr>${nombreTd + calificacionTd}</tr>`;
+                console.log("agregado");
+            }
+
+        }
+    </script>
+</body>
 
 </html>
