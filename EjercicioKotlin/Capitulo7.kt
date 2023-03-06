@@ -28,7 +28,51 @@ fun main() {
 //    ejercicio7_15(arrayOf(10, 2, 3))
     //ejercicio7_19(arrayOf(-6, 0, 20, 20, -6))
     //ejercicio7_11()
-    ejercicio7_21()
+    //ejercicio7_21()
+    ejercicio7_27()
+}
+
+
+//7.27 Se introducen una serie de valores numéricos desde
+//el teclado, siendo el valor final de entrada de datos
+//o centinela –99. Se desea calcular e imprimir el número de valores leídos,
+//la suma y media de los valores y una tabla que muestre cada valor leído y sus
+//desviaciones de la media.
+fun ejercicio7_27() {
+    val lista = mutableListOf<Int>()
+    var suma = 0
+    var stop = false
+
+    do {
+        print("Digita un numero:")
+        val digitado = readLine()!!.toInt()
+
+        if (digitado == -99) {
+            stop = true
+        } else {
+            lista.add(digitado)
+            suma += digitado
+        }
+
+    } while (!stop)
+
+    val media = suma / lista.size
+    var sumaDesviacionMedia = 0f
+
+    lista.map {
+        var result = (it - media)
+        if (result < 0)
+            result = result * -1
+
+        sumaDesviacionMedia += result
+    }
+
+    val desviacionMedia = sumaDesviacionMedia / lista.size
+
+    println("\nnumero de valores leido:${lista.size}")
+    println("suma de los valores leido:$suma")
+    println("media de los valores leido:$media")
+    println("desviacion de la Media:$desviacionMedia")
 }
 
 // 7.21. Una empresa tiene diez almacenes y necesita crear
