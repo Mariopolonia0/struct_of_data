@@ -29,7 +29,31 @@ fun main() {
     //ejercicio7_19(arrayOf(-6, 0, 20, 20, -6))
     //ejercicio7_11()
     //ejercicio7_21()
-    ejercicio7_27()
+    //ejercicio7_27()
+    ejercicio7_28(arrayOf("mario", "jaziel", "eskerni", "el niño", "tony"))
+}
+
+
+//7.28. Se dispone de una lista de N nombres de alumnos.
+//Escribir un algoritmo que solicite el nombre de un
+//alumno y busque en la lista (array) si el nombre está
+//en la lista.
+private fun ejercicio7_28(array: Array<String>) {
+
+    print("inserte el nombre del alumno:")
+    val nombre = readLine()!!
+    var encotrado = false
+
+    array.map { estudiante ->
+        if (nombre == estudiante)
+            encotrado = true
+    }
+
+    if (encotrado)
+        print("\nestudiante encotrado")
+    else
+        print("\nestudiante no encotrado")
+
 }
 
 
