@@ -52,7 +52,7 @@ fun guardarNombre(nombreArchivo: String, nombre: String) {
         it.writeObject(list)
     }
 
-    println("----------\nguardado----------\n")
+    println("----------\nguardado\n----------")
 }
 
 //Imprimir lista
