@@ -1,6 +1,6 @@
 
 
-Program sin_titulo;
+Program esMayor;
 
 Uses CRT;
 
