@@ -15,7 +15,5 @@ public class ejer2 {
         } catch (IOException | NumberFormatException e) {
             System.out.println("Error");
         }
-
     }
-
 }

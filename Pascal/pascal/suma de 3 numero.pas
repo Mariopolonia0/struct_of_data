@@ -1,4 +1,4 @@
-Program sin_titulo;
+Program esMayor;
 
 Var
 	n1: Real;

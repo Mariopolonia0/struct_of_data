@@ -1,5 +1,5 @@
 
-Program sin_titulo;
+Program esMayor;
 
 Var 
   v: String;

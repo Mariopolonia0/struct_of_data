@@ -1,12 +1,10 @@
-
-Program sin_titulo;
-
-Uses crt;
+Program esMayor;
 
 Var 
   e: integer;
+
 Begin
-  WriteLn('digame su edad bestia');
+  WriteLn('ingrese su edad:');
   ReadLn(e);
   If e>17 Then
     Begin
@@ -22,5 +20,4 @@ Begin
       WriteLn('');
       WriteLn('la bestia esta');
     End;
-  readkey
 End.
