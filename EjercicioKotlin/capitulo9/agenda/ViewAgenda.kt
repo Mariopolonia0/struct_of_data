@@ -55,6 +55,7 @@ class ViewAgenda : JFrame() {
     private fun panel(): JPanel {
         val jPanel = JPanel()
         jPanel.add(label("Lista de contactos", 10, 5, 20))
+        jPanel.add(label("Regristro",230 , 5, 20))
         jPanel.isVisible = true
         jPanel.layout = null
         //agregar componentes
@@ -92,56 +93,92 @@ class ViewAgenda : JFrame() {
 
     private fun jpanelRegistro(): JPanel {
         val jPanel = JPanel()
-        jPanel.add(label("Registro", 5, 0, 20))
-        jPanel.setBounds(230, 40, 280, 470)
+        jPanel.setBounds(220, 40, 280, 470)
         jPanel.isVisible = true
         jPanel.layout = null
         jPanel.background = Color.lightGray
 
         //agregar textFiel
-        jPanel.add(label("Nombre", 5, 30, 16))
-        textFieldNombre = textField(5, 60)
+        jPanel.add(label("Nombre", 10, 10, 16))
+        textFieldNombre = textField( 40)
         jPanel.add(textFieldNombre)
 
-        jPanel.add(label("Direccion", 5, 90, 16)) //y = 60 + 30
-        textFieldDireccion = textField(5, 120) // y = 90 + 30
+        jPanel.add(label("Direccion", 10, 70, 16))
+        textFieldDireccion = textField(100)
         jPanel.add(textFieldDireccion)
 
-        jPanel.add(label("Ciudad", 5, 150, 16))
-        textFieldCiudad = textField(5, 180)
+        jPanel.add(label("Ciudad", 10, 130, 16))
+        textFieldCiudad = textField( 160)
         jPanel.add(textFieldCiudad)
 
-        jPanel.add(label("Codigo Postal", 5, 210, 16))
-        textFieldCodigoPostal = textField(5, 240)
+        jPanel.add(label("Codigo Postal", 10, 190, 16))
+        textFieldCodigoPostal = textField( 220)
         jPanel.add(textFieldCodigoPostal)
 
-        jPanel.add(label("Telefono", 5, 270, 16))
-        textFieldTelefono = textField(5, 300)
+        jPanel.add(label("Telefono", 10, 250, 16))
+        textFieldTelefono = textField( 280)
         jPanel.add(textFieldTelefono)
 
-        jPanel.add(label("Fecha Nacimiento", 5, 330, 16))
-        textFieldFechaNacimiento = textField(5, 360)
+        jPanel.add(label("Fecha Nacimiento", 10, 310, 16))
+        textFieldFechaNacimiento = textField( 340)
         jPanel.add(textFieldFechaNacimiento)
 
         configurarButton()
+
         jPanel.add(buttonGuardar)
+        jPanel.add(buttonNuevo)
+        jPanel.add(buttonElinimar)
+
         return jPanel
     }
 
     private fun configurarButton() {
-        buttonGuardar = JButton("")
-        val icono = ImageIcon("Resources/GuardarIcon.png")
-        buttonGuardar.icon = ImageIcon(icono.image.getScaledInstance(50, 50, Image.SCALE_SMOOTH))
-        buttonGuardar.setBounds(20, 400, 60, 60)
+        //Configuracion button Nuevo
+        buttonNuevo = JButton("")
+        val iconoNuevo = ImageIcon("Resources/NuevoIcono.png")
+        buttonNuevo.icon = ImageIcon(iconoNuevo.image.getScaledInstance(50, 50, Image.SCALE_SMOOTH))
+        buttonNuevo.setBounds(10, 390, 60, 60)
 
-        val evento = object : MouseAdapter() {
+        val eventoNuevo = object : MouseAdapter() {
+            override fun mouseClicked(e: MouseEvent) {
+
+            }
+        }
+
+        buttonNuevo.addMouseListener(eventoNuevo)
+        buttonNuevo.isVisible = true
+
+        //Configuracion button Guardar
+        buttonGuardar = JButton("")
+        val iconoGuardar = ImageIcon("Resources/GuardarIcon.png")
+        buttonGuardar.icon = ImageIcon(iconoGuardar.image.getScaledInstance(50, 50, Image.SCALE_SMOOTH))
+        buttonGuardar.setBounds(85, 390, 60, 60)
+
+        val eventoGuardar = object : MouseAdapter() {
             override fun mouseClicked(e: MouseEvent) {
                 guardarContacto()
             }
         }
 
-        buttonGuardar.addMouseListener(evento)
+        buttonGuardar.addMouseListener(eventoGuardar)
         buttonGuardar.isVisible = true
+
+        //Configuracion button Eliminar
+        buttonElinimar = JButton("")
+        val iconoEliminar = ImageIcon("Resources/EliminarIcon.png")
+        buttonElinimar.icon = ImageIcon(iconoEliminar.image.getScaledInstance(50, 50, Image.SCALE_SMOOTH))
+        buttonElinimar.setBounds(165, 390, 60, 60)
+
+        val eventoEliminar = object : MouseAdapter() {
+            override fun mouseClicked(e: MouseEvent) {
+
+            }
+        }
+
+        buttonElinimar.addMouseListener(eventoEliminar)
+        buttonElinimar.isVisible = true
+
+
     }
 
     private fun guardarContacto() {
@@ -222,9 +259,9 @@ class ViewAgenda : JFrame() {
         textFieldFechaNacimiento.text = ""
     }
 
-    private fun textField(x: Int, y: Int): JTextField {
+    private fun textField( y: Int): JTextField {
         val textField = JTextField()
-        textField.setBounds(x, y, 220, 25)
+        textField.setBounds(10, y, 220, 25)
         textField.font = Font("arial", 1, 16)
         return textField
     }
