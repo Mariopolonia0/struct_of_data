@@ -3,7 +3,6 @@ package EjercicioJava.proyecto_ayuda_al_moreno;
 import java.io.*;
 
 class Empleado implements Serializable {
-
     private String nombre;
     private String apellido;
     private String direccion;

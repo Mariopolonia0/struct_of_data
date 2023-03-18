@@ -1,10 +1,13 @@
 package EjercicioKotlin.capitulo9.agenda
 
-data class Agenda(
+import java.io.Serializable
+
+
+class Contacto(
     var nombre: String = "",
     var direccion: String = "",
     var ciudad: String = "",
     var codigoPostal: String = "",
     var telefono: String = "",
-    var edad: String = ""
-)
+    var fechaNacimiento: String = ""
+) : Serializable
