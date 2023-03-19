@@ -19,7 +19,7 @@ class ViewAgenda : JFrame() {
     var model: DefaultListModel<String> = DefaultListModel()
     var rutaArchivo = "EjercicioKotlin/capitulo9/agenda/data.dat"
 
-    lateinit var list :JList<String>
+    lateinit var list: JList<String>
     lateinit var textFieldNombre: JTextField
     lateinit var textFieldDireccion: JTextField
     lateinit var textFieldCiudad: JTextField
@@ -55,7 +55,7 @@ class ViewAgenda : JFrame() {
     private fun panel(): JPanel {
         val jPanel = JPanel()
         jPanel.add(label("Lista de contactos", 10, 5, 20))
-        jPanel.add(label("Regristro",230 , 5, 20))
+        jPanel.add(label("Regristro", 230, 5, 20))
         jPanel.isVisible = true
         jPanel.layout = null
         //agregar componentes
@@ -100,7 +100,7 @@ class ViewAgenda : JFrame() {
 
         //agregar textFiel
         jPanel.add(label("Nombre", 10, 10, 16))
-        textFieldNombre = textField( 40)
+        textFieldNombre = textField(40)
         jPanel.add(textFieldNombre)
 
         jPanel.add(label("Direccion", 10, 70, 16))
@@ -108,19 +108,19 @@ class ViewAgenda : JFrame() {
         jPanel.add(textFieldDireccion)
 
         jPanel.add(label("Ciudad", 10, 130, 16))
-        textFieldCiudad = textField( 160)
+        textFieldCiudad = textField(160)
         jPanel.add(textFieldCiudad)
 
         jPanel.add(label("Codigo Postal", 10, 190, 16))
-        textFieldCodigoPostal = textField( 220)
+        textFieldCodigoPostal = textField(220)
         jPanel.add(textFieldCodigoPostal)
 
         jPanel.add(label("Telefono", 10, 250, 16))
-        textFieldTelefono = textField( 280)
+        textFieldTelefono = textField(280)
         jPanel.add(textFieldTelefono)
 
         jPanel.add(label("Fecha Nacimiento", 10, 310, 16))
-        textFieldFechaNacimiento = textField( 340)
+        textFieldFechaNacimiento = textField(340)
         jPanel.add(textFieldFechaNacimiento)
 
         configurarButton()
@@ -141,7 +141,7 @@ class ViewAgenda : JFrame() {
 
         val eventoNuevo = object : MouseAdapter() {
             override fun mouseClicked(e: MouseEvent) {
-
+                nuevoContacto()
             }
         }
 
@@ -167,18 +167,67 @@ class ViewAgenda : JFrame() {
         buttonElinimar = JButton("")
         val iconoEliminar = ImageIcon("Resources/EliminarIcon.png")
         buttonElinimar.icon = ImageIcon(iconoEliminar.image.getScaledInstance(50, 50, Image.SCALE_SMOOTH))
-        buttonElinimar.setBounds(165, 390, 60, 60)
+        buttonElinimar.setBounds(170, 390, 60, 60)
 
         val eventoEliminar = object : MouseAdapter() {
             override fun mouseClicked(e: MouseEvent) {
-
+                eliminarContacto()
             }
         }
 
         buttonElinimar.addMouseListener(eventoEliminar)
         buttonElinimar.isVisible = true
+    }
 
+    private fun eliminarContacto() {
+        if (list.selectedIndex != -1) {
+            listaAgenda.removeAt(list.selectedIndex)
+            actualizarLista()
+            limpiarRegistro()
+            guardarListaEnArchivo()
+            mensaje(1, "Contacto eliminado")
+        } else {
+            mensaje(3, "Seleccione un contacto")
+        }
+    }
 
+    private fun mensaje(tipo: Int, titulo: String) {
+        when (tipo) {
+            1 -> {
+                JOptionPane.showConfirmDialog(
+                    this,
+                    titulo,
+                    "Exelente",
+                    JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.INFORMATION_MESSAGE
+                )
+            }
+
+            2 -> {
+                JOptionPane.showConfirmDialog(
+                    this,
+                    titulo,
+                    "Informacion",
+                    1,
+                    1
+                )
+            }
+
+            3 -> {
+                JOptionPane.showConfirmDialog(
+                    this,
+                    titulo,
+                    "Error",
+                    JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.ERROR_MESSAGE
+                )
+            }
+        }
+    }
+
+    private fun nuevoContacto() {
+        limpiarRegistro()
+        list.clearSelection()
     }
 
     private fun guardarContacto() {
@@ -204,6 +253,8 @@ class ViewAgenda : JFrame() {
             limpiarRegistro()
             guardarListaEnArchivo()
         }
+
+        mensaje(1,"Se agrego el contacto")
     }
 
     private fun guardarListaEnArchivo() {
@@ -259,7 +310,7 @@ class ViewAgenda : JFrame() {
         textFieldFechaNacimiento.text = ""
     }
 
-    private fun textField( y: Int): JTextField {
+    private fun textField(y: Int): JTextField {
         val textField = JTextField()
         textField.setBounds(10, y, 220, 25)
         textField.font = Font("arial", 1, 16)
