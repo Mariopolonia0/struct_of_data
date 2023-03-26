@@ -1,6 +1,8 @@
 program proyecto_final_pascal;  //hecho por mario peña polonia matricula 2016-0037
-    uses crt;
- var
+    
+uses crt;
+
+var
     eq1,j1e1,j2e1,j3e1,j4e1,j5e1:string; 
     aa:integer; 
     eq2,j1e2,j2e2,j3e2,j4e2,j5e2:string; 
@@ -75,42 +77,210 @@ begin
  write('digite nombre del jugador numero 5 = '); 
  readln(j5e2);  
  clrscr; 
-                                                                                       //hecho por mario peña polonia matricula 2016-0037//
- repeat                                                                             //hecho por mario peña polonia matricula 2016-0037//
- clrscr; textcolor(7);                                                              //hecho por mario peña polonia matricula 2016-0037//
- gotoxy(10,4); write('EQUIPOS'   ); textcolor(7);                                 //hecho por mario peña polonia matricula 2016-0037//
- gotoxy(24,5); write('DOS PUNTOS'); gotoxy(37,5);write('TRES PUNTOS');              //hecho por mario peña polonia matricula 2016-0037//
- gotoxy(51,5); write('TIRO LIBRE'); gotoxy(64,5);write('TOTAL');                   //hecho por mario peña polonia matricula 2016-0037//
-                     textcolor(3);                                                  //hecho por mario peña polonia matricula 2016-0037//
- gotoxy(10,7);  write('EQUIPO 1;',eq1) ;                                            //hecho por mario peña polonia matricula 2016-0037//
- gotoxy(10,9); textcolor(3); write('1.',j1e1); gotoxy(33,9) ; write(dosp1); gotoxy(47,9) ; write(trep1);  gotoxy(60,9) ; write(lp1);     gotoxy(68,9) ;textcolor(7); write(t1);
- gotoxy(10,10);textcolor(3); write('2.',j2e1); gotoxy(33,10); write(dosp2); gotoxy(47,10) ; write(trep2);  gotoxy(60,10) ; write(lp2);   gotoxy(68,10) ;textcolor(7); write(t2);
- gotoxy(10,11);textcolor(3); write('3.',j3e1); gotoxy(33,11); write(dosp3); gotoxy(47,11) ; write(trep3);  gotoxy(60,11) ; write(lp3);   gotoxy(68,11) ;textcolor(7); write(t3);
- gotoxy(10,12);textcolor(3); write('4.',j4e1); gotoxy(33,12); write(dosp4); gotoxy(47,12) ; write(trep4);  gotoxy(60,12) ; write(lp4);   gotoxy(68,12) ;textcolor(7); write(t4);
- gotoxy(10,13);textcolor(3); write('5.',j5e1); gotoxy(33,13); write(dosp5); gotoxy(47,13) ; write(trep5);  gotoxy(60,13) ; write(lp5);   gotoxy(68,13) ;textcolor(7); write(t5);
+                                                                                      
+ repeat                                                                          
+ clrscr; textcolor(7);                                                              
+ gotoxy(10,4); 
+ write('EQUIPOS'   );
+ textcolor(7); 
+ 
+ gotoxy(24,5); 
+ write('DOS PUNTOS');
+ gotoxy(37,5);
+ write('TRES PUNTOS');
+ gotoxy(51,5); 
+ write('TIRO LIBRE');
+ gotoxy(64,5);
+ write('TOTAL');                  
+                     
+ textcolor(3);                                                  
+ gotoxy(10,7); 
+ write('EQUIPO 1;',eq1) ;   
+ 
+ gotoxy(10,9);
+ textcolor(3); 
+ write('1.',j1e1);
+ gotoxy(33,9) ;
+ write(dosp1);
+ gotoxy(47,9) ; 
+ write(trep1); 
+ gotoxy(60,9) ; 
+ write(lp1);    
+ gotoxy(68,9) ;
+ textcolor(7); 
+ write(t1);
+ gotoxy(10,10);
+ textcolor(3);
+ write('2.',j2e1);
+ gotoxy(33,10); 
+ write(dosp2);
+ gotoxy(47,10) ;
+ write(trep2);
+ gotoxy(60,10) ;
+ write(lp2);
+ gotoxy(68,10) ;
+ textcolor(7);
+ write(t2);
+ gotoxy(10,11);
+ textcolor(3);
+ write('3.',j3e1);
+ gotoxy(33,11);
+ write(dosp3);
+ gotoxy(47,11) ; 
+ write(trep3);
+ gotoxy(60,11) ; 
+ write(lp3);
+ gotoxy(68,11) ;
+ textcolor(7);
+ write(t3);
+ gotoxy(10,12);
+ textcolor(3);
+ write('4.',j4e1);
+ gotoxy(33,12);
+ write(dosp4);
+ gotoxy(47,12) ;
+ write(trep4);
+ gotoxy(60,12) ;
+ write(lp4);
+ gotoxy(68,12) ;
+ textcolor(7);
+ 
+ write(t4);
+ gotoxy(10,13);
+ textcolor(3);
+ write('5.',j5e1);
+ gotoxy(33,13);
+ write(dosp5);
+ gotoxy(47,13) ;
+ write(trep5); 
+ gotoxy(60,13) ;
+ write(lp5);
+ gotoxy(68,13) ;
+ textcolor(7);
+ write(t5);
                                                                                  //hecho por mario peña polonia matricula 2016-0037//
- gotoxy(10,15);textcolor(7); write('TOTAL');   gotoxy(33,15) ; write(tdos); gotoxy(47,15) ; write(ttrep);  gotoxy(60,15) ; write(tlp);   gotoxy(68,15) ; write(t6);
-           textcolor(3);                                                         //hecho por mario peña polonia matricula 2016-0037//
- gotoxy(10,17); write('EQUIPO 2;',eq2);                                          //hecho por mario peña polonia matricula 2016-0037//
- gotoxy(10,19);textcolor(3); write('1.',j1e2); gotoxy(33,19) ; write(dosp12); gotoxy(47,19) ; write(trep12);  gotoxy(60,19) ; write(lp12);  gotoxy(68,19) ; textcolor(7);write(t12);
- gotoxy(10,20);textcolor(3); write('2.',j2e2); gotoxy(33,20) ; write(dosp22); gotoxy(47,20) ; write(trep22);  gotoxy(60,20) ; write(lp22);  gotoxy(68,20) ; textcolor(7); write(t22);
- gotoxy(10,21);textcolor(3);write('3.',j3e2); gotoxy(33,21) ; write(dosp32); gotoxy(47,21) ; write(trep32);  gotoxy(60,21) ; write(lp32);  gotoxy(68,21) ; textcolor(7);write(t32);
- gotoxy(10,22);textcolor(3); write('4.',j4e2); gotoxy(33,22) ; write(dosp42); gotoxy(47,22) ; write(trep42);  gotoxy(60,22) ; write(lp42);  gotoxy(68,22) ; textcolor(7);write(t42);
- gotoxy(10,23);textcolor(3); write('5.',j5e2); gotoxy(33,23) ; write(dosp52); gotoxy(47,23) ; write(trep52);  gotoxy(60,23) ; write(lp52);  gotoxy(68,23) ; textcolor(7);write(t52);
- gotoxy(10,25);textcolor(7); write('TOTAL');   gotoxy(33,25) ; write(tdos2);  gotoxy(47,25) ; write(ttrep2);  gotoxy(60,25) ; write(tlp2);  gotoxy(68,25) ; write(t62);
-                                                                                       //hecho por mario peña polonia matricula 2016-0037//
-             textcolor(14);                                                             //hecho por mario peña polonia matricula 2016-0037//
-gotoxy(11,28);writeln('1.-DOS PUNTOS / 2.-TRES PUNTOS / 3.-TIRO LIBRE / 4.-SALIR') ;gotoxy(30,30);textcolor(12); write('SELECCIONA LA OPCION = '); read(aa);
-    Case aa Of
-  1: begin  textcolor(12); gotoxy(30,32); write('SELECCIONA EL EQUIPO = ') ; read(aa);        //hecho por mario peña polonia matricula 2016-0037//
-            Case aa Of
-               1: begin gotoxy(23,34);   write('SELECIONA EL # DEL JUGADOR QUE ANOTO = ') ; read(a);
-                   Case a Of
-                   1:  begin textcolor(3); gotoxy(33,9) ; read(dosp1); end;
-                   2:  begin textcolor(3); gotoxy(33,10); read(dosp2); end;        //hecho por mario peña polonia matricula 2016-0037//
-                   3:  begin textcolor(3); gotoxy(33,11); read(dosp3); end;
-                   4:  begin textcolor(3); gotoxy(33,12); read(dosp4); end;         //hecho por mario peña polonia matricula 2016-0037//
-                   5:  begin textcolor(3); gotoxy(33,13); read(dosp5); end;  end; end;
+ gotoxy(10,15);
+ textcolor(7);
+ write('TOTAL');
+ gotoxy(33,15);
+ write(tdos);
+ gotoxy(47,15);
+ write(ttrep); 
+ gotoxy(60,15);
+ write(tlp);   
+ gotoxy(68,15);
+ write(t6);
+ 
+ textcolor(3);                                                         //hecho por mario peña polonia matricula 2016-0037//
+ gotoxy(10,17);
+ write('EQUIPO 2;',eq2);
+ gotoxy(10,19);
+ textcolor(3);
+ write('1.',j1e2);
+ gotoxy(33,19) ; 
+ write(dosp12); 
+ gotoxy(47,19) ;
+ write(trep12); 
+ gotoxy(60,19) ;
+ write(lp12);
+ gotoxy(68,19) ;
+ textcolor(7);
+ write(t12);
+ gotoxy(10,20);
+ textcolor(3);
+ write('2.',j2e2);
+ gotoxy(33,20) ; 
+ write(dosp22); gotoxy(47,20) ;
+ write(trep22); 
+ gotoxy(60,20) ; 
+ write(lp22);
+ gotoxy(68,20) ; 
+ textcolor(7);
+ write(t22);
+ gotoxy(10,21);
+ textcolor(3);
+ write('3.',j3e2);
+ gotoxy(33,21) ; 
+ write(dosp32); 
+ gotoxy(47,21) ;
+ write(trep32); 
+ gotoxy(60,21) ; 
+ write(lp32); 
+ gotoxy(68,21) ; 
+ textcolor(7);
+ write(t32);
+ gotoxy(10,22);
+ textcolor(3);
+ write('4.',j4e2); 
+ gotoxy(33,22) ; 
+ write(dosp42); 
+ gotoxy(47,22) ;
+ write(trep42); 
+ gotoxy(60,22) ;
+ write(lp42);
+ gotoxy(68,22) ;
+ textcolor(7);
+ write(t42);
+ gotoxy(10,23);
+ textcolor(3);
+ write('5.',j5e2);
+ gotoxy(33,23) ; 
+ write(dosp52);
+ gotoxy(47,23) ;
+ write(trep52);
+ gotoxy(60,23) ;
+ write(lp52); 
+ gotoxy(68,23) ;
+ textcolor(7);
+ write(t52);
+ gotoxy(10,25);
+ textcolor(7);
+ writ
+ e('TOTAL');  
+ gotoxy(33,25) ;
+ write(tdos2); 
+ gotoxy(47,25) ;
+ write(ttrep2); 
+ gotoxy(60,25) ;
+ write(tlp2); 
+ gotoxy(68,25) ;
+ write(t62);
+                                                                                      
+ textcolor(14);                                                            
+ gotoxy(11,28);
+ writeln('1.-DOS PUNTOS / 2.-TRES PUNTOS / 3.-TIRO LIBRE / 4.-SALIR') ;
+ gotoxy(30,30);
+ textcolor(12); 
+ write('SELECCIONA LA OPCION = '); 
+ read(aa);
+    Case aa Of 1: begin  
+            textcolor(12); 
+            gotoxy(30,32); 
+            write('SELECCIONA EL EQUIPO = ') ;
+            read(aa);      
+    Case aa Of 1:
+        begin gotoxy(23,34);   
+        write('SELECIONA EL # DEL JUGADOR QUE ANOTO = ') ; 
+        read(a);
+                   Case a Of 1:  begin
+                     textcolor(3); 
+                     gotoxy(33,9); 
+                     read(dosp1); 
+                   end;
+                   2: begin 
+                       textcolor(3); 
+                       gotoxy(33,10); 
+                       read(dosp2); 
+                   end;
+                   //hecho por mario peña polonia matricula 2016-0037//
+                   3:  begin textcolor(3); gotoxy(33,11); read(dosp3); 
+                   end;
+                   4:  begin textcolor(3); gotoxy(33,12); read(dosp4);
+                   end;         //hecho por mario peña polonia matricula 2016-0037//
+                   5:  begin textcolor(3); gotoxy(33,13); read(dosp5); 
+                   end; 
+                   end; 
+     end;
                2: begin gotoxy(20,34);   write('SELECIONA EL # DEL JUGADOR QUE ANOTO = ') ; read(a);
                    Case a Of                                                                                //hecho por mario peña polonia matricula 2016-0037////hecho por mario peña polonia matricula 2016-0037//
                    1:  begin textcolor(3); gotoxy(33,19); read(dosp12); end;
@@ -175,7 +345,5 @@ gotoxy(11,28);writeln('1.-DOS PUNTOS / 2.-TRES PUNTOS / 3.-TIRO LIBRE / 4.-SALIR
     t52:=(dosp52*2)+(trep52*3)+lp52;          //hecho por mario peña polonia matricula 2016-0037//
     t62:=t12+t22+t32+t42+t52;
 until (aa=4);
-   //hecho por mario peña polonia matricula 2016-0037//
-  //hecho por mario peña polonia matricula 2016-0037//
-  //hecho por mario peña polonia matricula 2016-0037//
+
 end.
