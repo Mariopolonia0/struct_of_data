@@ -1,6 +1,5 @@
 package EjercicioKotlin.HackerRank
 
-
 /*
  * Complete the 'countApplesAndOranges' function below.
  *
