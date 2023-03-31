@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #FEFEFE;
+    background: content-box;
 }
 
 .menu_bar {
@@ -15,15 +15,13 @@ body {
 }
 
 header {
-    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
 
 header nav {
     background: #023859;
-    z-index: 1000;
-    max-width: 1000px;
-    width: 95%;
-    margin: 20px auto;
 }
 
 header nav ul {
@@ -87,66 +85,13 @@ header nav ul li .caret {
     margin-right: 0px;
 }
 
-@media screen and (max-width: 800px) {
-    body {
-        padding-top: 80px;
-    }
-
-    .menu_bar {
-        display: block;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        background: #E6344A;
-    }
-
-    .menu_bar .bt-menu {
-        display: block;
-        padding: 20px;
-        color: #fff;
-        overflow: hidden;
-        font-size: 25px;
-        font-weight: bold;
-        text-decoration: none;
-    }
-
-    .menu_bar span {
-        float: right;
-        font-size: 40px;
-    }
-
-    header nav {
-        width: 80%;
-        height: calc(100% - 80px);
-        position: fixed;
-        right: 100%;
-        margin: 0;
-        overflow: scroll;
-    }
-
-    header nav ul li {
-        display: block;
-        border-bottom: 1px solid rgba(255, 255, 255, .5);
-    }
-
-    header nav ul li a {
-        display: block;
-    }
-
-    header nav ul li:hover .children {
-        display: none;
-    }
-
-    header nav ul li .children {
-        width: 100%;
-        position: relative;
-    }
-
-    header nav ul li .children li a {
-        margin-left: 20px;
-    }
-
-    header nav ul li .caret {
-        float: right;
-    }
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px 4px 2px #d3d3d3d1;
+    border-radius: 10px;
+    font-family: sans-serif;
+    margin: 1%; 
 }
