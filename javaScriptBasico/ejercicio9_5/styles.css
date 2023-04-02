@@ -11,11 +11,11 @@ body {
 }
 
 input {
-    margin: 1%;
+    margin: 5px 10px;
 }
 
 h3 {
-    margin: 1%;
+    margin: 10px 0px 0px 10px;
 }
 
 .menu_bar {
@@ -106,13 +106,13 @@ header nav ul li .caret {
 
 button {
     align-self: center;
-    padding: 2vw;
-    margin-top: 2vw;
+    padding: 5px;
+    margin-top: 10px;
     font-size: x-large;
     border-width: medium;
-    border-radius: 3vw;
-    box-shadow: 0px 0px 8px #0064ff;
-    margin: 5%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 0px;
+    margin: 1%;
 }
 
 .cardFormulario {
@@ -122,7 +122,8 @@ button {
     box-shadow: 0px 0px 4px 2px #d3d3d3d1;
     border-radius: 10px;
     font-family: sans-serif;
-    margin: 1%
+    padding: 15px 5px;
+    margin: 1%;
 }
 
 .cardButton {
