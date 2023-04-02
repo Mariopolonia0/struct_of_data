@@ -24,28 +24,55 @@
 
 <body>
     <div class="titulo">
-        <h1>Compras</h1>
+        <h1>Productos</h1>
     </div>
 
     <div class="cardFormulario">
         <h3>Numero articulo</h3>
-        <input id="suplidor"></input>
+        <input id="numeroArticulo"></input>
+        <h3>Descripcion</h3>
+        <input id="descripcion"></input>
         <h3>Nivel minimo</h3>
-        <input id="empresa"></input>
-        <h3>Proveedor</h3>
-        <input id="empresa"></input>
+        <input id="nivelMinimo"></input>
         <h3>Precio</h3>
-        <input id="empresa"></input>
-    
+        <input id="precio"></input>
+
         <div class="cardButton">
-            <button type="button" onclick="SaveCompra()">
-                <h5>save</h5>
+            <button type="button" onclick="SaveProducto()">
+                <label>Save</label>
             </button>
-    
-            <button type="button" onclick="PrintCompra()">
-                <h5>print</h5>
+
+            <button type="button">
+                <label>New</label>
             </button>
+
+            <button type="button" >
+                <label>Delete</label>
+            </button>
+
+           
         </div>
+
+    </div>
+
+    <div class="titulo">
+        <h1>Lista Productos</h1>
+    </div>
+
+    <div class="cardFormulario">
+    <table>
+        <thead>
+            <tr>
+                <th>Numero articulo</th>
+                <th>Descripcion</th>
+                <th>Nivel minimo</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+    
+        </tbody>
+    </table>
     </div>
 
     <script src="main.js"></script>

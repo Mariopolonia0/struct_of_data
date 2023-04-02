@@ -1,3 +1,12 @@
+class Producto {
+    constructor(numeroArticulo, descripcion, nivelMinimo, precio) {
+        this.numeroArticulo = numeroArticulo,
+            this.descripcion = descripcion,
+            this.nivelMinimo = nivelMinimo,
+            this.precio = precio
+    }
+}
+
 class Venta {
     constructor(cliente, tipoVenta) {
         this.cliente = cliente,
@@ -10,6 +19,33 @@ class Compra {
         this.suplidor = suplidor,
             this.empresa = empresa
     }
+}
+
+var listaProducto = []
+
+
+listaProducto = JSON.parse(localStorage.getItem('producto'));
+
+const tablaBody = document.getElementById('tbody');
+
+listaProducto.map(
+    function (producto) {
+        var listaTD = `<th>${producto.numeroArticulo}</th>`
+        listaTD += `<th>${producto.descripcion}</th>`
+        listaTD += `<th>${producto.nivelMinimo}</th>`
+        listaTD += `<th>${producto.precio}</th>`
+        tablaBody.innerHTML += `<tr>${listaTD}</tr>`
+    });
+
+function SaveProducto() {
+    var _numeroArticulo = document.getElementById("numeroArticulo").value
+    var _descripcion = document.getElementById("descripcion").value
+    var _nivelMinimo = document.getElementById("nivelMinimo").value
+    var _precio = document.getElementById("precio").value
+
+    listaProducto.push(new Producto(_numeroArticulo, _descripcion, _nivelMinimo, _precio))
+    localStorage.setItem('producto', JSON.stringify(listaProducto));
+    alert("Producto Guardado")
 }
 
 function SaveVenta() {
