@@ -1,5 +1,4 @@
 ## Ejercicios de estrutura de dato 2020-1 en C++
-***
 ## link de ejercicio https://mariopolonia0.github.io/struct_of_data/javaScriptBasico/ejercicio9_5/index.html
 
 ## Ejercicios del libro de FUNDAMENTOS DE PROGRAMACIÓN
