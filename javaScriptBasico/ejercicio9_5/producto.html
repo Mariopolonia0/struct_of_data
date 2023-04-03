@@ -53,14 +53,14 @@
     </div>
 
     <div class="cardFormulario">
-        <h3>Id articulo</h3>
-        <input id="numeroArticulo"></input>
+        <h3>Id producto</h3>
+        <input id="numeroArticulo" pattern="^[0-9]+"></input>
         <h3>Descripcion</h3>
-        <input id="descripcion"></input>
+        <input id="descripcion" minlength="3"></input>
         <h3>Nivel minimo</h3>
-        <input id="nivelMinimo"></input>
+        <input id="nivelMinimo" pattern="^[0-9]+"></input>
         <h3>Precio</h3>
-        <input id="precio"></input>
+        <input id="precio" pattern="^[0-9]+"></input>
 
         <div class="cardButton">
             <button type="button" onclick="NewProducto()">
