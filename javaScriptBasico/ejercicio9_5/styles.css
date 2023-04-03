@@ -153,10 +153,20 @@ button {
         display: none;
     }
 
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
 }
 
-@media screen and (max-width: 400px) {
-    .divbuttonMenu img {
-        width: 40px;
+@media screen and (max-width: 370px) {
+
+    ul li a {
+        padding: 15px;
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
     }
 }
