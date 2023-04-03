@@ -108,7 +108,35 @@ button {
     margin: 1%
 }
 
-@media screen and (max-width: 700px) {
+.divbuttonMenu {
+    display: flex;
+    align-items: center;
+}
+
+.divbuttonMenu img {
+    width: 50px;
+}
+
+.divbuttonMenu label {
+    padding-left: 10px;
+    font-size: x-large;
+    cursor: unset;
+}
+
+.cardLista tr {
+    background: darkgray;
+    margin: 5%;
+    text-align: justify;
+    border-radius: 3px;
+}
+
+.cardLista th {
+    padding: 3px;
+    text-align: justify;
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 755px) {
     .titulo {
         display: flex;
         align-items: center;
@@ -119,6 +147,10 @@ button {
         border-radius: 10px;
         font-family: sans-serif;
         margin: 1%;
+    }
+
+    .divbuttonMenu label {
+        display: none;
     }
 
 }
