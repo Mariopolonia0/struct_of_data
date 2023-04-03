@@ -154,3 +154,9 @@ button {
     }
 
 }
+
+@media screen and (max-width: 400px) {
+    .divbuttonMenu img {
+        width: 40px;
+    }
+}
