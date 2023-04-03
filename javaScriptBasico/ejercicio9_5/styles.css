@@ -15,6 +15,10 @@ input {
     font-size: larger;
 }
 
+input:invalid{
+    background-color: rgb(255, 86, 86);
+}
+
 h3 {
     margin: 10px 0px 0px 10px;
 }
@@ -167,8 +171,6 @@ button {
     }
 
 }
-
-
 
 @media screen and (max-width: 370px) {
 

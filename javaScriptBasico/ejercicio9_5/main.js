@@ -75,24 +75,46 @@ function SaveProducto() {
     var _nivelMinimo = document.getElementById("nivelMinimo").value
     var _precio = document.getElementById("precio").value
 
-    var encotrado = false
-    for (var contador = 0; contador <= listaProducto.length - 1; contador++) {
+    if (validar(_numeroArticulo, _nivelMinimo, _precio)) {
+        var encotrado = false
+        for (var contador = 0; contador <= listaProducto.length - 1; contador++) {
 
-        if (listaProducto[contador].numeroArticulo == _numeroArticulo) {
-            encotrado = true
-            listaProducto[contador].descripcion = _descripcion
-            listaProducto[contador].nivelMinimo = _nivelMinimo
-            listaProducto[contador].precio = _precio
+            if (listaProducto[contador].numeroArticulo == _numeroArticulo) {
+                encotrado = true
+                listaProducto[contador].descripcion = _descripcion
+                listaProducto[contador].nivelMinimo = _nivelMinimo
+                listaProducto[contador].precio = _precio
+            }
         }
+
+        if (!encotrado)
+            listaProducto.push(new Producto(_numeroArticulo, _descripcion, _nivelMinimo, _precio, 0))
+
+        localStorage.setItem('productos', JSON.stringify(listaProducto));
+
+        alert("Producto Guardado")
+        pintarListaProducto()
+        NewProducto()
+    }
+}
+
+function validar(numeroArticulo, nivelMinimo, precio) {
+    if (!(/^[0-9]+$/).test(numeroArticulo) || numeroArticulo.length == 0) {
+        alert("El id producto esta mal ingresado")
+        return false
     }
 
-    if (!encotrado)
-        listaProducto.push(new Producto(_numeroArticulo, _descripcion, _nivelMinimo, _precio, 0))
+    if (!(/^[0-9]+$/).test(nivelMinimo)) {
+        alert("El nivel minimo esta mal ingresado")
+        return false
+    }
 
-    localStorage.setItem('productos', JSON.stringify(listaProducto));
+    if (!(/^[0-9]+$/).test(precio)) {
+        alert("El precio esta mal ingresado")
+        return false
+    }
 
-    alert("Producto Guardado")
-    pintarListaProducto()
+    return true
 }
 
 function NewProducto() {
@@ -105,16 +127,21 @@ function NewProducto() {
 function DeleteProducto() {
     var _numeroArticulo = document.getElementById("numeroArticulo").value
 
-    for (var contador = 0; contador <= listaProducto.length - 1; contador++) {
+    if(_numeroArticulo.length == 0){
+        alert("Ingrese un id producto para eliminarlo")
+    }else{
+        for (var contador = 0; contador <= listaProducto.length - 1; contador++) {
 
-        if (listaProducto[contador].numeroArticulo == _numeroArticulo) {
-            listaProducto.splice(contador, contador)
+            if (listaProducto[contador].numeroArticulo == _numeroArticulo) {
+                listaProducto.splice(contador, contador)
+            }
         }
-    }
 
-    localStorage.setItem('productos', JSON.stringify(listaProducto));
-    alert("Producto Eliminado")
-    llenarListaProducto()
+        localStorage.setItem('productos', JSON.stringify(listaProducto));
+        alert("Producto Eliminado")
+        llenarListaProducto()
+        NewProducto()
+    }
 }
 
 function SaveVenta() {
