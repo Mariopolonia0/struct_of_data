@@ -12,6 +12,7 @@ body {
 
 input {
     margin: 5px 10px;
+    font-size: larger;
 }
 
 h3 {
@@ -71,10 +72,10 @@ button {
     padding: 5px;
     margin-top: 10px;
     font-size: x-large;
-    border-width: medium;
     border-radius: 10px;
     box-shadow: 0px 0px 1px 0px;
     margin: 1%;
+    cursor: pointer;
 }
 
 .cardFormulario {
@@ -101,11 +102,13 @@ button {
 
 .cardButton {
     display: flex;
-    border: 1px solid lightgray;
-    box-shadow: 0px 0px 4px 2px #d3d3d3d1;
-    border-radius: 10px;
     font-family: sans-serif;
-    margin: 1%
+    margin-top: 5px;
+}
+
+.cardButton label {
+    font-size: 30px;
+    cursor: pointer;
 }
 
 .divbuttonMenu {
@@ -120,7 +123,7 @@ button {
 .divbuttonMenu label {
     padding-left: 10px;
     font-size: x-large;
-    cursor: unset;
+    cursor: pointer;
 }
 
 .cardLista tr {
@@ -159,7 +162,13 @@ button {
         justify-content: space-evenly;
     }
 
+    .cardButton label {
+        font-size: 20px;
+    }
+
 }
+
+
 
 @media screen and (max-width: 370px) {
 
