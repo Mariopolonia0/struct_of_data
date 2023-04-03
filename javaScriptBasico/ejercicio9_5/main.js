@@ -22,20 +22,22 @@ class Compra {
 }
 
 var listaProducto = []
-
-
-listaProducto = JSON.parse(localStorage.getItem('producto'));
-
 const tablaBody = document.getElementById('tbody');
 
-listaProducto.map(
-    function (producto) {
-        var listaTD = `<th>${producto.numeroArticulo}</th>`
-        listaTD += `<th>${producto.descripcion}</th>`
-        listaTD += `<th>${producto.nivelMinimo}</th>`
-        listaTD += `<th>${producto.precio}</th>`
-        tablaBody.innerHTML += `<tr>${listaTD}</tr>`
-    });
+try {
+    listaProducto = JSON.parse(localStorage.getItem('producto'));
+    listaProducto.map(
+        function (producto) {
+            var listaTD = `<th>${producto.numeroArticulo}</th>`
+            listaTD += `<th>${producto.descripcion}</th>`
+            listaTD += `<th>${producto.nivelMinimo}</th>`
+            listaTD += `<th>${producto.precio}</th>`
+            tablaBody.innerHTML += `<tr>${listaTD}</tr>`
+        });
+} catch (error) {
+    alert("la lista esta vacia");
+    listaProducto = [];
+}
 
 function SaveProducto() {
     var _numeroArticulo = document.getElementById("numeroArticulo").value
@@ -46,6 +48,10 @@ function SaveProducto() {
     listaProducto.push(new Producto(_numeroArticulo, _descripcion, _nivelMinimo, _precio))
     localStorage.setItem('producto', JSON.stringify(listaProducto));
     alert("Producto Guardado")
+}
+
+function NewProducto() {
+    alert("New Producto")
 }
 
 function SaveVenta() {

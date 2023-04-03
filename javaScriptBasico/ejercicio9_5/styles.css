@@ -18,10 +18,6 @@ h3 {
     margin: 10px 0px 0px 10px;
 }
 
-.menu_bar {
-    display: none;
-}
-
 header {
     display: flex;
     justify-content: space-evenly;
@@ -41,10 +37,6 @@ header nav ul li {
     position: relative;
 }
 
-header nav ul li:hover {
-    background: #E6344A;
-}
-
 header nav ul li a {
     color: #fff;
     display: block;
@@ -52,48 +44,18 @@ header nav ul li a {
     padding: 20px;
 }
 
-header nav ul li a span {
-    margin-right: 10px;
-}
-
-header nav ul li:hover .children {
-    display: block;
-}
-
-header nav ul li .children {
-    display: none;
-    background: #011826;
-    position: absolute;
-    width: 150%;
-    z-index: 1000;
-}
-
-header nav ul li .children li {
-    display: block;
-    overflow: hidden;
-    border-bottom: 1px solid rgba(255, 255, 255, .5);
-}
-
-header nav ul li .children li a {
-    display: block;
-}
-
-header nav ul li .children li a span {
-    float: right;
-    position: relative;
-    top: 3px;
-    margin-right: 0;
-    margin-left: 10px;
-}
-
-header nav ul li .caret {
-    position: relative;
-    top: 3px;
-    margin-left: 10px;
-    margin-right: 0px;
-}
-
 .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px 4px 2px #d3d3d3d1;
+    border-radius: 10px;
+    font-family: sans-serif;
+    margin: 1%;
+}
+
+.tituloLista {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,6 +78,17 @@ button {
 }
 
 .cardFormulario {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px 4px 2px #d3d3d3d1;
+    border-radius: 10px;
+    font-family: sans-serif;
+    padding: 15px 5px;
+    margin: 1%;
+}
+
+.cardLista {
     display: flex;
     flex-direction: column;
     border: 1px solid lightgray;
