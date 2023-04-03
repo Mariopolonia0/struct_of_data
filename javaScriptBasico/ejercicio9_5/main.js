@@ -23,6 +23,7 @@ class Compra {
 
 var listaProducto = []
 const tablaBody = document.getElementById('tbody');
+alert(screen.width + "---" + screen.height)
 
 try {
     listaProducto = JSON.parse(localStorage.getItem('producto'));
@@ -35,7 +36,11 @@ try {
             tablaBody.innerHTML += `<tr>${listaTD}</tr>`
         });
 } catch (error) {
-    alert("la lista esta vacia");
+    var _productoHtlm = document.getElementById('productoHtlm');
+    
+    if (_productoHtlm != null)
+        alert("la lista esta vacia");//productoHtlm
+
     listaProducto = [];
 }
 
