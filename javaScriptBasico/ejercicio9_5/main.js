@@ -28,10 +28,10 @@ try {
     listaProducto = JSON.parse(localStorage.getItem('producto'));
     listaProducto.map(
         function (producto) {
-            var listaTD = `<th>${producto.numeroArticulo}</th>`
-            listaTD += `<th>${producto.descripcion}</th>`
-            listaTD += `<th>${producto.nivelMinimo}</th>`
-            listaTD += `<th>${producto.precio}</th>`
+            var listaTD = `<th><label>${producto.numeroArticulo}</label></th>`
+            listaTD += `<th><label>${producto.descripcion}</label></th>`
+            listaTD += `<th><label>${producto.nivelMinimo}</label></th>`
+            listaTD += `<th><label>${producto.precio}</label></th>`
             tablaBody.innerHTML += `<tr>${listaTD}</tr>`
         });
 } catch (error) {
