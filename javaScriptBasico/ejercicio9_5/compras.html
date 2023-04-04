@@ -9,42 +9,42 @@
     <title>Document</title>
 </head>
 <header>
-   
+
     <nav>
-    <ul>
-        <li>
-            <a href="index.html">
-                <div class="divbuttonMenu">
-                    <img src="icono/icono_inventario.png"></img>
-                    <label>Inventario</label>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="compras.html">
-                <div class="divbuttonMenu">
-                    <img src="icono/icono_compra.png"></img>
-                    <label>Compras</label>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="venta.html">
-                <div class="divbuttonMenu">
-                    <img src="icono/icono_venta.png"></img>
-                    <label>Ventas</label>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="producto.html">
-                <div class="divbuttonMenu">
-                    <img src="icono/icono_product.png"></img>
-                    <label>Producto</label>
-                </div>
-            </a>
-        </li>
-    </ul>
+        <ul>
+            <li>
+                <a href="index.html">
+                    <div class="divbuttonMenu">
+                        <img src="icono/icono_inventario.png"></img>
+                        <label>Inventario</label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="compras.html">
+                    <div class="divbuttonMenu">
+                        <img src="icono/icono_compra.png"></img>
+                        <label>Compras</label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="venta.html">
+                    <div class="divbuttonMenu">
+                        <img src="icono/icono_venta.png"></img>
+                        <label>Ventas</label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="producto.html">
+                    <div class="divbuttonMenu">
+                        <img src="icono/icono_product.png"></img>
+                        <label>Producto</label>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </nav>
 </header>
 
@@ -54,27 +54,56 @@
     </div>
 
     <div class="cardFormulario">
-        <h3>Numero articulo</h3>
+        <h3>Suplidor</h3>
         <input id="suplidor"></input>
-        <h3>Nivel minimo</h3>
+        <h3>Empresa</h3>
         <input id="empresa"></input>
-        <h3>Proveedor</h3>
-        <input id="empresa"></input>
-        <h3>Precio</h3>
-        <input id="empresa"></input>
-    
+        <h3>Fecha</h3>
+        <input id="fecha"></input>
+        <div class="cardRow">
+            <div class="cardColumn">
+                <label class="">Id producto</label>
+                <input> </input>
+            </div>
+            <button>
+                <img src="icono/icono_buscar.png" alt="buscar">
+            </button>
+            <div class="cardColumn">
+                <label class="">Descripcion</label>
+                <input> </input>
+            </div>
+            <div class="cardColumn">
+                <label class="">Cantidad</label>
+                <input> </input>
+            </div>
+            <div class="cardColumn">
+                <label class="">Precio</label>
+                <input> </input>
+            </div>
+        </div>
+
+
+        <div class="cardButton">
+            <h3>Precio:</h3>
+            <h3>5</h3>
+        </div>
+
+
+
+
+
         <div class="cardButton">
             <button type="button" onclick="SaveCompra()">
                 <h5>save</h5>
             </button>
-    
+
             <button type="button" onclick="PrintCompra()">
                 <h5>print</h5>
             </button>
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="compra.js"></script>
 </body>
 
 </html>

@@ -15,7 +15,51 @@ input {
     font-size: larger;
 }
 
-input:invalid{
+.row label {
+    margin: 0px 10px;
+}
+
+.cardRow {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px 4px 2px #d3d3d3d1;
+    border-radius: 10px;
+    font-family: sans-serif;
+    padding: 15px 5px;
+    margin: 1%;
+}
+
+.cardRow label {}
+
+.cardRow input {
+width: 70px;
+    margin: 5px 0px;
+}
+
+.cardColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardRow img {
+    width: 25px;
+}
+
+.cardRow button {
+    width: 40px;
+    padding: 0px;
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px 0px;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    border-color: transparent;
+    background: transparent;
+}
+
+input:invalid {
     background-color: rgb(255, 86, 86);
 }
 

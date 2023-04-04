@@ -10,40 +10,40 @@
 </head>
 <header>
     <nav>
-    <ul>
-        <li>
-            <a href="index.html">
-                <div class="divbuttonMenu">
-                    <img src="icono/icono_inventario.png"></img>
-                    <label>Inventario</label>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="compras.html">
-                <div class="divbuttonMenu">
-                    <img src="icono/icono_compra.png"></img>
-                    <label>Compras</label>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="venta.html">
-                <div class="divbuttonMenu">
-                    <img src="icono/icono_venta.png"></img>
-                    <label>Ventas</label>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="producto.html">
-                <div class="divbuttonMenu">
-                    <img src="icono/icono_product.png"></img>
-                    <label>Producto</label>
-                </div>
-            </a>
-        </li>
-    </ul>
+        <ul>
+            <li>
+                <a href="index.html">
+                    <div class="divbuttonMenu">
+                        <img src="icono/icono_inventario.png"></img>
+                        <label>Inventario</label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="compras.html">
+                    <div class="divbuttonMenu">
+                        <img src="icono/icono_compra.png"></img>
+                        <label>Compras</label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="venta.html">
+                    <div class="divbuttonMenu">
+                        <img src="icono/icono_venta.png"></img>
+                        <label>Ventas</label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="producto.html">
+                    <div class="divbuttonMenu">
+                        <img src="icono/icono_product.png"></img>
+                        <label>Producto</label>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </nav>
 </header>
 
@@ -52,13 +52,29 @@
         <h1>Inventario</h1>
     </div>
 
-    <div class="cardFormulario">
+    <div class="cardLista">
+        <table>
+            <thead>
+                <tr>
+                    <th><label>Id articulo</label></th>
+                    <th><label>Descripcion</label></th>
+                    <th><label>Cantidad</label></th>
+                    <th><label>Precio</label></th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+
+    <!--div class="cardFormulario">
        <button onclick="reset()">
         <label>Reset</label>
        </button>
-    </div>
+    </div-->
 
-    <script src="main.js"></script>
+    <script src="inventario.js"></script>
 </body>
 
 </html>
