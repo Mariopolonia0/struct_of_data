@@ -26,24 +26,25 @@ input {
     box-shadow: 0px 0px 4px 2px #d3d3d3d1;
     border-radius: 10px;
     font-family: sans-serif;
-    padding: 15px 5px;
-    margin: 1%;
+    padding: 15px 0px;
+    margin: 0%;
 }
 
 .cardRow label {}
 
 .cardRow input {
-width: 70px;
+    width: 100px;
     margin: 5px 0px;
 }
 
 .cardColumn {
     display: flex;
     flex-direction: column;
+    margin: 0px 5px;
 }
 
 .cardRow img {
-    width: 25px;
+    width: 35px;
 }
 
 .cardRow button {
@@ -133,7 +134,7 @@ button {
     box-shadow: 0px 0px 4px 2px #d3d3d3d1;
     border-radius: 10px;
     font-family: sans-serif;
-    padding: 15px 5px;
+    padding: 15px 0px;
     margin: 1%;
 }
 
@@ -187,6 +188,10 @@ button {
     border-radius: 3px;
 }
 
+.cardNoDisponible {
+    display: none;
+}
+
 @media screen and (max-width: 755px) {
     .titulo {
         display: flex;
@@ -199,6 +204,8 @@ button {
         font-family: sans-serif;
         margin: 1%;
     }
+
+
 
     .divbuttonMenu label {
         display: none;
@@ -223,5 +230,31 @@ button {
         list-style: none;
         display: flex;
         justify-content: space-evenly;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+
+    .cardFormulario {
+        display: none;
+    }
+
+    .cardNoDisponible {
+        display: flex;
+        border: 1px solid lightgray;
+        box-shadow: 0px 0px 4px 2px #d3d3d3d1;
+        border-radius: 10px;
+        font-family: sans-serif;
+        padding: 15px 0px;
+        margin: 1%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cardNoDisponible label {
+        margin: 10px;
+        font-size: larger;
+        font-weight: 600;
     }
 }
