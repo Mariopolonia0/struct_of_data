@@ -28,11 +28,6 @@ input {
 
 .cardRow label {}
 
-.cardRow input {
-    width: 85px;
-    margin: 5px 0px;
-}
-
 .cardColumn {
     display: flex;
     flex-direction: column;
@@ -48,6 +43,25 @@ input {
     font-family: sans-serif;
     padding: 15px 3px;
     margin: 1%;
+}
+
+.detalleDescripcionInput {
+    width: 100%;
+    margin: 5px 0px;
+    color: black;
+    font-weight: bolder;
+}
+
+.detallePrecioInput {
+    width: 85px;
+    margin: 5px 0px;
+    color: black;
+    font-weight: bolder;
+}
+
+.detalleNumeroInput {
+    width: 85px;
+    margin: 5px 0px;
 }
 
 .cardRow img {
@@ -149,7 +163,32 @@ button {
     display: flex;
     flex-direction: column;
     padding: 0px 0px;
-    margin: 1%;
+    margin: 1% 0%;
+}
+
+.totalCompras {
+    display: flex;
+}
+
+dialog {
+    margin: revert;
+    padding: 5%;
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px 4px 2px #d3d3d3d1;
+    border-radius: 10px;
+}
+
+.divOpcionDialog {
+    display: flex;
+    justify-content: flex-end;
+}
+
+dialog h3 {
+    margin: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .cardButton {

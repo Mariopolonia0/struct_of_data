@@ -49,7 +49,7 @@ function pintarListaProducto() {
             var listaTD = `<th><label>${producto.numeroArticulo}</label></th>`
             listaTD += `<th><label>${producto.descripcion}</label></th>`
             listaTD += `<th><label>${producto.nivelMinimo}</label></th>`
-            listaTD += `<th><label>${producto.precio}</label></th>`
+            listaTD += `<th><label>${(producto.precio * 1).toLocaleString("en") }</label></th>`
             tr += `<tr onclick="selectProducto(this)">${listaTD}</tr>`
         });
 
@@ -122,13 +122,17 @@ function NewProducto() {
 function DeleteProducto() {
     var _numeroArticulo = document.getElementById("numeroArticulo").value
 
-    if(_numeroArticulo.length == 0){
+    if (_numeroArticulo.length == 0) {
         alert("Ingrese un id producto para eliminarlo")
-    }else{
+    } else {
         for (var contador = 0; contador <= listaProducto.length - 1; contador++) {
 
             if (listaProducto[contador].numeroArticulo == _numeroArticulo) {
-                listaProducto.splice(contador, contador)
+                if (contador == 0) {
+                    listaProducto.shift();
+                } else {
+                    listaProducto.splice(contador, contador)
+                }
             }
         }
 
