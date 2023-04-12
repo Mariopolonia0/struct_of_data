@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<header>
+    
+    <nav>
+    <ul>
+        <li>
+            <a href="index.html">
+                <div class="divbuttonMenu">
+                    <img src="icono/icono_inventario.png"></img>
+                    <label>Inventario</label>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="compras.html">
+                <div class="divbuttonMenu">
+                    <img src="icono/icono_compra.png"></img>
+                    <label>Compras</label>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="venta.html">
+                <div class="divbuttonMenu">
+                    <img src="icono/icono_venta.png"></img>
+                    <label>Ventas</label>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="producto.html">
+                <div class="divbuttonMenu">
+                    <img src="icono/icono_product.png"></img>
+                    <label>Producto</label>
+                </div>
+            </a>
+        </li>
+    </ul>
+    </nav>
+</header>
+
+<body>
+    <div class="titulo">
+        <h1>Venta</h1>
+    </div>
+
+    <div class="cardFormulario">
+        <h3>Cliente</h3>
+        <input id="cliente"></input>
+        <h3>Tipo venta</h3>
+        <input id="tipoVenta"></input>
+    
+        <div class="cardButton">
+            <button type="button" onclick="SaveVenta()">
+                <h5>save</h5>
+            </button>
+    
+            <button type="button" onclick="PrintVenta()">
+                <h5>print</h5>
+            </button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+ 
+</html>
