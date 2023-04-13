@@ -23,3 +23,7 @@ function pintarListaProducto() {
 function selectProducto(tr) {
     var data = tr.outerText.split("\t")
 }
+
+function sizeScreen(){
+    alert(screen.width + "-" + screen.height)
+}

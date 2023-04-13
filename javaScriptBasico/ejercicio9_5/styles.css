@@ -60,8 +60,10 @@ input {
 }
 
 .detalleNumeroInput {
-    width: 85px;
+    width: 50%;
     margin: 5px 0px;
+    color: black;
+    font-weight: bolder;
 }
 
 .cardRow img {

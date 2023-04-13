@@ -15,6 +15,7 @@ function SaveCompra() {
 var listDetalle = []
 var totalCompras = 0
 
+/*
 function buscarProducto() {
     var _idProducto = document.getElementById("detalleIdProducto").value
     var encotrado = false
@@ -36,9 +37,8 @@ function buscarProducto() {
             alert("Agregue el producto en el registro de producto")
     }
 
-
-
 }
+*/
 
 function agregarDetalle() {
     var _idProducto = document.getElementById("detalleIdProducto").value
@@ -66,10 +66,6 @@ function agregarDetalle() {
             limpiarCampoDetalle()
         }
     }
-}
-
-function selectProducto() {
-
 }
 
 function pintarListaProducto(producto) {
@@ -127,7 +123,7 @@ function ValidarCantidad(cantidad) {
 
 var favDialog = document.getElementById('favDialog');
 
-function monstrarlista() {
+function buscarProducto() {
 
     //tbodyProducto
     const tablaBody = document.getElementById('tbodyProducto');
@@ -149,6 +145,16 @@ function monstrarlista() {
     tablaBody.innerHTML = tr
 
     favDialog.showModal();
+}
+
+function selectProducto(tr) {
+    var data = tr.outerText.split("\t")
+    favDialog.close()
+    document.getElementById("detalleIdProducto").value = data[0]
+    document.getElementById("detalleDescripcion").value = data[1]
+    document.getElementById("detalleCantidad").value = "0"
+    document.getElementById("detallePrecio").value = data[4]
+     document.getElementById("detalleCantidad").focus()
 }
 
 function cerrarDialog() {
