@@ -314,6 +314,9 @@ dialog h3 {
         display: flex;
         justify-content: space-evenly;
     }
+}
+
+@media screen and (max-width: 550px) {
 
     .cardFormulario {
         display: none;
