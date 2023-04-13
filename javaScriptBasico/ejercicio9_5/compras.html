@@ -65,7 +65,7 @@
             <div class="cardRow">
                 <div class="cardColumn">
                     <label class="">Id producto</label>
-                    <input id="detalleIdProducto" class="detalleNumeroInput" pattern="^[0-9]+"> </input>
+                    <input id="detalleIdProducto" disabled class="detalleNumeroInput" pattern="^[0-9]+"> </input>
                 </div>
                 <button onclick="buscarProducto()">
                     <img src="icono/icono_buscar.png" alt="buscar">
@@ -85,13 +85,12 @@
                 <button onclick="agregarDetalle()">
                     <img src="icono/icono_add.png" alt="buscar">
                 </button>
-                <button onclick="monstrarlista()">
+                <button onclick="">
                     <img src="icono/icono_list.png" alt="buscar">
                 </button>
             </div>
 
-            <div class="cardLista">
-
+            <div class="cardListaDetalle">
                 <table>
                     <thead>
                         <tr>
@@ -129,10 +128,9 @@
         <label>No disponible en pantalla pequeña</label>
     </div>
 
-
     <dialog id="favDialog">
         <h3>Lista producto</h3>
-        <div class="cardLista">
+        <div class="cardListaDialog">
             <table>
                 <thead>
                     <tr>

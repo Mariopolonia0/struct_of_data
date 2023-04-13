@@ -60,8 +60,10 @@ input {
 }
 
 .detalleNumeroInput {
-    width: 85px;
+    width: 50%;
     margin: 5px 0px;
+    color: black;
+    font-weight: bolder;
 }
 
 .cardRow img {
@@ -163,7 +165,60 @@ button {
     display: flex;
     flex-direction: column;
     padding: 0px 0px;
-    margin: 1% 0%;
+    margin: 1% 1%;
+}
+
+.cardLista tr {
+    background: darkgray;
+    margin: 5%;
+    text-align: justify;
+    border-radius: 3px;
+}
+
+.cardLista th {
+    padding: 3px;
+    text-align: justify;
+    border-radius: 3px;
+}
+
+.cardListaDetalle {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px;
+    margin: 1% 0.5%;
+}
+
+.cardListaDetalle tr {
+    background: darkgray;
+    margin: 5%;
+    text-align: justify;
+    border-radius: 3px;
+}
+
+.cardListaDetalle th {
+    padding: 3px;
+    text-align: justify;
+    border-radius: 3px;
+}
+
+.cardListaDialog {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px;
+    margin: 0%;
+}
+
+.cardListaDialog tr {
+    background: darkgray;
+    margin: 5%;
+    text-align: justify;
+    border-radius: 3px;
+}
+
+.cardListaDialog th {
+    padding: 3px;
+    text-align: justify;
+    border-radius: 3px;
 }
 
 .totalCompras {
@@ -172,7 +227,7 @@ button {
 
 dialog {
     margin: revert;
-    padding: 5%;
+    padding: 2%;
     border: 1px solid lightgray;
     box-shadow: 0px 0px 4px 2px #d3d3d3d1;
     border-radius: 10px;
@@ -217,18 +272,6 @@ dialog h3 {
     cursor: pointer;
 }
 
-.cardLista tr {
-    background: darkgray;
-    margin: 5%;
-    text-align: justify;
-    border-radius: 3px;
-}
-
-.cardLista th {
-    padding: 3px;
-    text-align: justify;
-    border-radius: 3px;
-}
 
 .cardNoDisponible {
     display: none;

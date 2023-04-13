@@ -15,8 +15,6 @@ class Venta {
     }
 }
 
-
-
 var listaProducto = []
 const tablaBody = document.getElementById('tbody');
 
@@ -159,6 +157,3 @@ function PrintVenta() {
     var venta = JSON.parse(localStorage.getItem('venta'));
     alert(venta.cliente + " " + venta.tipoVenta);
 }
-
-
-//alert(screen.width + "---" + screen.height)
