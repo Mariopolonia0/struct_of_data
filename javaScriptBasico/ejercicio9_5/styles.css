@@ -316,7 +316,7 @@ dialog h3 {
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 410px) {
 
     .cardFormulario {
         display: none;
