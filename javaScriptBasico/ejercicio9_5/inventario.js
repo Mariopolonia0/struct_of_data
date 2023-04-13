@@ -25,5 +25,5 @@ function selectProducto(tr) {
 }
 
 function sizeScreen(){
-    alert(screen.width + "-" + screen.height)
+    alert(screen.width + "---" + screen.height)
 }
