@@ -32,7 +32,20 @@ function SaveCompra() {
 
         localStorage.setItem('listaCompras', JSON.stringify(listaCompras));
         alert("se guardo la compra")
+        limpiarCampo()
     }
+}
+
+function limpiarCampo() {
+    listDetalle = []
+    totalCompras = 0
+    document.getElementById("suplidor").focus()
+    document.getElementById("suplidor").value = ""
+    document.getElementById("empresa").value = ""
+    document.getElementById("fecha").value = ""
+    document.getElementById("detalleCantidad").value = ""
+    document.getElementById("totalCompras").innerHTML = totalCompras.toLocaleString("en")
+    document.getElementById('tbody').innerHTML = ``
 }
 
 function validadCompra(suplidor, empresa, fecha) {
@@ -198,8 +211,6 @@ var favDialogCompra = document.getElementById('favDialogCompra');
 
 function mostrarCompras() {
 
-    //listaCompras = JSON.parse(localStorage.getItem('listaCompras'));
-
     const tablaBody = document.getElementById('tbodyCompras');
     var tr = ``
     listaCompras = JSON.parse(localStorage.getItem('listaCompras'))
@@ -221,11 +232,6 @@ function mostrarCompras() {
 function selectComprar(tr) {
     var data = tr.outerText.split("\t")
     alert(data[0])
-    /* favDialog.close()
-     document.getElementById("detalleIdProducto").value = data[0]
-     document.getElementById("detalleDescripcion").value = data[1]
-     document.getElementById("detallePrecio").value = data[4]
-     document.getElementById("detalleCantidad").focus()*/
 }
 
 function cerrarDialogCompras() {
