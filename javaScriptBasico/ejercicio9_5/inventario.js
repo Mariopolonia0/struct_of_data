@@ -27,3 +27,9 @@ function selectProducto(tr) {
 function sizeScreen(){
     alert(screen.width + "---" + screen.height)
 }
+
+function reset() {
+    lista = []
+    localStorage.setItem('productos', JSON.stringify(lista));
+    localStorage.setItem('listaCompras', JSON.stringify(lista));
+}

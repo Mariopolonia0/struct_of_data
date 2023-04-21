@@ -148,10 +148,7 @@ function SaveVenta() {
     localStorage.setItem('venta', JSON.stringify(venta));
 }
 
-function reset() {
-    listaProducto = []
-    localStorage.setItem('productos', JSON.stringify(listaProducto));
-}
+
 
 function PrintVenta() {
     var venta = JSON.parse(localStorage.getItem('venta'));

@@ -32,8 +32,28 @@ function SaveCompra() {
 
         localStorage.setItem('listaCompras', JSON.stringify(listaCompras));
         alert("se guardo la compra")
+        agregarInventario()
         limpiarCampo()
     }
+}
+
+function agregarInventario() {
+    var listaProducto = JSON.parse(localStorage.getItem('productos'))
+
+    listDetalle.map(
+        function (productodetalle) {
+            listaProducto.map(
+                function (producto) {
+                    if (producto.numeroArticulo == productodetalle.numeroArticulo) {
+                        var _cantidad = parseInt(producto.cantidad)
+                        producto.cantidad = _cantidad += parseInt(productodetalle.cantidad)
+                    }
+                }
+            )
+        }
+    )
+
+    localStorage.setItem('productos', JSON.stringify(listaProducto));
 }
 
 function limpiarCampo() {
@@ -79,10 +99,6 @@ function validadCompra(suplidor, empresa, fecha) {
 
 
 function PrintCompra() {
-
-}
-
-function BuscarCompra() {
 
 }
 
@@ -219,7 +235,7 @@ function mostrarCompras() {
             var listaTD = `<th><label>${compra.suplidor}</label></th>`
             listaTD += `<th><label>${compra.empresa}</label></th>`
             listaTD += `<th><label>${compra.fecha}</label></th>`
-            listaTD += `<th><label>${(compra.total  * 1).toLocaleString("en")}</label></th>`
+            listaTD += `<th><label>${(compra.total * 1).toLocaleString("en")}</label></th>`
             tr += `<tr onclick="selectComprar(this)">${listaTD}</tr>`
         }
     )
