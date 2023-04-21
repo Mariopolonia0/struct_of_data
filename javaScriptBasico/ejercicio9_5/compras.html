@@ -55,9 +55,9 @@
 
     <div class="cardFormulario">
         <h3>Suplidor</h3>
-        <input id="suplidor"></input>
+        <input id="suplidor" minlength="3"></input>
         <h3>Empresa</h3>
-        <input id="empresa"></input>
+        <input id="empresa" minlength="3"></input>
         <h3>Fecha</h3>
         <input id="fecha" type="date"></input>
 
@@ -112,11 +112,15 @@
 
         <div class="cardButton">
             <button type="button" onclick="SaveCompra()">
-                <h5>save</h5>
+                <h5>Save</h5>
             </button>
 
             <button type="button" onclick="PrintCompra()">
-                <h5>print</h5>
+                <h5>Print</h5>
+            </button>
+
+            <button type="button" onclick="mostrarCompras()">
+                <h5>Buscar</h5>
             </button>
         </div>
     </div>
@@ -150,6 +154,32 @@
         </div>
 
     </dialog>
+
+    <dialog id="favDialogCompra">
+        <h3>Lista Compras</h3>
+        <div class="cardListaDialog">
+            <table>
+                <thead>
+                    <tr>
+                        <th><label>Suplidor</label></th>
+                        <th><label>Empresa</label></th>
+                        <th><label>Fecha</label></th>
+                        <th><label>Total</label></th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyCompras">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="divOpcionDialog">
+            <button onclick="cerrarDialogCompras()">
+                <h5>Cerrar</h5>
+            </button>
+        </div>
+
+    </dialog>
+
     <script src="compra.js"></script>
 </body>
 
