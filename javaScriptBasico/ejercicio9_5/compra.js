@@ -32,7 +32,40 @@ function SaveCompra() {
 
         localStorage.setItem('listaCompras', JSON.stringify(listaCompras));
         alert("se guardo la compra")
+        agregarInventario()
+        limpiarCampo()
     }
+}
+
+function agregarInventario() {
+    var listaProducto = JSON.parse(localStorage.getItem('productos'))
+
+    listDetalle.map(
+        function (productodetalle) {
+            listaProducto.map(
+                function (producto) {
+                    if (producto.numeroArticulo == productodetalle.numeroArticulo) {
+                        var _cantidad = parseInt(producto.cantidad)
+                        producto.cantidad = _cantidad += parseInt(productodetalle.cantidad)
+                    }
+                }
+            )
+        }
+    )
+
+    localStorage.setItem('productos', JSON.stringify(listaProducto));
+}
+
+function limpiarCampo() {
+    listDetalle = []
+    totalCompras = 0
+    document.getElementById("suplidor").focus()
+    document.getElementById("suplidor").value = ""
+    document.getElementById("empresa").value = ""
+    document.getElementById("fecha").value = ""
+    document.getElementById("detalleCantidad").value = ""
+    document.getElementById("totalCompras").innerHTML = totalCompras.toLocaleString("en")
+    document.getElementById('tbody').innerHTML = ``
 }
 
 function validadCompra(suplidor, empresa, fecha) {
@@ -66,10 +99,6 @@ function validadCompra(suplidor, empresa, fecha) {
 
 
 function PrintCompra() {
-
-}
-
-function BuscarCompra() {
 
 }
 
@@ -198,8 +227,6 @@ var favDialogCompra = document.getElementById('favDialogCompra');
 
 function mostrarCompras() {
 
-    //listaCompras = JSON.parse(localStorage.getItem('listaCompras'));
-
     const tablaBody = document.getElementById('tbodyCompras');
     var tr = ``
     listaCompras = JSON.parse(localStorage.getItem('listaCompras'))
@@ -208,7 +235,7 @@ function mostrarCompras() {
             var listaTD = `<th><label>${compra.suplidor}</label></th>`
             listaTD += `<th><label>${compra.empresa}</label></th>`
             listaTD += `<th><label>${compra.fecha}</label></th>`
-            listaTD += `<th><label>${(compra.total  * 1).toLocaleString("en")}</label></th>`
+            listaTD += `<th><label>${(compra.total * 1).toLocaleString("en")}</label></th>`
             tr += `<tr onclick="selectComprar(this)">${listaTD}</tr>`
         }
     )
@@ -221,11 +248,6 @@ function mostrarCompras() {
 function selectComprar(tr) {
     var data = tr.outerText.split("\t")
     alert(data[0])
-    /* favDialog.close()
-     document.getElementById("detalleIdProducto").value = data[0]
-     document.getElementById("detalleDescripcion").value = data[1]
-     document.getElementById("detallePrecio").value = data[4]
-     document.getElementById("detalleCantidad").focus()*/
 }
 
 function cerrarDialogCompras() {
