@@ -2,16 +2,16 @@ package EjercicioKotlin.Mouredev
 
 import java.time.LocalDate
 
-class Reto12 {
-    var month = 0
-    var year = 0
+class Reto12(var month :Int = 0,var year :Int = 0) {
 
     init {
-        readDate()
+        if (month == 0 || year ==0 )
+            readDate()
         isFriday13()
     }
 
-    private fun readDate() {
+
+    fun readDate() {
         print("Enter the number of the month:")
         month = readLine()!!.toInt()
 
