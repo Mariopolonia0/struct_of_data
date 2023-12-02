@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EjercicioJava/EjercicioJava.iml" filepath="$PROJECT_DIR$/EjercicioJava/EjercicioJava.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Estrutura_De_Dato.iml" filepath="$PROJECT_DIR$/Estrutura_De_Dato.iml" />
+      <module fileurl="file://$PROJECT_DIR$/struct_of_data.iml" filepath="$PROJECT_DIR$/struct_of_data.iml" />
     </modules>
   </component>
 </project>
