@@ -62,6 +62,7 @@ private fun mayorCuatroNumero(numeroUno: Int, numeroDos: Int, numeroTres: Int, n
 private fun cantidadCaracter(cadena: String) {
     val cantidadLetras = mutableListOf<Int>()
     var contador = 0
+
     while (contador < cadena.length - 1) {
         var contador2 = contador + 1
         var numeroLetra = 1

@@ -1,5 +1,7 @@
 package EjercicioKotlin.Mouredev
 
+import java.io.Console
+
 class Reto45_ElCalendarioDeAdeviento {
 
     private var listaParticipantes: MutableList<String> = mutableListOf("mario", "eskerni", "jaziel", "polonia")
