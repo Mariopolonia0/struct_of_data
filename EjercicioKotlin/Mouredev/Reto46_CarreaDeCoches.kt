@@ -2,7 +2,7 @@ package EjercicioKotlin.Mouredev
 
 fun main() {
     val meta = "\uD83C\uDFC1"
-    val arbor = "\uD83C\uDF32"
+    val arbol = "\uD83C\uDF32"
     val camino = "_"
     val carroAzul = "\uD83D\uDE99"
     val carroRojo = "\uD83D\uDE97"
@@ -27,7 +27,7 @@ fun main() {
         print(meta)
         if (caminoRecorridoRojo >= 0) {
             for (item in caminoRecorridoRojo downTo 0) {
-                print(arbor)
+                print(arbol)
                 for (printCamino in 1..4)
                     print(camino)
             }
@@ -41,7 +41,7 @@ fun main() {
 
         if (caminoRecorridoAzul >= 0) {
             for (item in caminoRecorridoAzul downTo 0) {
-                print(arbor)
+                print(arbol)
                 for (printCamino in 1..4)
                     print(camino)
             }
