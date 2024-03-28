@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class registroTareaDometicas extends JFrame {
+
+    private JTextField tareaDomesticaIdTextField;
     public registroTareaDometicas() {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setTitle("Registro Tarea Domestica");
@@ -17,14 +19,16 @@ public class registroTareaDometicas extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(null);
 
-        JLabel label = texto("Book ID ");
-        label.setBounds(25, 10, 100, 30);
+        JLabel label = texto("Tarea Dometica ID");
+        label.setBounds(25, 10, 200, 30);
         panel.add(label);
 
-        /*bookIdTextField = textField();
-        bookIdTextField.setBounds(90, 10, 190, 30);
-        panel.add(bookIdTextField);
+        tareaDomesticaIdTextField = textField();
+        tareaDomesticaIdTextField.setBounds(170, 10, 190, 30);
+        panel.add(tareaDomesticaIdTextField);
 
+
+/*
         nombreTextField = textField();
         panel.add(panel("Nombre ", 25, 60, nombreTextField, new BorderLayout()));
 
@@ -50,5 +54,12 @@ public class registroTareaDometicas extends JFrame {
         texto.setForeground(Color.BLACK);
         texto.setFont(new Font("arial", 1, 16));
         return texto;
+    }
+
+    private JTextField textField() {
+        JTextField jTextField = new JTextField();
+        jTextField.setForeground(Color.BLACK);
+        jTextField.setFont(new Font("arial", 1, 16));
+        return jTextField;
     }
 }

@@ -1,15 +1,24 @@
 package EjercicioJava.tareaDomesticas.ui;
 
+import EjercicioJava.tareaDomesticas.data.Tarea;
+import EjercicioJava.tareaDomesticas.network.TareaApi;
+
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+
+
+
 public class listTareaDometicas extends JFrame {
-    JScrollPane scrollPane = new JScrollPane();
 
     private JButton agregar;
     private JButton eliminar;
+
+    private JScrollPane scrollPane = new JScrollPane();
+    private JList<Tarea> lista;
 
     public listTareaDometicas() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,12 +33,35 @@ public class listTareaDometicas extends JFrame {
     private JPanel PanelPrincipal() {
         JPanel panel = new JPanel();
         ConfigurarButton();
-       // llenarLista();
+         llenarLista();
         panel.setLayout(null);
         panel.add(scrollPane);
         panel.add(agregar);
         panel.add(eliminar);
         return panel;
+    }
+
+    private void llenarLista() {
+
+        DefaultListModel model = new DefaultListModel<Tarea>();
+
+        TareaApi api = new TareaApi();
+
+        for (int contador = 1; contador <= 50; contador++) {
+            Tarea tarea = new Tarea();
+            tarea.setTareaId(contador);
+            tarea.setNombre("");
+            tarea.setEstado("listo");
+            model.addElement(tarea);
+        }
+
+        lista = new JList(model);
+        scrollPane.setBounds(0, 0, 330, 450);
+        scrollPane.setBorder(new LineBorder(Color.CYAN, 5, true));
+        lista.setCellRenderer(new TareaRenderer());
+
+        scrollPane.setViewportView(lista);
+
     }
 
     private void ConfigurarButton() {
@@ -55,6 +87,7 @@ public class listTareaDometicas extends JFrame {
             }
         });
     }
+
     private void OpcionAgregar() {
         new registroTareaDometicas();
     }
