@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Compras</title>
+</head>
+<header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">
+                    <div class="divbuttonMenu">
+                        <img src="icono/icono_inventario.png"></img>
+                        <label>Inventario</label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="compras.html">
+                    <div class="divbuttonMenu">
+                        <img src="icono/icono_compra.png"></img>
+                        <label>Compras</label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="venta.html">
+                    <div class="divbuttonMenu">
+                        <img src="icono/icono_venta.png"></img>
+                        <label>Ventas</label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="producto.html">
+                    <div class="divbuttonMenu">
+                        <img src="icono/icono_product.png"></img>
+                        <label>Producto</label>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <div class="titulo">
+        <h1>Compras</h1>
+    </div>
+
+    <div class="cardFormulario">
+        <h3>Suplidor</h3>
+        <input id="suplidor" minlength="3"></input>
+        <h3>Empresa</h3>
+        <input id="empresa" minlength="3"></input>
+        <h3>Fecha</h3>
+        <input id="fecha" type="date"></input>
+
+        <div class="cardDetalle">
+            <div class="cardRow">
+                <div class="cardColumn">
+                    <label class="">Id producto</label>
+                    <input id="detalleIdProducto" disabled class="detalleNumeroInput" pattern="^[0-9]+"> </input>
+                </div>
+                <button onclick="buscarProducto()">
+                    <img src="icono/icono_buscar.png" alt="buscar">
+                </button>
+                <div class="cardColumnDescripcion">
+                    <label class="">Descripcion</label>
+                    <input id="detalleDescripcion" disabled class="detalleDescripcionInput"> </input>
+                </div>
+                <div class="cardColumn">
+                    <label class="">Cantidad</label>
+                    <input id="detalleCantidad" class="detalleNumeroInput" pattern="^[0-9]+"> </input>
+                </div>
+                <div class="cardColumn">
+                    <label class="">Precio</label>
+                    <input id="detallePrecio" disabled class="detallePrecioInput"> </input>
+                </div>
+                <button onclick="agregarDetalle()">
+                    <img src="icono/icono_add.png" alt="buscar">
+                </button>
+            </div>
+
+            <div class="cardListaDetalle">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><label>Id articulo</label></th>
+                            <th><label>Descripcion</label></th>
+                            <th><label>Cantidad</label></th>
+                            <th><label>Precio</label></th>
+                            <th><label>Total</label></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="totalCompras">
+            <h3>Total Compras:</h3>
+            <h3 id="totalCompras">0</h3>
+        </div>
+
+        <div class="cardButton">
+            <button type="button" onclick="SaveCompra()">
+                <h5>Save</h5>
+            </button>
+
+            <button type="button" onclick="PrintCompra()">
+                <h5>Print</h5>
+            </button>
+
+            <button type="button" onclick="mostrarCompras()">
+                <h5>Buscar</h5>
+            </button>
+        </div>
+    </div>
+
+    <div class="cardNoDisponible">
+        <label>No disponible en pantalla pequeña</label>
+    </div>
+
+    <dialog id="favDialog">
+        <h3>Lista producto</h3>
+        <div class="cardListaDialog">
+            <table>
+                <thead>
+                    <tr>
+                        <th><label>Id articulo</label></th>
+                        <th><label>Descripcion</label></th>
+                        <th><label>Nivel minimo</label></th>
+                        <th><label>Cantidad</label></th>
+                        <th><label>Precio</label></th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyProducto">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="divOpcionDialog">
+            <button onclick="cerrarDialog()">
+                <h5>Cerrar</h5>
+            </button>
+        </div>
+
+    </dialog>
+
+    <dialog id="favDialogCompra">
+        <h3>Lista Compras</h3>
+        <div class="cardListaDialog">
+            <table>
+                <thead>
+                    <tr>
+                        <th><label>Suplidor</label></th>
+                        <th><label>Empresa</label></th>
+                        <th><label>Fecha</label></th>
+                        <th><label>Total</label></th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyCompras">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="divOpcionDialog">
+            <button onclick="cerrarDialogCompras()">
+                <h5>Cerrar</h5>
+            </button>
+        </div>
+
+    </dialog>
+
+    <script src="compra.js"></script>
+</body>
+
+</html>

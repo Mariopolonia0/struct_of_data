@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Dado el nombre de una serie de estudiantes y las
+    calificaciones obtenidas en un examen, calcular e
+    imprimir la calificación media, así como cada calificación y la diferencia con la media
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7.26</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        background: darkseagreen;
+        flex-direction: column;
+    }
+
+    label {
+        font-size: 6vw;
+        margin-top: 2vw;
+        margin-right: 2vw;
+    }
+
+    input {
+        font-size: 6vw;
+        margin-top: 2vw;
+        border-radius: 2vw;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    table {
+        border: 1px solid #333;
+        margin-top: 4vw;
+    }
+
+    td {
+        border: 1px solid #333;
+    }
+
+    thead,
+    tfoot {
+        background-color: #333;
+        color: #fff;
+    }
+
+    td {
+        color: black;
+        font-weight: bold;
+        font-size: 6vw;
+    }
+
+    button {
+        align-self: center;
+        padding: 2vw;
+        margin-top: 2vw;
+        font-size: x-large;
+        border-width: medium;
+        border-radius: 3vw;
+        background: url();
+        color: white;
+        box-shadow: 0px 0px 8px #0064ff;
+    }
+
+    .resultado {
+        display: flex;
+    }
+</style>
+
+<body>
+    <div>
+        <form>
+            <label for="fname">Name</label>
+            <input type="text" id="nombre" name="fname">
+            <label for="fname">Qualification</label>
+            <input type="text" id="calificacion" name="fname">
+            <button type="button" onclick="ingresarDato()">Agregar</button>
+        </form>
+    </div>
+    <div class="resultado">
+        <label>calificacion media: </label>
+        <label id="calificacionMedia">0</label>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Ratings</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <script>
+        const isNumber = n => (typeof (n) === 'number' || n instanceof Number);
+        var totalCalificacion = 0;
+        class estudiante {
+            constructor(nombre, calificacion) {
+                this.nombre = nombre,
+                    this.calificacion = calificacion
+            }
+        }
+        var lista = []
+
+        function ingresarDato() {
+
+            const tablaBody = document.getElementById('tbody');
+            var inputNombre = document.getElementById("nombre").value;
+            var labelCalificacionMedia = document.getElementById("calificacionMedia");
+            var inputCalificacion = document.getElementById("calificacion").value;
+            var numeroCalificacion = parseInt(inputCalificacion, 10);
+
+            if (inputNombre != "" && numeroCalificacion > 0) {
+
+                lista.push(new estudiante(inputNombre, inputCalificacion))
+                totalCalificacion += numeroCalificacion;
+                console.log(totalCalificacion + "/" + lista.length);
+
+                labelCalificacionMedia.innerHTML =
+                    `<label style =" color: white; ">
+                        ${(totalCalificacion / lista.length).toFixed(2)}
+                    </label>`;
+
+                var tr = `
+                    <tr>
+                        <td style =" color: white;">Estudiante</td>
+                        <td style =" color: white;">Calificación</td>
+                    </tr>`;
+
+                lista.map(function (estudiante) {
+                    let nombreTd = `<td> ${estudiante.nombre}</td> `;
+                    var calificacionTd;
+                    if (estudiante.calificacion > (totalCalificacion / lista.length)) {
+                        calificacionTd =
+                            `<td style =" color: blue;"> ${estudiante.calificacion} </td>`;
+                    } else {
+                        calificacionTd =
+                            `<td> ${estudiante.calificacion}</td>`;
+                    }
+                    tr += `<tr>${nombreTd + calificacionTd}</tr>`
+                    //tablaBody.innerHTML = `<tr>${nombreTd + calificacionTd}</tr>`;
+                })
+                tablaBody.innerHTML = tr;
+            } else
+                alert("Los campos están vacíos o incorrectos");
+        }
+    </script>
+</body>
+
+</html>
