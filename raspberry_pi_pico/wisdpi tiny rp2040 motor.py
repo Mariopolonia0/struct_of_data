@@ -31,7 +31,7 @@ while True:
     if uart.any() > 0:
         dato = uart.readline()
         print(dato)
-        
+
         if "0" in dato:
             leftForward.value(0)
             leftBack.value(0)
@@ -39,7 +39,7 @@ while True:
             righBack.value(0)
             pixel[0] = (0, 0, 0)
             pixel.write()
-            
+
         if "1" in dato:
             leftForward.value(1)
             rigthForward.value(1)
@@ -47,7 +47,7 @@ while True:
             righBack.value(0)
             pixel[0] = (0, 0, 255)
             pixel.write()
-            
+
         if "2" in dato:
             leftBack.value(1)
             righBack.value(1)
@@ -55,3 +55,4 @@ while True:
             leftForward.value(0)
             pixel[0] = (255, 0, 0)
             pixel.write()
+
