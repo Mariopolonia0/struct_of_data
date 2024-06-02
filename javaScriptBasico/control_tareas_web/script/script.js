@@ -1,9 +1,12 @@
 function login() {
 
-    username
-
     const uri = 'http://www.apinomina.somee.com/api/Books';
-    fetch(uri)
+    fetch(uri, {
+        headers: {
+            'origin':'https://mariopolonia0.github.io/struct_of_data/javaScriptBasico/control_tareas_web/index.html',
+            'Access-Control-Allow-Origin': 'http://www.apinomina.somee.com/api/Books' 
+        }
+    })
         .then(response => console.log(response.json()))
         .then(data => document.getElementById("username").value = data)
         .catch(error => document.getElementById("username").value = error);
