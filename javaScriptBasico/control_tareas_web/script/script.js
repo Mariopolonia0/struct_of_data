@@ -5,14 +5,9 @@ function login() {
 
     const uri = 'http://www.apinomina.somee.com/api/Books';
 
-    fetch(uri, {
-
-        Headers: {
-            "Content-Security-Policy": "upgrade-insecure-requests"
-        }
-    })
-        .then(response => console.log(response.json()))
-        .then(data => document.getElementById("username").value = data)
+    fetch(uri)
+        .then(response => alert(response.text)  )
+        .then(text => document.getElementById("username").value = text)
         .catch(error => document.getElementById("username").value = error);
 
 }
