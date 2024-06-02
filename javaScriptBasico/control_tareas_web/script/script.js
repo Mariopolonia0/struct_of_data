@@ -1,6 +1,6 @@
 function login() {
 
-    const uri = 'http://www.apinomina.somee.com';
+    const uri = 'http://www.apinomina.somee.com/api/Books';
 
     fetch(uri)
         .then(response => console.log(response.json()))
