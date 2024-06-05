@@ -1,13 +1,29 @@
 function login() {
 
-    //const uri = 'https://controltarea.azurewebsites.net/api/Books';
-    //https://localhost:7086/api/Books
+    const nombreUsuarioIngresado = document.getElementById('nombreUsuario').value
+    const passwordIngresado = document.getElementById('password').value
 
-    const uri = 'http://www.apinomina.somee.com/api/Books';
+    if (nombreUsuarioIngresado == '' || passwordIngresado == '') {
+        alert("Campos estan vacio")
+        return
+    }
 
-    fetch(uri)
-        .then(response => alert(response.text)  )
-        .then(text => document.getElementById("username").value = text)
-        .catch(error => document.getElementById("username").value = error);
+    const data = {
+        nombreUsuario: nombreUsuarioIngresado,
+        password: passwordIngresado
+    };
 
+    const uri = "http://www.apinomina.somee.com/Usuario/login";
+
+    fetch(uri, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+    })
+        .then((res) => res.json())
+        .then(function (dataObject) {
+            console.log(dataObject)
+        })
 }
