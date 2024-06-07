@@ -21,7 +21,7 @@ function login() {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-        referrerPolicy: "unsafe-url"   
+        referrerPolicy: "unsafe-url"
     })
         .then((res) => res.json())
         .then(function (dataObject) {
@@ -33,5 +33,8 @@ function login() {
             }
 
         })
-        .catch(error => console.log(error))
+        .catch((error) => {
+            console.log(error)
+            alert("Tenemos un error en el Server")
+        })
 }
