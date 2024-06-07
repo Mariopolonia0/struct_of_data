@@ -13,19 +13,18 @@ function login() {
         password: passwordIngresado
     };
 
-    const uri = "http://www.apinomina.somee.com/Usuario/login";
+    const uri = "http://www.apinomina.somee.com/Usuario/login/";
 
     fetch(uri, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Content-Security-Policy": "upgrade-insecure-requests"
         },
         body: JSON.stringify(data)
     })
         .then((res) => res.json())
         .then(function (dataObject) {
-
+alert(dataObject.usuarioId)
             if (dataObject.usuarioId == 0) {
                 alert("login incorrecto")
             } else {
