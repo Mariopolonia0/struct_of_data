@@ -20,8 +20,7 @@ function login() {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
-        referrerPolicy: "unsafe-url"
+        body: JSON.stringify(data)
     })
         .then((res) => res.json())
         .then(function (dataObject) {
