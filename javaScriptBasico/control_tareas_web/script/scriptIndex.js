@@ -30,7 +30,7 @@ function login() {
             if (dataObject.usuarioId == 0) {
                 alert("login incorrecto")
             } else {
-                window.location = "ui/listaTarea.HTML";
+                window.location = "ui/listaTarea.Html";
             }
 
         })
@@ -39,16 +39,3 @@ function login() {
             alert("Tenemos un error en el Server")
         })
 }
-
-/*
-const uri = 'http://www.apinomina.somee.com/api/Books';
-
-
-fetch(uri)
-.then((response) => response.json())
-.then(function (dataObject) {
-    console.log(dataObject[0].bookId)
-    alert
-})
-.catch(error => document.getElementById("username").value = error);
-*/
