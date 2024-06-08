@@ -25,14 +25,12 @@ function login() {
         .then((res) => res.json())
         .then(function (dataObject) {
 
-            alert(dataObject.usuarioId)
-
             if (dataObject.usuarioId == 0) {
                 alert("login incorrecto")
             } else {
-                window.location = "ui/listaTarea.Html";
+                window.location = "ui/listaTarea.html"; //listaTarea.Html
             }
-
+            
         })
         .catch((error) => {
             console.log(error)
