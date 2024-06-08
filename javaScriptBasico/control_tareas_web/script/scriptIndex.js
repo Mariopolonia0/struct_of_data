@@ -13,7 +13,7 @@ function login() {
         password: passwordIngresado
     };
 
-    const uri = 'http://www.apinomina.somee.com/Usuario/login';
+    const uri = 'https://controltarea.azurewebsites.net/Usuario/login';
 
     fetch(uri, {
         method: "POST",
