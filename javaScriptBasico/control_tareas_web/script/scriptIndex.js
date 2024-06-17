@@ -37,3 +37,7 @@ function login() {
             alert("Tenemos un error en el Server")
         })
 }
+
+function Registro() {
+
+}

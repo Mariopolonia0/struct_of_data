@@ -31,6 +31,16 @@ button {
     width: 100%;
 }
 
+.buttonRegistro {
+    background-color: #1815A3;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
 /* Add a hover effect for buttons */
 button:hover {
     opacity: 0.8;
