@@ -5,7 +5,7 @@ form {
     align-items: center;
 }
 
-body{
+body {
     background-color: #c9c9c9;
 }
 
@@ -21,6 +21,12 @@ input[type=password] {
 }
 
 /* Set a style for all buttons */
+
+.cardButton {
+    display: flex;
+    flex-direction: row;
+}
+
 button {
     background-color: #04AA6D;
     color: white;
@@ -29,6 +35,7 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
+    margin: 2% 2% 2% 2%;
 }
 
 .buttonRegistro {
@@ -39,6 +46,7 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
+    margin: 2% 0%;
 }
 
 .buttonDelete {
@@ -49,6 +57,7 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
+    margin: 2% 0%;
 }
 
 /* Add a hover effect for buttons */
@@ -63,7 +72,7 @@ button:hover {
     background-color: #f44336;
 }
 
-.labelTitulo{
+.labelTitulo {
     font-size: xx-large;
 }
 

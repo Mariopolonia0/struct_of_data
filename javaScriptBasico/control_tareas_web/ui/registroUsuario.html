@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--link rel="stylesheet" href="/css/styleRegistroUser.css"-->
     <link rel="stylesheet" type="text/css" href="../css/styleRegistroUser.css">
     <link rel="WEBSITE icon" type="png" href="../icon/logoSoluctionPolonia.png" />
-    
+
     <title>Register User</title>
 </head>
+
 <body>
     <form action="action_page.php" method="post">
 
@@ -29,17 +31,23 @@
             <label for="uname"><b>license</b></label>
             <input id="nombreUsuario" type="text" placeholder="Enter Username" name="nombreUsuario" required>
 
-            <label for="psw"><b>Password</b></label>   
+            <label for="psw"><b>Password</b></label>
             <input id="password" type="password" placeholder="Enter Password" name="password" required>
 
-            <label for="psw"><b>Password</b></label>   
+            <label for="psw"><b>Password</b></label>
             <input id="password" type="password" placeholder="Enter Password" name="password" required>
 
-            <button class="buttonRegistro" type="button" onclick="Registro()">New</button>
-            <button type="button" onclick="login()">Save</button>
-            <button class="buttonDelete" type="button" onclick="Registro()">Delete</button>
+            <card class="cardButton">
+                <button class="buttonRegistro" type="button" onclick="Registro()">New</button>
+                <button type="button" onclick="login()">Save</button>
+                <button class="buttonDelete" type="button" onclick="Registro()">Delete</button>
+
+            </card>
+
+
         </div>
     </form>
     <script src="script/scriptIndex.js"></script>
 </body>
+
 </html>
