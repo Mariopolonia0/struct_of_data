@@ -15,13 +15,15 @@
     <form action="action_page.php" method="post">
 
         <img class="imgcontainer" src="../icon/logoSoluctionPolonia.png" alt="Avatar" class="avatar">
-        <label class="labelTitulo" for="uname"><b>Control Tareas </b></label>
+        <label class="labelTitulo" for="uname"><b>Task manager </b></label>
         <label class="labelTitulo" for="uname"><b>Register User</b></label>
 
         <div class="container">
             <label for="uname"><b>Name</b></label>
-            <input id="nombreUsuario" type="text" placeholder="Enter Username" name="nombreUsuario" required>
-
+            <card class="cardButton">
+                <input id="nombreUsuario" type="text" placeholder="Enter Username" name="nombreUsuario" required>
+                <button class="buttonSearch" type="button" onclick="Registro()">Search</button>
+            </card>
             <label for="uname"><b>Last name</b></label>
             <input id="nombreUsuario" type="text" placeholder="Enter Username" name="nombreUsuario" required>
 

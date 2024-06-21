@@ -60,6 +60,17 @@ button {
     margin: 2% 0%;
 }
 
+
+
+.buttonSearch {
+    background-color: #a31515;
+    color: white;
+    padding: 14px 20px;
+    margin: 1% 0% 1% 1%;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+
 /* Add a hover effect for buttons */
 button:hover {
     opacity: 0.8;
@@ -85,7 +96,7 @@ button:hover {
 
 /* Avatar image */
 img.avatar {
-    width: 40%;
+    width: 30%;
     border-radius: 50%;
 }
 
