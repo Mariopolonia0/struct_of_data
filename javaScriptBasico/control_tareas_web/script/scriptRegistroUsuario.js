@@ -6,16 +6,6 @@ const license = document.getElementById('license')
 const password = document.getElementById('password')
 const passwordConfirmation = document.getElementById('passwordConfirmation')
 
-/*
-{
-    "usuarioId": 0,
-    "nombre": "string",
-    "apellido": "string",
-    "nombreUsuario": "string",
-    "password": "string",
-    "numeroLicencia": "string"
-  }
-*/
 function enviarDataToApi() {
     const data = {
         usuarioId: 0,
@@ -37,13 +27,7 @@ function enviarDataToApi() {
     })
         .then((res) => res.json())
         .then(function (dataObject) {
-
-            if (dataObject.usuarioId == 0) {
-                alert("error al enviar la data")
-            } else {
-                alert("Data enviada")
-            }
-
+            alert(dataObject.dataResult)
         })
         .catch((error) => {
             console.log(error)

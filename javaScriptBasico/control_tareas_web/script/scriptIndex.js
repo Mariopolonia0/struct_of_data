@@ -30,7 +30,7 @@ function login() {
             } else {
                 window.location = "ui/listaTarea.html"; //listaTarea.Html
             }
-            
+
         })
         .catch((error) => {
             console.log(error)
