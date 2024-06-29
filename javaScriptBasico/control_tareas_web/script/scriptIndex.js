@@ -30,7 +30,7 @@ function login() {
 
                 if (dataObject.usuarioId == 0) {
                     messageDialog.innerHTML = "login incorrecto";
-                    dialogo.show();
+                    dialogo.showModal();
                 } else {
                     window.location = "ui/listaTarea.html"; //listaTarea.Html
                 }
@@ -38,7 +38,7 @@ function login() {
             })
             .catch((error) => {
                 messageDialog.innerHTML = "Tenemos este error en el Server : " + error;
-                dialogo.show();
+                dialogo.showModal();
             })
     }
 }
