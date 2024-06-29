@@ -7,8 +7,11 @@ function login() {
     const nombreUsuarioIngresado = document.getElementById('nombreUsuario').value
     const passwordIngresado = document.getElementById('password').value
 
-    if (nombreUsuarioIngresado == '' || passwordIngresado == '') {
-        messageDialog.innerHTML = "Campos estan vacio";
+    if (nombreUsuarioIngresado == '') {
+        messageDialog.innerHTML = "Enter the user";
+        dialogo.showModal();
+    } else if (passwordIngresado == '') {
+        messageDialog.innerHTML = "Enter the password";
         dialogo.showModal();
     } else {
         const data = {
@@ -29,7 +32,7 @@ function login() {
             .then(function (dataObject) {
 
                 if (dataObject.usuarioId == 0) {
-                    messageDialog.innerHTML = "login incorrecto";
+                    messageDialog.innerHTML = "Incorrect Login";
                     dialogo.showModal();
                 } else {
                     window.location = "ui/listaTarea.html"; //listaTarea.Html
@@ -37,7 +40,7 @@ function login() {
 
             })
             .catch((error) => {
-                messageDialog.innerHTML = "Tenemos este error en el Server : " + error;
+                messageDialog.innerHTML = "We have this error on the Server : " + error;
                 dialogo.showModal();
             })
     }
