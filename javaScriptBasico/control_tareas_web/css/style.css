@@ -3,40 +3,40 @@ body {
 }
 
 /*input bonito  */
-.label{
-    display: grid;  
+.label {
+    display: grid;
     grid-template-areas: "input";
     background-color: #c9c9c9;
 }
 
-.input{
+.input {
     grid-area: input;
-    width: 300px;   
-    font: inherit;  
+    width: 300px;
+    font: inherit;
     border-radius: 10px;
     border: 5px solid blue;
     padding: .7rem 1.5rem;
     background-color: #c9c9c9;
 }
 
-.label_name{
+.label_name {
     grid-area: input;
-    z-index: 100;   
+    z-index: 100;
     width: max-content;
     margin-left: 1rem;
     padding: 0.5rem;
-    align-self: center; 
+    align-self: center;
     height: 10%;
     display: flex;
     align-items: center;
 }
 
-.input:focus + .label_name,
-.input:not(:placeholder-shown) + .label_name
-{
-    transform: translateY(-100%) ;
-    background-color:#c9c9c9 ;
+.input:focus+.label_name,
+.input:not(:placeholder-shown)+.label_name {
+    transform: translateY(-100%);
+    background-color: #c9c9c9;
 }
+
 
 
 /* Bordered form */
@@ -131,7 +131,7 @@ img.avatar {
 
 /* Add padding to containers */
 .container {
-    width: 40%;
+    width: 50%;
     padding: 16px;
 }
 
@@ -150,5 +150,12 @@ span.psw {
 
     .cancelbtn {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 755px) {
+    .container {
+        width: 90%;
+        padding: 16px;
     }
 }
