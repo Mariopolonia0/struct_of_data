@@ -16,16 +16,25 @@
         <label class="labelTitulo" for="uname"><b>Task manager</b></label>
 
         <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input id="nombreUsuario" type="text" placeholder="Enter Username" name="nombreUsuario" required>
 
-            <label for="psw"><b>Password</b></label>
-            <input id="password" type="password" placeholder="Enter Password" name="password" required>
+            <label class="label">
+                <input id="nombreUsuario" class="input" type="text" placeholder=" ">
+                <span class="label_name">
+                    <b> Enter Username </b>
+                </span>
+            </label>
+
+            <label class="label">
+                <input id="password" type="password" class="input" name="password" placeholder=" " required>
+                <span class="label_name">
+                    <b> Enter Password</b>
+                </span>
+            </label>
 
             <button type="button" onclick="login()">Login</button>
 
             <a href="ui/registroUsuario.html">
-                <button class="buttonRegistro" type="button" >Record</button>
+                <button class="buttonRegistro" type="button">Record</button>
             </a>
         </div>
     </form>
