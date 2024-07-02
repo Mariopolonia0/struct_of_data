@@ -17,24 +17,49 @@
         <label class="labelTitulo" for="uname"><b>Register User</b></label>
 
         <div class="container">
-            <label for="uname"><b>Name</b></label>
-            <input id="name" type="text" placeholder="Enter Username" name="nombreUsuario" required>
 
-            <label for="uname"><b>Last name</b></label>
-            <input id="lastName" type="text" placeholder="Enter Username" name="nombreUsuario" required>
+            <label class="label">
+                <input id="name" class="input" type="text" placeholder=" " required>
+                <span class="label_name">
+                    <b> Enter name </b>
+                </span>
+            </label>
 
-            <label for="uname"><b>User name</b></label>
-            <input id="userName" type="text" placeholder="Enter Username" name="nombreUsuario" required>
+            <label class="label">
+                <input id="lastName" class="input" type="text" placeholder=" " required>
+                <span class="label_name">
+                    <b> Enter last name </b>
+                </span>
+            </label>
 
-            <label for="uname"><b>License</b></label>
-            <input id="license" type="text" placeholder="Enter Username" name="nombreUsuario" required>
+            <label class="label">
+                <input id="userName" class="input" type="text" placeholder=" " required>
+                <span class="label_name">
+                    <b> Enter user name </b>
+                </span>
+            </label>
 
-            <label for="psw"><b>Password</b></label>
-            <input id="password" type="password" placeholder="Enter Password" name="password" required>
+            <label class="label">
+                <input id="license" class="input" type="text" placeholder=" "  required>
+                <span class="label_name">
+                    <b> Enter license</b>
+                </span>
+            </label>
 
-            <label for="psw"><b>Password</b></label>
-            <input id="passwordConfirmation" type="password" placeholder="Enter Password" name="password" required>
+            <label class="label">
+                <input id="password" class="input" type="password" placeholder=" " required>
+                <span class="label_name">
+                    <b> Enter password</b>
+                </span>
+            </label>
 
+            <label class="label">
+                <input id="passwordConfirmation" class="input" type="password" placeholder=" " required>
+                <span class="label_name">
+                    <b> Enter password confirmation</b>
+                </span>
+            </label>
+            
             <card class="cardButton">
                 <button class="buttonRegistro" type="button" onclick="clean()">New</button>
                 <button type="button" onclick="savedata()">Save</button>

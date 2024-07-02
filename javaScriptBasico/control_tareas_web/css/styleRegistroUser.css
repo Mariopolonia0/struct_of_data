@@ -9,6 +9,42 @@ body {
     background-color: #c9c9c9;
 }
 
+/*input bonito  */
+.label {
+    display: grid;
+    grid-template-areas: "input";
+    background-color: #c9c9c9;
+}
+
+.input {
+    grid-area: input;
+    width: 300px;
+    font: inherit;
+    border-radius: 10px;
+    border: 5px solid blue;
+    padding: .7rem 1.5rem;
+    background-color: #c9c9c9;
+}
+
+.label_name {
+    grid-area: input;
+    z-index: 100;
+    width: max-content;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    align-self: center;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.input:focus+.label_name,
+.input:not(:placeholder-shown)+.label_name {
+    transform: translateY(-100%);
+    background-color: #c9c9c9;
+}
+
+
 /* Full-width inputs */
 input[type=text],
 input[type=password] {
@@ -16,10 +52,10 @@ input[type=password] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 2px solid #1815a3bf;
     box-sizing: border-box;
+    outline: none;
 }
-
 /* Set a style for all buttons */
 
 .cardButton {
@@ -36,6 +72,7 @@ button {
     cursor: pointer;
     width: 100%;
     margin: 2% 2% 2% 2%;
+    border-radius: 10px;
 }
 
 .buttonRegistro {
@@ -47,6 +84,7 @@ button {
     cursor: pointer;
     width: 100%;
     margin: 2% 0%;
+    border-radius: 10px;
 }
 
 .buttonDelete {
@@ -58,6 +96,7 @@ button {
     cursor: pointer;
     width: 100%;
     margin: 2% 0%;
+    border-radius: 10px;
 }
 
 /* Add a hover effect for buttons */
@@ -91,6 +130,7 @@ img.avatar {
 
 /* Add padding to containers */
 .container {
+    width: 50%;
     padding: 16px;
 }
 
@@ -109,5 +149,12 @@ span.psw {
 
     .cancelbtn {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 755px) {
+    .container {
+        width: 90%;
+        padding: 16px;
     }
 }
