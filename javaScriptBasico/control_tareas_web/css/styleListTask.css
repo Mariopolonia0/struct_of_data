@@ -1,0 +1,82 @@
+body {
+    display: grid;
+    justify-items: center;
+    background-color: #c9c9c9;
+}
+
+img {
+    height: 130px;
+    width: 130px;
+}
+
+select {
+    outline: none !important;
+    border: 1px solid red;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.labelTitulo {
+    font-size: x-large;
+}
+
+.container {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 8px 4px #9d9d9d;
+    border-radius: 15px;
+    font-family: sans-serif;
+}
+
+/*input bonito  */
+.label {
+    display: grid;
+    grid-template-areas: "input";
+    background-color: #c9c9c9;
+    margin: 8px;
+}
+
+.input {
+    grid-area: input;
+    width: 80px;
+    font: inherit;
+    border-radius: 10px;
+    border: 3px solid #1815A3;
+    padding: .7rem 1.5rem;
+    background-color: #c9c9c9;
+}
+
+.label_name {
+    grid-area: input;
+    z-index: 100;
+    width: max-content;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    align-self: center;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.input:focus+.label_name,
+.input:not(:placeholder-shown)+.label_name {
+    transform: translateY(-100%);
+    background-color: #c9c9c9;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}

@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    
+    <link rel="stylesheet" href="../css/styleListTask.css">
+
     <link rel="WEBSITE icon" type="png" href="icon/logoSoluctionPolonia.png" />
     <title>Lista Tareas</title>
 </head>
+
 <body>
-    <h1>hola mario</h1>
-    <h4>welcome</h4>
+    <img class="imgcontainer" src="../icon/logoSoluctionPolonia.png" alt="Avatar" class="avatar">
+    <label class="labelTitulo" for="uname"><b>Task manager </b></label>
+    <label class="labelTitulo" for="uname"><b>List Task</b></label>
+
+    <div class="container">
+
+        <select  class="label" name="example">
+            <option value="A">Nombre</option>
+            <option value="B">Descripcion</option>
+            <option value="C">Estado</option>
+        </select>
+
+        <label class="label">
+            <input id="nombreUsuario" class="input" type="text" placeholder=" ">
+            <span class="label_name">
+                <b>Buscar</b>
+            </span>
+        </label>
+
+        <button type="button" onclick="login()">Search</button>
+
+        <button type="button" onclick="login()">Add new</button>
+    </div>
+
+    <script src="../script/scriptListaTask.js"></script>
 </body>
+
 </html>
