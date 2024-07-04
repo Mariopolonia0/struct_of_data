@@ -31,14 +31,20 @@ select {
     display: flex;
     flex-direction: column;
     border: 1px solid transparent;
-    box-shadow: inset 1px 1px 20px 20px #b1b1b1;
+    background: #1815A3;
     border-radius: 7px;
     padding: 7px;
 }
 
-.selectBusqueda{
+.labelTipoBusqueda {
+    font-weight: bolde;
+    color: #c9c9c9;
+}
+
+.selectBusqueda {
     margin-top: 5px;
 }
+
 /*input bonito  */
 .label {
     display: grid;
@@ -51,7 +57,7 @@ select {
     width: 80px;
     font: inherit;
     border-radius: 10px;
-    border: 3px solid #1815A3;
+    border: 2px solid #1815A3;
     padding: .7rem 1.5rem;
     background-color: #c9c9c9;
 }
@@ -76,13 +82,14 @@ select {
 
 /* Set a style for all buttons */
 button {
-    background-color: #04AA6D;
-    color: white;
+    background-color: #1815A3;
+    color: #c9c9c9;
     padding: 14px 20px;
     margin: 8px 8px;
     border: none;
     cursor: pointer;
     border-radius: 10px;
+    font-weight: bolder;
 }
 
 /* Add a hover effect for buttons */
