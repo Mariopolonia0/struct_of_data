@@ -11,8 +11,6 @@ img {
 
 select {
     outline: none !important;
-    border: 1px solid red;
-    box-shadow: 0 0 10px #719ECE;
 }
 
 .labelTitulo {
@@ -26,15 +24,26 @@ select {
     border: 1px solid transparent;
     box-shadow: 2px 2px 8px 4px #9d9d9d;
     border-radius: 15px;
-    font-family: sans-serif;
 }
 
+.containerTipoBusqueda {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid transparent;
+    box-shadow: inset 1px 1px 20px 20px #b1b1b1;
+    border-radius: 7px;
+    padding: 7px;
+}
+
+.selectBusqueda{
+    margin-top: 5px;
+}
 /*input bonito  */
 .label {
     display: grid;
     grid-template-areas: "input";
     background-color: #c9c9c9;
-    margin: 8px;
 }
 
 .input {
