@@ -67,15 +67,6 @@ option {
     background-color: #c9c9c9;
 }
 
-.inputRegistroTask {
-    grid-area: input;
-    font: inherit;
-    border-radius: 10px;
-    border: 2px solid #1815A3;
-    padding: .7rem 1.5rem;
-    background-color: #c9c9c9;
-}
-
 .label_name {
     grid-area: input;
     z-index: 100;
@@ -184,13 +175,40 @@ dialog[open] {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    align-items: center;
 }
 
-
+/*input bonito  */
 .labelRegistroTask {
     display: grid;
     grid-template-areas: "input";
     background-color: #c9c9c9;
     margin: 5%;
+}
+
+.inputRegistroTask {
+    width: 85%;
+    grid-area: input;
+    font: inherit;
+    border-radius: 10px;
+    border: 2px solid #1815A3;
+    padding: .7rem 1.5rem;
+    background-color: #c9c9c9;
+}
+
+.label_nameRegistroTask {
+    grid-area: input;
+    z-index: 100;
+    width: max-content;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    align-self: center;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.inputRegistroTask:focus+.label_nameRegistroTask,
+.inputRegistroTask:not(:placeholder-shown)+.label_nameRegistroTask {
+    transform: translateY(-100%);
+    background-color: #c9c9c9;
 }

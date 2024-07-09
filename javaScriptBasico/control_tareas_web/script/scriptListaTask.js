@@ -9,3 +9,12 @@ function formTask() {
 function cancel() {
     dialogoFormTask.close();
 }
+
+function clean(){
+
+}
+
+
+function savedata(){
+
+}
