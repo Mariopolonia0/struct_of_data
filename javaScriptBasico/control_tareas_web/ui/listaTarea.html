@@ -11,16 +11,16 @@
 </head>
 
 <body>
-    <img class="imgcontainer" src="../icon/logoSoluctionPolonia.png" alt="Soluction_Polonia" >
+    <img class="imgcontainer" src="../icon/logoSoluctionPolonia.png" alt="Soluction_Polonia">
     <label class="labelTitulo"><b>Task manager </b></label>
-    <label class="labelTitulo" ><b>List Task</b></label>
+    <label class="labelTitulo"><b>List Task</b></label>
 
     <div class="container">
 
         <div class="containerTipoBusqueda">
-            <label for="selectOption" class="labelTipoBusqueda">Buscar por</label>
-            
-            <select id="selectOption" name="select" class="selectBusqueda" >
+            <label for="selectOptionm" class="labelTipoBusqueda">Buscar por</label>
+
+            <select id="selectOption" name="select" class="selectBusqueda">
                 <option value="A">Nombre</option>
                 <option value="B">Descripcion</option>
                 <option value="C">Por hacer </option>
@@ -38,8 +38,66 @@
 
         <button type="button" onclick="login()">Search</button>
 
-        <button type="button" onclick="login()">Add new</button>
+        <button type="button" onclick="formTask()">Add new</button>
     </div>
+
+    <div class="container">
+        <table>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <dialog id="DialogNotificacion">
+        <img class="imgcontainerDialog" src="../icon/infoIcono.png" alt="Soluction_Polonia">
+        <p class="textoDialgo" id="messageDialog"></p>
+    </dialog>
+
+    <dialog id="DialogFormTask">
+        <img class="imgcontainerDialog" src="../icon/formIcon.png" alt="Soluction_Polonia">
+        <label class="labelTituloRegistroTask"><b>Register Task</b></label>
+        <div class="containerFormDialogo">
+
+            <label class="labelRegistroTask">
+                <input id="name" class="inputRegistroTask" type="text" placeholder=" " required>
+                <span class="label_name">
+                    <b> Enter User </b>
+                </span>
+            </label>
+
+            <label class="labelRegistroTask">
+                <input id="name" class="inputRegistroTask" type="text" placeholder=" " required>
+                <span class="label_name">
+                    <b> Enter descripcion</b>
+                </span>
+            </label>
+
+            <label class="labelRegistroTask">
+                <input id="name" class="inputRegistroTask" type="date" placeholder=" " required>
+                <span class="label_name">
+                    <b> Enter fecha vencimiento</b>
+                </span>
+            </label>
+
+            <label class="labelRegistroTask">
+                <input id="name" class="inputRegistroTask" type="text" placeholder=" " required>
+                <span class="label_name">
+                    <b> Estado </b>
+                </span>
+            </label>
+
+            <p class="textoDialgo" id="messageDialog"></p>
+        </div>
+
+        <card class="cardButtonRegistroTask">
+            <button class="buttonNewRegistroTask" type="button" onclick="clean()">New</button>
+            <button type="buttonSaveRegistroTask" onclick="savedata()">Save</button>
+            <button class="buttonCancelarRegistroTask" type="button" onclick="cancel()">Cancel</button>
+        </card>
+
+    </dialog>
 
     <script src="../script/scriptListaTask.js"></script>
 </body>

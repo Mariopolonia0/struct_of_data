@@ -45,6 +45,10 @@ select {
     margin-top: 5px;
 }
 
+option {
+    margin: 5px;
+}
+
 /*input bonito  */
 .label {
     display: grid;
@@ -52,9 +56,19 @@ select {
     background-color: #c9c9c9;
 }
 
+
 .input {
     grid-area: input;
     width: 80px;
+    font: inherit;
+    border-radius: 10px;
+    border: 2px solid #1815A3;
+    padding: .7rem 1.5rem;
+    background-color: #c9c9c9;
+}
+
+.inputRegistroTask {
+    grid-area: input;
     font: inherit;
     border-radius: 10px;
     border: 2px solid #1815A3;
@@ -95,4 +109,88 @@ button {
 /* Add a hover effect for buttons */
 button:hover {
     opacity: 0.8;
+}
+
+.cardButtonRegistroTask {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.buttonNewRegistroTask {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin: 2% 2% 2% 2%;
+    border-radius: 10px;
+}
+
+.buttonCancelarRegistroTask {
+    background-color: #a31515;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin: 2% 0%;
+    border-radius: 10px;
+}
+
+.buttonSaveRegistroTask {
+    background-color: #1815A3;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin: 2% 0%;
+    border-radius: 10px;
+}
+
+/* dialog   */
+dialog[open] {
+    padding: 5%;
+    background-color: #c9c9c9;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px #000000;
+    border: none;
+}
+
+.labelTituloRegistroTask {
+    margin: 15% 0%;
+    font-size: x-large;
+}
+
+.imgcontainerDialog {
+    height: 70px;
+    width: 70px;
+}
+
+.textoDialgo {
+    font-size: 130%;
+}
+
+.containerFormDialogo {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.labelRegistroTask {
+    display: grid;
+    grid-template-areas: "input";
+    background-color: #c9c9c9;
+    margin: 5%;
 }
