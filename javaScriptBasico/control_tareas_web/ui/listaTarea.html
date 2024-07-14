@@ -61,7 +61,7 @@
         <div class="containerFormDialogo">
 
             <label class="labelRegistroTask">
-                <input  class="inputRegistroTask" type="text" placeholder=" " required>
+                <input class="inputRegistroTask" type="text" placeholder=" " required>
                 <span class="label_nameRegistroTask">
                     <b> Enter User </b>
                 </span>
@@ -74,19 +74,31 @@
                 </span>
             </label>
 
-            <label class="labelRegistroTask">
-                <input  class="inputRegistroTask" type="date" placeholder=" " required>
+
+            <div class="divDialgoRegistroTask">
                 <span class="label_nameRegistroTask">
                     <b> Enter fecha vencimiento</b>
                 </span>
-            </label>
+                <input class="fechaInputRegistroTask" type="date" placeholder=" " required>
 
-            <label class="labelRegistroTask">
-                <input  class="inputRegistroTask" type="text" placeholder=" " required>
+            </div>
+
+            <div class="divDialgoRegistroTask">
                 <span class="label_nameRegistroTask">
-                    <b> Estado </b>
+                    <b>Select state</b>
                 </span>
-            </label>
+
+                <select id="selectOptionEstado" name="select" class="selectBusquedaEstado">
+                    <option value="AOptionEstado">Select</option>
+                    <option value="AOptionEstado">To do</option>
+                    <option value="BOptionEstado">Process</option>
+                    <option value="COptionEstado">Finished </option>
+                </select>
+            </div>
+
+
+
+
 
         </div>
 
