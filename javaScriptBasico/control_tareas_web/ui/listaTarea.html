@@ -60,12 +60,20 @@
         <label class="labelTituloRegistroTask"><b>Register Task</b></label>
         <div class="containerFormDialogo">
 
-            <label class="labelRegistroTask">
-                <input class="inputRegistroTask" type="text" placeholder=" " required>
-                <span class="label_nameRegistroTask">
-                    <b> Enter User </b>
-                </span>
-            </label>
+            <grid class="divBuscarUserTask">
+                <div class="divBuscarUserTwo">
+                    <span class="label_divBuscarUser">
+                        <b>Look for the user</b>
+                    </span>
+                    <p class="InputdivBuscarUser" type="text" placeholder=" " required>Hola</p>
+    
+                </div>
+
+                <button type="button" class="buttonBuscarUser" onclick="login()">
+                    <img class="imgIconoBuscarUser" src="../icon/BuscarIcon.png" >
+
+                </button>
+            </grid>
 
             <label class="labelRegistroTask">
                 <input class="inputRegistroTask" type="text" placeholder=" " required>
@@ -95,11 +103,6 @@
                     <option value="COptionEstado">Finished </option>
                 </select>
             </div>
-
-
-
-
-
         </div>
 
         <card class="cardButtonRegistroTask">
