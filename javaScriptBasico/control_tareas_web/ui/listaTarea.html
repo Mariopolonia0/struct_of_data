@@ -65,13 +65,12 @@
                     <span class="label_divBuscarUser">
                         <b>Look for the user</b>
                     </span>
-                    <p class="InputdivBuscarUser" type="text" placeholder=" " required>Hola</p>
-    
+                    <p class="InputdivBuscarUser" id="nombreUserForNewTask"></p>
+
                 </div>
 
-                <button type="button" class="buttonBuscarUser" onclick="login()">
-                    <img class="imgIconoBuscarUser" src="../icon/BuscarIcon.png" >
-
+                <button type="button" class="buttonBuscarUser" onclick="buscarUserForTask()">
+                    <img class="imgIconoBuscarUser" src="../icon/BuscarIcon.png">
                 </button>
             </grid>
 
@@ -110,6 +109,43 @@
             <button class="buttonSaveRegistroTask" type="button" onclick="savedata()">Save</button>
             <button class="buttonCancelarRegistroTask" type="button" onclick="cancel()">Cancel</button>
         </card>
+
+    </dialog>
+
+    <dialog id="DialogBuscarUser">
+        <img class="imgcontainerDialog" src="../icon/BuscarIcon.png" alt="Soluction_Polonia">
+        <label class="labelTituloRegistroTask"><b>Buscar Usuario</b></label>
+
+
+        <div class="containerBuscarUser">
+
+            <div class="containerTipoBusqueda">
+                <label for="selectOption" class="labelTipoBusqueda">Buscar por</label>
+
+                <select id="selectOption" name="select" class="selectBusqueda">
+                    <option value="A">Nombre</option>
+                    <option value="B">Descripcion</option>
+                    <option value="C">Por hacer </option>
+                    <option value="D">Proceso</option>
+                    <option value="E">Realizada</option>
+                </select>
+
+            </div>
+            <label class="label">
+                <input id="nombreUsuario" class="input" type="text" placeholder=" ">
+                <span class="label_name">
+                    <b>Buscar</b>
+                </span>
+            </label>
+
+            <button type="button" class="buttonBuscarUserForTask" onclick="">
+                <img class="imgIconoBuscarUser" src="../icon/BuscarIcon.png">
+            </button>
+
+            <button type="button" class="buttonBuscarUserForTask" onclick="cancelBuscarUserForTask()">
+                <img class="imgIconoBuscarUser" src="../icon/CancelIcon.png">
+            </button>
+        </div>
 
     </dialog>
 

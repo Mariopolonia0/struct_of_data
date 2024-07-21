@@ -25,7 +25,14 @@ select {
     box-shadow: 2px 2px 8px 4px #9d9d9d;
     border-radius: 15px;
 }
-
+.containerBuscarUser{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 8px 4px #9d9d9d;
+    border-radius: 15px;
+}
 .containerTipoBusqueda {
     margin: 10px;
     display: flex;
@@ -102,6 +109,7 @@ button {
     border: 2px solid #1815A3;
     background-color: #c9c9c9;
     display: flex;
+    justify-content: space-between;
     margin: 5% 0%
 }
 
@@ -128,20 +136,38 @@ button {
 
 }
 
-.imgIconoBuscarUser{
-    height: 30px;
-    width: 30px;
+.imgIconoBuscarUser {
+    height: 40px;
+    width: 40px;
 }
 
 .buttonBuscarUser {
-    background-color: #1815A3;
-    color: #c9c9c9;
-    padding: 14px 20px;
-    margin: 8px 8px;
+    background-color: #c9c9c9;
     border: none;
     cursor: pointer;
     border-radius: 10px;
     font-weight: bolder;
+    padding: 8px;
+}
+
+.buttonBuscarUserForTask{
+    background-color: #c9c9c9;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bolder;
+    padding: 5px;
+}
+
+.buttonCancelarBuscarUser {
+    background-color: #a31515;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
 }
 
 /* Add a hover effect for buttons */
@@ -210,8 +236,8 @@ dialog[open] {
 }
 
 .imgcontainerDialog {
-    height: 70px;
-    width: 70px;
+    height: 50px;
+    width: 50px;
 }
 
 .textoDialgo {
