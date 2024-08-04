@@ -112,9 +112,14 @@
 
     </dialog>
 
+
     <dialog id="DialogBuscarUser">
-        <img class="imgcontainerDialog" src="../icon/BuscarIcon.png" alt="Soluction_Polonia">
-        <label class="labelTituloRegistroTask"><b>Buscar Usuario</b></label>
+
+        <div class="containerTituloSelectUser">
+            <img class="imgcontainerDialog" src="../icon/BuscarIcon.png" alt="Soluction_Polonia">
+            <label class="labelTituloRegistroTask"><b>Buscar Usuario</b></label>
+        </div>
+       
 
 
         <div class="containerBuscarUser">
@@ -124,10 +129,7 @@
 
                 <select id="selectOption" name="select" class="selectBusqueda">
                     <option value="A">Nombre</option>
-                    <option value="B">Descripcion</option>
-                    <option value="C">Por hacer </option>
-                    <option value="D">Proceso</option>
-                    <option value="E">Realizada</option>
+                    <option value="B">Apellido</option>
                 </select>
 
             </div>
@@ -147,6 +149,9 @@
             </button>
         </div>
 
+        <section class="containerBuscarListForUser" id="listCard">
+
+        </section>
     </dialog>
 
     <script src="../script/scriptListaTask.js"></script>
