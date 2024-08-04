@@ -1,6 +1,10 @@
 var dialogoFormTask = document.getElementById('DialogFormTask');
 var dialogoBuscarUsetTask = document.getElementById('DialogBuscarUser');
 const contenedorCarta = document.getElementById('listCard');
+const nombreUserForNewTask = document.getElementById('nombreUserForNewTask');
+//lista para entrar los usuarios para que se pueden seleccionar
+var listUser = [];
+
 
 dialogoBuscarUsetTask.onpen
 function formTask() {
@@ -31,14 +35,12 @@ function savedata() {
 
 }
 
+//funcion para buscar los usuarios en la api rest
 function getUserForTask() {
-    //https://controltarea.azurewebsites.net/Usuario/SP
-
+    contenedorCarta.innerHTML = `   `;
+    listUser = [];
     const uri = 'https://controltarea.azurewebsites.net/Usuario/SP';
-    contenedorCarta.innerHTML = ` 
-          
-        `
-
+    
     fetch(uri, {
         method: "GET",
         headers: {
@@ -47,7 +49,7 @@ function getUserForTask() {
     })
         .then((res) => res.json())
         .then(function (dataObject) {
-            dataObject.forEach(element => llenarListaUsuarioForTask(element))
+            dataObject.forEach(user => llenarListaUsuarioForTask(user))
         })
         .catch((error) => {
             console.log(error)
@@ -55,17 +57,17 @@ function getUserForTask() {
         })
 }
 
-function llenarListaUsuarioForTask(element) {
-
-
+function llenarListaUsuarioForTask(user) {
+    listUser.push(user)
     contenedorCarta.innerHTML += ` 
-    <div class="cardItemUser" onclick="probando(${element.usuarioId})">
-        <h3 class="card-title">${element.nombreAndApellido}</h3>
-    </div>     
+        <div class="cardItemUser" onclick="userSelect(${user.usuarioId})">
+            <h3 class="card-title">${user.nombreAndApellido}</h3>
+        </div>   
     `
-
 }
 
-function probando(numero){
-    alert(numero);
+function userSelect(id) {
+    var usedSelect = listUser.find(user => user.usuarioId == id)
+    nombreUserForNewTask.innerText = usedSelect.nombreAndApellido;
+    cancelBuscarUserForTask();
 }
