@@ -35,7 +35,9 @@ function login() {
                     messageDialog.innerHTML = "Incorrect Login";
                     dialogo.showModal();
                 } else {
-                    window.location = "ui/listaTarea.html"; //listaTarea.Html
+                    //despues de la ruta del archivo donde vamos a navegar ponemos un ?
+                    //para pasar el id del usuario que hizo el login
+                    window.location = "ui/listaTarea.html?Id=" + dataObject.usuarioId;
                 }
 
             })
