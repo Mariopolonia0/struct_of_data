@@ -8,6 +8,8 @@ const bodyMain = document.getElementById('bodyMain');//bodyMain
 const inputDescripcion = document.getElementById('inputDescripcion');//inputDescripcion
 const inputFechaVencimiento = document.getElementById('inputFechaVencimiento'); //inputFechaVencimiento
 const selectOptionEstado = document.getElementById('selectOptionEstado'); //selectOption
+const tiempoTranscurrido = Date.now();
+const hoy = new Date(tiempoTranscurrido);
 
 //lista para entrar los usuarios para que se pueden seleccionar
 var listUser = [];
@@ -18,6 +20,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const userLoginId = urlParams.get('Id');
 
 function formTask() {
+    inputFechaVencimiento.value = hoy.toString();
     selectOptionEstado.value = 2;
     dialogoFormTask.showModal();
 }
@@ -36,14 +39,13 @@ function cancelBuscarUserForTask() {
     dialogoBuscarUsetTask.close();
 }
 
-function cancelNotificacion(){
+function cancelNotificacion() {
     DialogNotificacion.close();
 }
 
 function clean() {
 
 }
-
 
 //funcion para buscar los usuarios en la api rest
 function getUserForTask() {
@@ -90,25 +92,50 @@ function userSelect(id) {
 function savedata() {
 
     if (validar()) {
-        const tiempoTranscurrido = Date.now();
-        const hoy = new Date(tiempoTranscurrido);
 
         var dataTask = {
             "tareaId": 0,
             "usuarioId": idSelectUser,
             "descripcion": inputDescripcion.value,
-            "fechaCreada": hoy.toDateString(),
-            "fechaTerminada": "string",
+            "fechaCreada": hoy.toLocaleDateString("en-US"),
+            "fechaTerminada": "",
             "fechaVecimineto": inputFechaVencimiento.value,
-            "estado": "string"
+            "estado": optionSelectEstado()
         }
     }
+}
 
+function optionSelectEstado() {
+
+    switch (selectOptionEstado.value) {
+        case 2: return "To do";
+        case 3: return "Process";
+        case 4: return "Finished";
+        default:
+            return "select"
+    }
 }
 
 function validar() {
     if (idSelectUser == 0) {
         messageDialog.innerText = "Seleccione un usuario para asignarle la tarea"
-        DialogNotificacion.showModal(); 
+        DialogNotificacion.showModal();
+        return false;
+    } else if (inputDescripcion.value == "") {
+        messageDialog.innerText = "Ingrese una descripcion de la tarea"
+        DialogNotificacion.showModal();
+        return false;
+    } else if (inputFechaVencimiento.value == "") {
+        messageDialog.innerText = "Ingrese un fecha"
+        DialogNotificacion.showModal();
+        return false;
+    } else if (inputFechaVencimiento.value == "") {
+        messageDialog.innerText = "Ingrese un fecha"
+        DialogNotificacion.showModal();
+        return false;
+    } else if (selectOptionEstado.value == 1) {
+        messageDialog.innerText = "Seleccione un estado"
+        DialogNotificacion.showModal();
+        return false;
     }
 }
