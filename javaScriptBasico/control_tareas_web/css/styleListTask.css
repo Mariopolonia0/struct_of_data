@@ -270,6 +270,12 @@ dialog[open] {
     border: none;
 }
 
+.DialogNotificacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .labelTituloRegistroTask {
     margin: 10% 0%;
     font-size: x-large;

@@ -36,7 +36,7 @@
             </span>
         </label>
 
-        <button type="button" onclick="login()">Search</button>
+        <button type="button" onclick="">Search</button>
 
         <button type="button" onclick="formTask()">Add new</button>
     </div>
@@ -51,18 +51,20 @@
     </div>
 
     <dialog id="DialogNotificacion">
-        <img class="imgcontainerDialog" src="../icon/infoIcono.png" alt="Soluction_Polonia">
-        <p class="textoDialgo" id="messageDialog"></p>
+        <div class="DialogNotificacion">
+            <img class="imgcontainerDialog" src="../icon/infoIcono.png" alt="Soluction_Polonia">
+            <p class="textoDialgo" id="messageDialog"></p>
+            <button class="buttonCancelarRegistroTask" type="button" onclick="cancelNotificacion()">Cancel</button>
+        </div>
     </dialog>
 
     <dialog id="DialogFormTask">
-
         <div class="containerTituloSelectUser">
             <img class="imgcontainerDialog" src="../icon/formIcon.png" alt="Soluction_Polonia">
             <label class="labelTituloRegistroTask"><b>Register Task</b></label>
         </div>
 
-        
+
         <div class="containerFormDialogo">
 
             <grid class="divBuscarUserTask">
@@ -80,7 +82,7 @@
             </grid>
 
             <label class="labelRegistroTask">
-                <input class="inputRegistroTask" type="text" placeholder=" " required>
+                <input class="inputRegistroTask" type="text" id="inputDescripcion" placeholder=" " required>
                 <span class="label_nameRegistroTask">
                     <b> Enter descripcion</b>
                 </span>
@@ -91,7 +93,7 @@
                 <span class="label_nameRegistroTask">
                     <b> Enter fecha vencimiento</b>
                 </span>
-                <input class="fechaInputRegistroTask" type="date" placeholder=" " required>
+                <input class="fechaInputRegistroTask" id="inputFechaVencimiento" type="date" placeholder=" " required>
 
             </div>
 
@@ -101,10 +103,10 @@
                 </span>
 
                 <select id="selectOptionEstado" name="select" class="selectBusquedaEstado">
-                    <option value="AOptionEstado">Select</option>
-                    <option value="AOptionEstado">To do</option>
-                    <option value="BOptionEstado">Process</option>
-                    <option value="COptionEstado">Finished </option>
+                    <option value="1">Select</option>
+                    <option value="2">To do</option>
+                    <option value="3">Process</option>
+                    <option value="4">Finished </option>
                 </select>
             </div>
         </div>
@@ -116,7 +118,6 @@
         </card>
 
     </dialog>
-
 
     <dialog id="DialogBuscarUser">
 
@@ -157,7 +158,7 @@
         </section>
     </dialog>
 
-    <script  src="../script/scriptListaTask.js"></script>
+    <script src="../script/scriptListaTask.js"></script>
 </body>
 
 </html>

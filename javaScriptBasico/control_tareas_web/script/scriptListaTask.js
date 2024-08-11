@@ -1,8 +1,13 @@
 var dialogoFormTask = document.getElementById('DialogFormTask');
 var dialogoBuscarUsetTask = document.getElementById('DialogBuscarUser');
+var DialogNotificacion = document.getElementById('DialogNotificacion');
+const messageDialog = document.getElementById('messageDialog');//messageDialog
 const contenedorCarta = document.getElementById('listCard');
 const nombreUserForNewTask = document.getElementById('nombreUserForNewTask');
 const bodyMain = document.getElementById('bodyMain');//bodyMain
+const inputDescripcion = document.getElementById('inputDescripcion');//inputDescripcion
+const inputFechaVencimiento = document.getElementById('inputFechaVencimiento'); //inputFechaVencimiento
+const selectOptionEstado = document.getElementById('selectOptionEstado'); //selectOption
 
 //lista para entrar los usuarios para que se pueden seleccionar
 var listUser = [];
@@ -13,6 +18,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const userLoginId = urlParams.get('Id');
 
 function formTask() {
+    selectOptionEstado.value = 2;
     dialogoFormTask.showModal();
 }
 
@@ -30,6 +36,9 @@ function cancelBuscarUserForTask() {
     dialogoBuscarUsetTask.close();
 }
 
+function cancelNotificacion(){
+    DialogNotificacion.close();
+}
 
 function clean() {
 
@@ -79,5 +88,27 @@ function userSelect(id) {
 }
 
 function savedata() {
-    console.log(datos);
+
+    if (validar()) {
+        const tiempoTranscurrido = Date.now();
+        const hoy = new Date(tiempoTranscurrido);
+
+        var dataTask = {
+            "tareaId": 0,
+            "usuarioId": idSelectUser,
+            "descripcion": inputDescripcion.value,
+            "fechaCreada": hoy.toDateString(),
+            "fechaTerminada": "string",
+            "fechaVecimineto": inputFechaVencimiento.value,
+            "estado": "string"
+        }
+    }
+
+}
+
+function validar() {
+    if (idSelectUser == 0) {
+        messageDialog.innerText = "Seleccione un usuario para asignarle la tarea"
+        DialogNotificacion.showModal(); 
+    }
 }
