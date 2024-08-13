@@ -10,6 +10,7 @@ const inputFechaVencimiento = document.getElementById('inputFechaVencimiento'); 
 const selectOptionEstado = document.getElementById('selectOptionEstado'); //selectOption
 const tiempoTranscurrido = Date.now();
 const hoy = new Date(tiempoTranscurrido);
+var dataTask = {};
 
 //lista para entrar los usuarios para que se pueden seleccionar
 var listUser = [];
@@ -93,7 +94,7 @@ function savedata() {
 
     if (validar()) {
 
-        var dataTask = {
+        dataTask = {
             "tareaId": 0,
             "usuarioId": idSelectUser,
             "descripcion": inputDescripcion.value,
@@ -102,17 +103,41 @@ function savedata() {
             "fechaVecimineto": inputFechaVencimiento.value,
             "estado": optionSelectEstado()
         }
+
+        enviarDataApi();
     }
+}
+
+//https://controltarea.azurewebsites.net/api/Tareas
+function enviarDataApi() {
+    const uri = 'https://controltarea.azurewebsites.net/api/Tareas';
+
+    fetch(uri, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataTask)
+    })
+        .then((res) => res.json())
+        .then(function (dataObject) {
+            messageDialog.innerText = dataObject.dataResult
+            DialogNotificacion.showModal();
+        })
+        .catch((error) => {
+            messageDialog.innerText = "We have this error on the Server : " + error;
+            DialogNotificacion.showModal();
+        })
 }
 
 function optionSelectEstado() {
 
     switch (selectOptionEstado.value) {
-        case 2: return "To do";
-        case 3: return "Process";
-        case 4: return "Finished";
+        case '2': return "To do";
+        case '3': return "Process";
+        case '4': return "Finished";
         default:
-            return "select"
+            return "select";
     }
 }
 
@@ -138,4 +163,6 @@ function validar() {
         DialogNotificacion.showModal();
         return false;
     }
+
+    return true;
 }
