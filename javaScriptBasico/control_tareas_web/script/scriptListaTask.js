@@ -3,6 +3,7 @@ var dialogoBuscarUsetTask = document.getElementById('DialogBuscarUser');
 var DialogNotificacion = document.getElementById('DialogNotificacion');
 const messageDialog = document.getElementById('messageDialog');//messageDialog
 const contenedorCarta = document.getElementById('listCard');
+const listTask = document.getElementById('listTask');//containerListTask
 const nombreUserForNewTask = document.getElementById('nombreUserForNewTask');
 const bodyMain = document.getElementById('bodyMain');//bodyMain
 const inputDescripcion = document.getElementById('inputDescripcion');//inputDescripcion
@@ -15,10 +16,61 @@ var dataTask = {};
 //lista para entrar los usuarios para que se pueden seleccionar
 var listUser = [];
 var idSelectUser = 0;
+var _listTask = [];
 
 //obtener el valor usuarioId del usuario que esta logueado que se poso por la URL
 const urlParams = new URLSearchParams(window.location.search);
 const userLoginId = urlParams.get('Id');
+
+obtenerListaOfTarea();
+
+
+function obtenerListaOfTarea() {
+    //https://controltarea.azurewebsites.net/api/Tareas
+
+    listTask.innerHTML = `   `;
+    _listTask = [];
+    const uri = 'https://controltarea.azurewebsites.net/api/Tareas';
+    //se poner le cursor en progress
+    document.documentElement.style.cursor = "progress"
+
+    fetch(uri, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    })
+        .then((res) => res.json())
+        .then(function (dataObject) {
+            dataObject.forEach(task => llenarListTask(task))
+            //se poner le cursor en default
+            document.documentElement.style.cursor = "default"
+        })
+        .catch((error) => {
+            console.log(error)
+            alert("Tenemos un error en el Server")
+        })
+}
+
+function llenarListTask(task) {
+    _listTask.push(task)
+    listTask.innerHTML += ` 
+        <div class="cardTareaItem" onclick="selectTarea(${task.tareaId})">
+            <div class="divRowArriba">
+                <h3 class="card-title">${task.nombreAndApellido}</h3>
+                <h3 class="card-title">${task.fechaVecimineto}</h3>
+            </div>
+            <div class="divRowAbajo">
+                <h3 class="card-title">${task.descripcion}</h3>
+                <h3 class="card-title">${task.estado}</h3>
+            </div>
+        </div>   
+    `
+}
+
+function selectTarea(tareaId) {
+    console.log(tareaId)
+}
 
 function formTask() {
     inputFechaVencimiento.value = hoy.toString();
