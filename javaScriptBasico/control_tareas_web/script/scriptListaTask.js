@@ -69,7 +69,15 @@ function llenarListTask(task) {
 }
 
 function selectTarea(tareaId) {
-    console.log(tareaId)
+    inputFechaVencimiento.value = hoy.toString();
+    selectOptionEstado.value = 2;
+
+    var selectTarea = _listTask.find(task => task.tareaId == tareaId)
+    nombreUserForNewTask.innerText = selectTarea.nombreAndApellido;
+    inputDescripcion.value = selectTarea.descripcion;
+    inputFechaVencimiento.value = selectTarea.fechaVecimineto;
+
+    dialogoFormTask.showModal();
 }
 
 function formTask() {
