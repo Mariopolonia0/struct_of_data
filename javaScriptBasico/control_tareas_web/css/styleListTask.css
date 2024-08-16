@@ -261,17 +261,18 @@ button:hover {
 /* componentes de la lista de tareas*/
 
 .containerListTask {
-    margin-top: 10px;
-    border: 1px solid transparent;
-    box-shadow: 2px 2px 8px 4px #9d9d9d;
-    border-radius: 15px;
-    width: 450px;
+    width: 460px;
 }
 
 .cardTareaItem {
     margin: 10px;
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 8px 4px #9d9d9d;
+    border-radius: 15px;
+    padding: 10px;
 }
 
 
