@@ -17,7 +17,7 @@ var dataTask = {};
 var listUser = [];
 var idSelectUser = 0;
 var _listTask = [];
-
+var tareaId = 0;
 //obtener el valor usuarioId del usuario que esta logueado que se poso por la URL
 const urlParams = new URLSearchParams(window.location.search);
 const userLoginId = urlParams.get('Id');
@@ -52,6 +52,11 @@ function obtenerListaOfTarea() {
         })
 }
 
+function buscarFiltrado() {
+    messageDialog.innerText = "En la próxima actualización no hay dinero para este botón";
+    DialogNotificacion.showModal();
+}
+
 function llenarListTask(task) {
     _listTask.push(task)
     listTask.innerHTML += ` 
@@ -68,11 +73,15 @@ function llenarListTask(task) {
     `
 }
 
-function selectTarea(tareaId) {
-    inputFechaVencimiento.value = hoy.toString();
-    selectOptionEstado.value = 2;
+function selectTarea(_tareaId) {
+    clearVariable();
 
-    var selectTarea = _listTask.find(task => task.tareaId == tareaId)
+    var selectTarea = _listTask.find(task => task.tareaId == _tareaId)
+    tareaId = _tareaId;
+    idSelectUser = selectTarea.usuarioId;
+
+    selectOptionEstado.value = optionSelectEstadoSelectTask(selectTarea.estado);
+    inputFechaVencimiento.value = selectTarea.fechaVecimineto;
     nombreUserForNewTask.innerText = selectTarea.nombreAndApellido;
     inputDescripcion.value = selectTarea.descripcion;
     inputFechaVencimiento.value = selectTarea.fechaVecimineto;
@@ -80,7 +89,31 @@ function selectTarea(tareaId) {
     dialogoFormTask.showModal();
 }
 
+function clearVariable(){
+    tareaId = 0;
+    idSelectUser =0;
+
+    selectOptionEstado.value = optionSelectEstadoSelectTask(0);
+    inputFechaVencimiento.value = "";
+    nombreUserForNewTask.innerText = "";
+    inputDescripcion.value = "";
+    inputFechaVencimiento.value = "";
+}
+
+function optionSelectEstadoSelectTask(_value) {
+
+    switch (_value) {
+        case "To do": return 2;
+        case "Process": return 3;
+        case "Finished": return 4;
+        default:
+            return 1;
+    }
+}
+
+
 function formTask() {
+    clearVariable();
     inputFechaVencimiento.value = hoy.toString();
     selectOptionEstado.value = 2;
     dialogoFormTask.showModal();
@@ -155,7 +188,7 @@ function savedata() {
     if (validar()) {
 
         dataTask = {
-            "tareaId": 0,
+            "tareaId": tareaId,
             "usuarioId": idSelectUser,
             "descripcion": inputDescripcion.value,
             "fechaCreada": hoy.toLocaleDateString("en-US"),
