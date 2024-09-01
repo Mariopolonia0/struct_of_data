@@ -74,6 +74,7 @@ function llenarListTask(task) {
     `
 }
 
+
 function selectTarea(_tareaId) {
     clearVariable();
 
@@ -85,9 +86,15 @@ function selectTarea(_tareaId) {
     inputFechaVencimiento.value = selectTarea.fechaVecimineto;
     nombreUserForNewTask.innerText = selectTarea.nombreAndApellido;
     inputDescripcion.value = selectTarea.descripcion;
-    inputFechaVencimiento.value = selectTarea.fechaVecimineto;
+    inputFechaVencimiento.value = formatoFechaSelectTask( selectTarea.fechaVecimineto);
 
     dialogoFormTask.showModal();
+}
+
+function formatoFechaSelectTask(_fechaVecimineto) {
+   
+    var dateDividido = _fechaVecimineto.split('/');
+    return dateDividido[2] + '-' + dateDividido[0] + '-' + dateDividido[1]
 }
 
 function clearVariable() {
@@ -194,7 +201,7 @@ function savedata() {
             "descripcion": inputDescripcion.value,
             "fechaCreada": hoy.toLocaleDateString("en-US"),
             "fechaTerminada": "",
-            "fechaVecimineto": inputFechaVencimiento.value,
+            "fechaVecimineto": formatoFecha(),
             "estado": optionSelectEstado()
         }
 
@@ -202,6 +209,11 @@ function savedata() {
     }
 }
 
+function formatoFecha() {
+    var date = inputFechaVencimiento.value;
+    var dateDividido = date.split('-');
+    return dateDividido[1] + '/' + dateDividido[2] + '/' + dateDividido[0]
+}
 //https://controltarea.azurewebsites.net/api/Tareas
 function enviarDataApi() {
     const uri = 'https://controltarea.azurewebsites.net/api/Tareas';
@@ -228,8 +240,6 @@ function enviarDataApi() {
             DialogNotificacion.showModal();
         })
 }
-
-
 
 function optionSelectEstado() {
 
