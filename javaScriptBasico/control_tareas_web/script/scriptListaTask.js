@@ -24,7 +24,6 @@ const userLoginId = urlParams.get('Id');
 
 obtenerListaOfTarea();
 
-
 function obtenerListaOfTarea() {
     //https://controltarea.azurewebsites.net/api/Tareas
 
@@ -53,6 +52,8 @@ function obtenerListaOfTarea() {
 }
 
 function buscarFiltrado() {
+    var buttonDialogNtificacionId = document.getElementById('buttonDialogNtificacionId');
+    buttonDialogNtificacionId.style.background = "#1815A3";
     messageDialog.innerText = "En la próxima actualización no hay dinero para este botón";
     DialogNotificacion.showModal();
 }
@@ -89,9 +90,9 @@ function selectTarea(_tareaId) {
     dialogoFormTask.showModal();
 }
 
-function clearVariable(){
+function clearVariable() {
     tareaId = 0;
-    idSelectUser =0;
+    idSelectUser = 0;
 
     selectOptionEstado.value = optionSelectEstadoSelectTask(0);
     inputFechaVencimiento.value = "";
@@ -214,14 +215,21 @@ function enviarDataApi() {
     })
         .then((res) => res.json())
         .then(function (dataObject) {
-            messageDialog.innerText = dataObject.dataResult
+            var buttonDialogNtificacionId = document.getElementById('buttonDialogNtificacionId');
+            buttonDialogNtificacionId.style.background = "#1815A3";
+            buttonDialogNtificacionId.innerText = "Aceptar";
+            messageDialog.innerText = dataObject.dataResult;
             DialogNotificacion.showModal();
+            obtenerListaOfTarea();
+            cancel();
         })
         .catch((error) => {
             messageDialog.innerText = "We have this error on the Server : " + error;
             DialogNotificacion.showModal();
         })
 }
+
+
 
 function optionSelectEstado() {
 
