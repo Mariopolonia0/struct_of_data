@@ -18,7 +18,7 @@ var listUser = [];
 var idSelectUser = 0;
 var _listTask = [];
 var tareaId = 0;
-//obtener el valor usuarioId del usuario que esta logueado que se poso por la URL
+//obtener el valor usuarioId del usuario que esta logueado que se pase por la URL
 const urlParams = new URLSearchParams(window.location.search);
 const userLoginId = urlParams.get('Id');
 
@@ -86,13 +86,13 @@ function selectTarea(_tareaId) {
     inputFechaVencimiento.value = selectTarea.fechaVecimineto;
     nombreUserForNewTask.innerText = selectTarea.nombreAndApellido;
     inputDescripcion.value = selectTarea.descripcion;
-    inputFechaVencimiento.value = formatoFechaSelectTask( selectTarea.fechaVecimineto);
+    inputFechaVencimiento.value = formatoFechaSelectTask(selectTarea.fechaVecimineto);
 
     dialogoFormTask.showModal();
 }
 
 function formatoFechaSelectTask(_fechaVecimineto) {
-   
+
     var dateDividido = _fechaVecimineto.split('/');
     return dateDividido[2] + '-' + dateDividido[0] + '-' + dateDividido[1]
 }
