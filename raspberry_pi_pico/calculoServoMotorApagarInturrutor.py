@@ -97,16 +97,20 @@ while True:
         try:
             request = request.split()[1]
             print('Request:', request)
+            
+            # Process the request and update variables
+            if request == '/lightoff?':
+                led.value(1)
+                pwm.duty_ns(positionApagar)
+                utime.sleep(1)
+                led.value(0)
+                pwm.duty_ns(positionNormal)
+                
         except IndexError:
+            print("Error:"+IndexError)
             pass
         
-        # Process the request and update variables
-        if request == '/lightoff?':
-            led.value(1)
-            pwm.duty_ns(positionApagar)
-            utime.sleep(1)
-            led.value(0)
-            pwm.duty_ns(positionNormal)
+        
             
         # Generate HTML response
         response = webpage(state)
