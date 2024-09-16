@@ -1,10 +1,8 @@
+from machine import Pin, PWM
+import utime
 import network
 import socket
 import time
-
-from machine import Pin
-
-led = Pin(0, Pin.OUT)
 
 #configuration wifi 
 ssid = 'SpectrumSetup-BA'
@@ -14,28 +12,50 @@ wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 wlan.connect(ssid, password)
 
+#500000  posicion inicial del motor donde esta ubicado
+#1570000 posicion para apagar el interrutor
+
+positionNormal = 1300000 #donde esta el motor en descanso
+positionApagar = 1570000 #donde el motor apaga el interrutor
+
+led = Pin(0, Pin.OUT)
+pwm = PWM(Pin(1))
+
+pwm.freq(50)
+
+pwm.duty_ns(positionNormal)
+
 # HTML template for the webpage
 def webpage(state):
     html = f"""
         <!DOCTYPE html>
-        <html>
-        <head>
-            <title>Pico Web Server</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-        </head>
-        <body>
-            <h1>Raspberry Pi Pico Web Server</h1>
-            <h2>Led Control</h2>
-            <form action="./lighton">
-                <input type="submit" value="Light on" />
-            </form>
-            <br>
-            <form action="./lightoff">
-                <input type="submit" value="Light off" />
-            </form>
-            <p>LED state: {state}</p>
-        </body>
-        </html>
+            <html>
+
+            <head>
+                <title>Pico Web Server</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+            </head>
+
+            <body style="
+                    background: darkgray;
+                    display: flex;display: flex;
+                    flex-direction: column;
+                    align-items: center;">
+                    
+                <h1>Raspberry Pi Pico Web Server</h1>
+                <h2>Apagar Interruptor</h2>
+                
+                <form action="./lightoff">
+                    <input style="
+                        font-size: 20px;
+                        line-height: 50px;
+                        text-align: center;
+                        width: 100px;
+                        height: 50px;" type="submit" value="Light off" />
+                </form>
+            </body>
+
+            </html>
         """
     return str(html)
 
@@ -63,7 +83,6 @@ print('listening on', addr)
 # Initialize variables
 state = "OFF"
 
-
 # Listen for connections
 while True:
     try:
@@ -82,14 +101,13 @@ while True:
             pass
         
         # Process the request and update variables
-        if request == '/lighton?':
-            print("LED on")
+        if request == '/lightoff?':
             led.value(1)
-            state = "ON"
-        elif request == '/lightoff?':
+            pwm.duty_ns(positionApagar)
+            utime.sleep(1)
             led.value(0)
-            state = 'OFF'
-
+            pwm.duty_ns(positionNormal)
+            
         # Generate HTML response
         response = webpage(state)
 
