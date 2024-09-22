@@ -7,20 +7,26 @@
 </head>
 
 <body style="
+        background: darkgray;
         display: flex;display: flex;
         flex-direction: column;
-        align-items: center;
-        background: darkgray;">
-    <h1>Web Server</h1>
-    <h2>Apagar Interruptor</h2>
-    <form action="./lighton">
-        <input style="
-            font-size: 20px;
-            line-height: 50px;
-            text-align: center;
-            width: 100px;
-            height: 50px;" type="submit" value="Light off" />
+        align-items: center;">
+
+    <h2>Web Server</h2>
+    <img src="https://i.ibb.co/TLyLgy4/SPIcon.png" alt="SPIcon" border="0">
+    <h3>Interruptor</h3>
+
+    <form style="margin: 1% 0%;" action="./lightoff">
+        <button style="font-size: larger;" type="submit" onclick="">Light off</button>
     </form>
+
+    <form style="margin: 1% 0%;" action="./lighton">
+        <button style="font-size: larger;" type="submit">Light on</button>
+    </form>
+
+    <p>Switch state: {state}</p>
+
+    <h3>Raspberry Pi Pico</h3>
 </body>
 
 </html>
