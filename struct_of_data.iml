@@ -16,6 +16,6 @@
     <orderEntry type="jdk" jdkName="openjdk-20" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="KotlinJavaRuntime" level="project" />
-    <orderEntry type="library" name="MicroPython" level="project" />
+    <orderEntry type="library" name="onvif-1.0.9" level="project" />
   </component>
 </module>

@@ -11,36 +11,40 @@
 </head>
 
 <body id="bodyMain">
-  
-        <img class="imgcontainer" src="../icon/logoSoluctionPolonia.png" alt="Soluction_Polonia">
-        <label class="labelTitulo"><b>Task manager </b></label>
-        <label class="labelTitulo"><b>List Task</b></label>
 
-        <div class="container">
+    <img class="imgcontainer" src="../icon/logoSoluctionPolonia.png" alt="Soluction_Polonia">
+    <label class="labelTitulo"><b>Task manager </b></label>
+    <label class="labelTitulo"><b>List Task</b></label>
 
-            <div class="containerTipoBusqueda">
-                <label for="selectOption" class="labelTipoBusqueda">Buscar por</label>
+    <div class="container">
 
-                <select id="selectOption" name="select" class="selectBusqueda">
-                    <option value="A">Nombre</option>
-                    <option value="B">Descripcion</option>
-                    <option value="C">Por hacer </option>
-                    <option value="D">Proceso</option>
-                    <option value="E">Realizada</option>
-                </select>
+        <div class="containerTipoBusqueda">
+            <label for="selectOption" class="labelTipoBusqueda">Buscar por</label>
 
-            </div>
-            <label class="label">
-                <input id="nombreUsuario" class="input" type="text" placeholder=" ">
-                <span class="label_name">
-                    <b>Buscar</b>
-                </span>
-            </label>
+            <select id="selectOption" name="select" class="selectBusqueda">
+                <option value="A">Nombre</option>
+                <option value="B">Descripcion</option>
+                <option value="C">Por hacer </option>
+                <option value="D">Proceso</option>
+                <option value="E">Realizada</option>
+            </select>
 
-            <button type="button" onclick="buscarFiltrado()">Search</button>
-
-            <button type="button" onclick="formTask()">Add new</button>
         </div>
+        <label class="label">
+            <input id="nombreUsuario" class="input" type="text" placeholder=" ">
+            <span class="label_name">
+                <b>Buscar</b>
+            </span>
+        </label>
+
+        <button type="button" onclick="buscarFiltrado()">
+            <img class="imgIconButon" src="../icon/buscar.png" alt="buscar">
+        </button>
+
+        <button type="button" onclick="formTask()">
+            <img class="imgIconButon" src="../icon/add.png" alt="add">
+        </button>
+    </div>
 
 
 
@@ -51,7 +55,8 @@
         <div class="DialogNotificacion">
             <img class="imgcontainerDialog" src="../icon/infoIcono.png" alt="Soluction_Polonia">
             <p class="textoDialgo" id="messageDialog"></p>
-            <button class="buttonCancelarRegistroTask" id="buttonDialogNtificacionId" type="button" onclick="cancelNotificacion()">Cancel</button>
+            <button class="buttonCancelarRegistroTask" id="buttonDialogNtificacionId" type="button"
+                onclick="cancelNotificacion()">Cancel</button>
         </div>
     </dialog>
 
@@ -95,7 +100,7 @@
             </div>
 
             <div class="divDialgoRegistroTask">
-                <span class="label_nameRegistroTask" >
+                <span class="label_nameRegistroTask">
                     <b>Select state</b>
                 </span>
 
