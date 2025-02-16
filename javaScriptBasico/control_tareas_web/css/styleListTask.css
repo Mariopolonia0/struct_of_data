@@ -3,10 +3,11 @@ body {
     height: 100%;
     width: 100%;
     background-color: #c9c9c9;
-    display: grid;
-    justify-items: center;
+    display: flex;
     margin: 0;
     padding: 0;
+    flex-direction: column;
+    align-items: center;
 }
 
 img {
