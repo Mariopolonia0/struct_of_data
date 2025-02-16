@@ -1,34 +1,12 @@
-html,
 body {
-    height: 100%;
-    width: 100%;
     background-color: #c9c9c9;
     display: grid;
     justify-items: center;
-    margin: 0;
-    padding: 0;
 }
 
 img {
     height: 130px;
     width: 130px;
-}
-
-.imgIconButon {
-    height: 30px;
-    width: 30px;
-}
-
-/* Set a style for all buttons */
-button {
-    background-color: #1815A3;
-    color: #c9c9c9;
-    padding: 10px 10px;
-    margin: 8px 8px;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
-    font-weight: bolder;
 }
 
 select {
@@ -42,6 +20,7 @@ select {
 .container {
     display: flex;
     margin-top: 10px;
+    align-items: center;
     border: 1px solid transparent;
     box-shadow: 2px 2px 8px 4px #9d9d9d;
     border-radius: 15px;
@@ -123,11 +102,12 @@ option {
     display: grid;
     grid-template-areas: "input";
     background-color: #c9c9c9;
-    margin: 10px 0px;
 }
+
 
 .input {
     grid-area: input;
+    width: 80px;
     font: inherit;
     border-radius: 10px;
     border: 2px solid #1815A3;
@@ -137,11 +117,12 @@ option {
 
 .label_name {
     grid-area: input;
-    z-index: 10;
-    width: 50%;
+    z-index: 100;
+    width: max-content;
     margin-left: 1rem;
-    padding: 0.1rem 0.7rem;
+    padding: 0.5rem;
     align-self: center;
+    height: 10%;
     display: flex;
     align-items: center;
 }
@@ -152,7 +133,17 @@ option {
     background-color: #c9c9c9;
 }
 
-
+/* Set a style for all buttons */
+button {
+    background-color: #1815A3;
+    color: #c9c9c9;
+    padding: 14px 20px;
+    margin: 8px 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bolder;
+}
 
 .divBuscarUserTask {
     border-radius: 10px;
@@ -270,7 +261,7 @@ button:hover {
 /* componentes de la lista de tareas*/
 
 .containerListTask {
-    width: 100%;
+    width: 460px;
 }
 
 .cardTareaItem {
@@ -400,14 +391,4 @@ option {
     margin: 20%;
     padding: 5%;
     font-size: 131%;
-}
-
-@media screen and (max-width: 755px) {
-    .label {
-        display: grid ;
-        grid-template-areas: "input";
-        background-color: #c9c9c9;
-        margin: 10px 0px;
-        width: 50%;
-    }
 }

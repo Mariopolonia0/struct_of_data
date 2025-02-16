@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html id="html" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="WEBSITE icon" type="png" href="icon/logoSoluctionPolonia.png" />
+    <title>Task manager</title>
+</head>
+
+<body id="body">
+    <form >
+
+        <img class="imgcontainer" src="icon/logoSoluctionPolonia.png"  alt="Soluction_Polonia">
+        <label class="labelTitulo" ><b>Task manager</b></label>
+
+        <div class="container">
+
+            <label class="label">
+                <input id="nombreUsuario" class="input" type="text" placeholder=" ">
+                <span class="label_name">
+                    <b> Enter Username </b>
+                </span>
+            </label>
+
+            <label class="label">
+                <input id="password" type="password" class="input" name="password" placeholder=" " required>
+                <span class="label_name">
+                    <b> Enter Password</b>
+                </span>
+            </label>
+
+            <button type="button" onclick="login()">Login</button>
+
+            <a href="ui/registroUsuario.html">
+                <button class="buttonRegistro" type="button">Record</button>
+            </a>
+        </div>
+    </form>
+
+    <dialog id="DialogNotificacion">
+        <img class="imgcontainerDialog" src="icon/infoIcono.png" alt="Soluction_Polonia">
+        <p class="textoDialgo" id="messageDialog"></p>
+    </dialog>
+
+    <script  src="script/scriptIndex.js"></script>
+</body>
+
+</html>

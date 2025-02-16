@@ -1,0 +1,150 @@
+body {
+    background-color: #c9c9c9;
+}
+
+/*input bonito  */
+.label {
+    display: grid;
+    grid-template-areas: "input";
+    background-color: #c9c9c9;
+}
+
+.input {
+    grid-area: input;
+    width: 300px;
+    font: inherit;
+    border-radius: 10px;
+    border: 5px solid blue;
+    padding: .7rem 1.5rem;
+    background-color: #c9c9c9;
+}
+
+.label_name {
+    grid-area: input;
+    z-index: 100;
+    width: max-content;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    align-self: center;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.input:focus+.label_name,
+.input:not(:placeholder-shown)+.label_name {
+    transform: translateY(-100%);
+    background-color: #c9c9c9;
+}
+
+/* Bordered form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Full-width inputs */
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #1815a3bf;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.buttonRegistro {
+    background-color: #1815A3;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+} 
+
+.labelTitulo {
+    font-size: xx-large;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+    margin: 24px 0 12px 0;
+    height: 150px;
+    width: 150px;
+}
+
+/* dialog   */
+dialog[open] {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px #000000;
+    border: none;
+}
+
+.imgcontainerDialog {
+    margin: 24px 0 12px 0;
+    height: 100px;
+    width: 100px;
+}
+
+.textoDialgo {
+    font-size: 130%;
+}
+
+
+
+/* Add padding to containers */
+.container {
+    width: 50%;
+    padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 755px) {
+    .container {
+        width: 90%;
+        padding: 16px;
+    }
+}
