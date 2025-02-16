@@ -41,11 +41,13 @@ select {
 
 .container {
     display: flex;
-    margin-top: 10px;
+    margin: 10px;
     border: 1px solid transparent;
     box-shadow: 2px 2px 8px 4px #9d9d9d;
     border-radius: 15px;
 }
+
+.containerMain {}
 
 .containerTituloSelectUser {
     display: flex;
@@ -402,12 +404,12 @@ option {
     font-size: 131%;
 }
 
-@media screen and (max-width: 755px) {
+@media screen and (max-width: 550px) {
     .label {
-        display: grid ;
-        grid-template-areas: "input";
-        background-color: #c9c9c9;
-        margin: 10px 0px;
+        width: 50%;
+    }
+
+    .input {
         width: 50%;
     }
 }
