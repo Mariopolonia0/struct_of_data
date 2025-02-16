@@ -61,14 +61,21 @@ function buscarFiltrado() {
 function llenarListTask(task) {
     _listTask.push(task)
     listTask.innerHTML += ` 
-        <div class="cardTareaItem" onclick="selectTarea(${task.tareaId})">
+        <div class="cardTareaItem" ">
             <div class="divRowArriba">
                 <h3 class="card-title">${task.nombreAndApellido}</h3>
                 <h3 class="card-title">${task.fechaVecimineto}</h3>
             </div>
             <div class="divRowAbajo">
                 <h3 class="card-title">${task.descripcion}</h3>
-                <h3 class="card-title">${task.estado}</h3>
+                <div class="divRowAbajo">
+                    <button type="button" class="buttonItem" onclick="">
+                        <img class="imgIconButon" src="../icon/play.png" alt="play">
+                    </button>
+                    <button type="button" class="buttonItem" onclick="selectTarea(${task.tareaId})">
+                        <img class="imgIconButon" src="../icon/editar.png" alt="editar">
+                    </button>
+                <div>
             </div>
         </div>   
     `

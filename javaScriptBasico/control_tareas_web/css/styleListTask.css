@@ -25,11 +25,17 @@ button {
     background-color: #1815A3;
     color: #c9c9c9;
     padding: 10px 10px;
-    margin: 8px 8px;
+    margin: 8px 8px 8px 0px;
     border: none;
     cursor: pointer;
     border-radius: 10px;
     font-weight: bolder;
+}
+
+.buttonItem{
+    margin: 0px 0px 0px 10px;
+    background-color: #c9c9c9;
+    padding: 0px 0px 0px 15px;
 }
 
 select {
@@ -412,5 +418,10 @@ option {
 
     .input {
         width: 50%;
+    }
+
+    img {
+        height: 80px;
+        width: 80px;
     }
 }
