@@ -89,7 +89,7 @@ function selectTarea(_tareaId) {
     tareaId = _tareaId;
     idSelectUser = selectTarea.usuarioId;
 
-    selectOptionEstado.value = optionSelectEstadoSelectTask(selectTarea.estado);
+   // selectOptionEstado.value = optionSelectEstadoSelectTask(selectTarea.estado);
     inputFechaVencimiento.value = selectTarea.fechaVecimineto;
     nombreUserForNewTask.innerText = selectTarea.nombreAndApellido;
     inputDescripcion.value = selectTarea.descripcion;
@@ -108,7 +108,7 @@ function clearVariable() {
     tareaId = 0;
     idSelectUser = 0;
 
-    selectOptionEstado.value = optionSelectEstadoSelectTask(0);
+    //selectOptionEstado.value = optionSelectEstadoSelectTask(0);
     inputFechaVencimiento.value = "";
     nombreUserForNewTask.innerText = "";
     inputDescripcion.value = "";
@@ -130,7 +130,7 @@ function optionSelectEstadoSelectTask(_value) {
 function formTask() {
     clearVariable();
     inputFechaVencimiento.value = hoy.toString();
-    selectOptionEstado.value = 2;
+   // selectOptionEstado.value = 2;
     dialogoFormTask.showModal();
 }
 
