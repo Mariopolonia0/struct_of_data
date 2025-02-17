@@ -65,9 +65,10 @@ function llenarListTask(task) {
             <div class="divRowArriba">
                 <h3 class="card-title">${task.nombreAndApellido}</h3>
                 <h3 class="card-title">${task.fechaVecimineto}</h3>
+                <h3 class="card-title">${task.descripcion}</h3>
             </div>
             <div class="divRowAbajo">
-                <h3 class="card-title">${task.descripcion}</h3>
+                <h3 class="card-title">${task.fechaVecimineto}</h3>
                 <div class="divRowAbajo">
                     <button type="button" class="buttonItem" onclick="">
                         <img class="imgIconButon" src="../icon/play.png" alt="play">
@@ -89,7 +90,7 @@ function selectTarea(_tareaId) {
     tareaId = _tareaId;
     idSelectUser = selectTarea.usuarioId;
 
-   // selectOptionEstado.value = optionSelectEstadoSelectTask(selectTarea.estado);
+    // selectOptionEstado.value = optionSelectEstadoSelectTask(selectTarea.estado);
     inputFechaVencimiento.value = selectTarea.fechaVecimineto;
     nombreUserForNewTask.innerText = selectTarea.nombreAndApellido;
     inputDescripcion.value = selectTarea.descripcion;
@@ -130,7 +131,7 @@ function optionSelectEstadoSelectTask(_value) {
 function formTask() {
     clearVariable();
     inputFechaVencimiento.value = hoy.toString();
-   // selectOptionEstado.value = 2;
+    // selectOptionEstado.value = 2;
     dialogoFormTask.showModal();
 }
 
@@ -160,7 +161,7 @@ function clean() {
 function getUserForTask() {
     contenedorCarta.innerHTML = `   `;
     listUser = [];
-    const uri = 'https://controltarea.azurewebsites.net/Usuario/SP';
+    const uri = 'https://controltarea.azurewebsites.net/Usuario';
     //se poner le cursor en progress
     document.documentElement.style.cursor = "progress"
 

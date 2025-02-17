@@ -114,6 +114,20 @@ select {
     padding: 7px;
 }
 
+.containerInfo {
+    display: flex;
+    margin: 10px;
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 8px 4px #9d9d9d;
+    border-radius: 15px;
+    padding: 10%;
+    justify-content: center;
+}
+
+.labelInfo {
+    font-size: x-large;
+}
+
 .labelTipoBusqueda {
     font-weight: bolde;
     color: #c9c9c9;
