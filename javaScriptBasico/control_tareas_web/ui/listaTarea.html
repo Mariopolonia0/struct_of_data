@@ -49,10 +49,12 @@
         <section class="containerListTask" id="listTask">
         </section>
 
-        <card class="containerInfo">
+        <card id="labelInfo" class="containerInfo">
             <label class="labelInfo">No tienes tareas disponibles</label>
         </card>
     </div>
+
+    <div id="loader" class="loader"></div>
 
     <dialog id="DialogNotificacion">
         <div class="DialogNotificacion">
@@ -88,6 +90,13 @@
                 <input class="inputRegistroTask" type="text" id="inputDescripcion" placeholder=" " required>
                 <span class="label_nameRegistroTask">
                     <b> Enter descripcion</b>
+                </span>
+            </label>
+
+            <label class="labelRegistroTask">
+                <input class="inputRegistroTask" type="text" id="inputDireccion" placeholder=" " required>
+                <span class="label_nameRegistroTask">
+                    <b> Enter direccion</b>
                 </span>
             </label>
 

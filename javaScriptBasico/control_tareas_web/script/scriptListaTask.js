@@ -8,32 +8,34 @@ const nombreUserForNewTask = document.getElementById('nombreUserForNewTask');
 const bodyMain = document.getElementById('bodyMain');//bodyMain
 const inputDescripcion = document.getElementById('inputDescripcion');//inputDescripcion
 const inputFechaVencimiento = document.getElementById('inputFechaVencimiento'); //inputFechaVencimiento
-const selectOptionEstado = document.getElementById('selectOptionEstado'); //selectOption
+
+const inputDireccion = document.getElementById('inputDireccion'); //inputDireccion
 const tiempoTranscurrido = Date.now();
 const hoy = new Date(tiempoTranscurrido);
-var dataTask = {};
 
-//lista para entrar los usuarios para que se pueden seleccionar
-var listUser = [];
-var idSelectUser = 0;
-var _listTask = [];
-var tareaId = 0;
+var dataTask = {};
 //obtener el valor usuarioId del usuario que esta logueado que se pase por la URL
 const urlParams = new URLSearchParams(window.location.search);
 const userLoginId = urlParams.get('Id');
 
+//lista para entrar los usuarios para que se pueden seleccionar
+var optionEstado = "to do"
+var listUser = [];
+var idSelectUser = 0;
+var _listTask = [];
+var tareaId = 0;
+
 obtenerListaOfTarea();
 
-function obtenerListaOfTarea() {
-    //https://controltarea.azurewebsites.net/api/Tareas
-
+async function obtenerListaOfTarea() {
+    var loader = document.getElementById('loader');
     listTask.innerHTML = `   `;
     _listTask = [];
-    const uri = 'https://controltarea.azurewebsites.net/api/Tareas';
-    //se poner le cursor en progress
-    document.documentElement.style.cursor = "progress"
+    const uri = 'https://controltarea.azurewebsites.net/api/Tareas/' + userLoginId;
 
-    fetch(uri, {
+    loader.style.display = "flex";
+
+    await fetch(uri, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -41,9 +43,17 @@ function obtenerListaOfTarea() {
     })
         .then((res) => res.json())
         .then(function (dataObject) {
+            loader.style.display = "none";
             dataObject.forEach(task => llenarListTask(task))
-            //se poner le cursor en default
-            document.documentElement.style.cursor = "default"
+
+            //aqui ponermos el mensaje de que no hay tarea
+            if (dataObject.length == 0) {
+                var labelInfo = document.getElementById('labelInfo');
+                labelInfo.style.display = "flex";
+            } else {
+                var labelInfo = document.getElementById('labelInfo');
+                labelInfo.style.display = "none";
+            }
         })
         .catch((error) => {
             console.log(error)
@@ -54,21 +64,22 @@ function obtenerListaOfTarea() {
 function buscarFiltrado() {
     var buttonDialogNtificacionId = document.getElementById('buttonDialogNtificacionId');
     buttonDialogNtificacionId.style.background = "#1815A3";
-    messageDialog.innerText = "En la próxima actualización no hay dinero para este botón";
+    messageDialog.innerText = "En la próxima actualización ";
     DialogNotificacion.showModal();
 }
 
 function llenarListTask(task) {
+    console.log(task)
     _listTask.push(task)
     listTask.innerHTML += ` 
         <div class="cardTareaItem" ">
             <div class="divRowArriba">
                 <h3 class="card-title">${task.nombreAndApellido}</h3>
                 <h3 class="card-title">${task.fechaVecimineto}</h3>
-                <h3 class="card-title">${task.descripcion}</h3>
+                <h3 class="card-title">${task.direccion}</h3>
             </div>
             <div class="divRowAbajo">
-                <h3 class="card-title">${task.fechaVecimineto}</h3>
+                <h3 class="card-title">${task.descripcion}</h3>
                 <div class="divRowAbajo">
                     <button type="button" class="buttonItem" onclick="">
                         <img class="imgIconButon" src="../icon/play.png" alt="play">
@@ -94,13 +105,13 @@ function selectTarea(_tareaId) {
     inputFechaVencimiento.value = selectTarea.fechaVecimineto;
     nombreUserForNewTask.innerText = selectTarea.nombreAndApellido;
     inputDescripcion.value = selectTarea.descripcion;
+    inputDireccion.value = selectTarea.direccion;
     inputFechaVencimiento.value = formatoFechaSelectTask(selectTarea.fechaVecimineto);
 
     dialogoFormTask.showModal();
 }
 
 function formatoFechaSelectTask(_fechaVecimineto) {
-
     var dateDividido = _fechaVecimineto.split('/');
     return dateDividido[2] + '-' + dateDividido[0] + '-' + dateDividido[1]
 }
@@ -108,11 +119,11 @@ function formatoFechaSelectTask(_fechaVecimineto) {
 function clearVariable() {
     tareaId = 0;
     idSelectUser = 0;
-
     //selectOptionEstado.value = optionSelectEstadoSelectTask(0);
     inputFechaVencimiento.value = "";
     nombreUserForNewTask.innerText = "";
     inputDescripcion.value = "";
+    inputDireccion.value = "";
     inputFechaVencimiento.value = "";
 }
 
@@ -127,11 +138,9 @@ function optionSelectEstadoSelectTask(_value) {
     }
 }
 
-
 function formTask() {
     clearVariable();
     inputFechaVencimiento.value = hoy.toString();
-    // selectOptionEstado.value = 2;
     dialogoFormTask.showModal();
 }
 
@@ -144,7 +153,6 @@ function buscarUserForTask() {
     dialogoBuscarUsetTask.showModal();
 }
 
-
 function cancelBuscarUserForTask() {
     dialogoBuscarUsetTask.close();
 }
@@ -153,19 +161,18 @@ function cancelNotificacion() {
     DialogNotificacion.close();
 }
 
-function clean() {
-
-}
 
 //funcion para buscar los usuarios en la api rest
-function getUserForTask() {
+async function getUserForTask() {
     contenedorCarta.innerHTML = `   `;
     listUser = [];
-    const uri = 'https://controltarea.azurewebsites.net/Usuario';
+    var usuario = await buscarUsuario();
+
+    const uri = 'https://controltarea.azurewebsites.net/Usuario/' + usuario.codigoEmpresa;
     //se poner le cursor en progress
     document.documentElement.style.cursor = "progress"
 
-    fetch(uri, {
+    await fetch(uri, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -179,8 +186,29 @@ function getUserForTask() {
         })
         .catch((error) => {
             console.log(error)
-            alert("Tenemos un error en el Server")
         })
+}
+
+async function buscarUsuario() {
+
+    const uri = 'https://controltarea.azurewebsites.net/Usuario/' + userLoginId;
+    var usuario;
+
+    await fetch(uri, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    })
+        .then((res) => res.json())
+        .then(function (dataObject) {
+            usuario = dataObject;
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+
+    return usuario;
 }
 
 function llenarListaUsuarioForTask(user) {
@@ -199,21 +227,27 @@ function userSelect(id) {
     cancelBuscarUserForTask();
 }
 
-function savedata() {
+function clean() {
 
+}
+
+async function savedata() {
     if (validar()) {
 
         dataTask = {
             "tareaId": tareaId,
             "usuarioId": idSelectUser,
             "descripcion": inputDescripcion.value,
+            "notaTerminada": "",
+            "fechaEmpezada": "",
             "fechaCreada": hoy.toLocaleDateString("en-US"),
             "fechaTerminada": "",
             "fechaVecimineto": formatoFecha(),
-            "estado": optionSelectEstado()
+            "direccion": inputDireccion.value,
+            "estado": optionEstado
         }
 
-        enviarDataApi();
+        await enviarDataApi();
     }
 }
 
@@ -222,11 +256,11 @@ function formatoFecha() {
     var dateDividido = date.split('-');
     return dateDividido[1] + '/' + dateDividido[2] + '/' + dateDividido[0]
 }
-//https://controltarea.azurewebsites.net/api/Tareas
-function enviarDataApi() {
+
+async function enviarDataApi() {
     const uri = 'https://controltarea.azurewebsites.net/api/Tareas';
 
-    fetch(uri, {
+    await fetch(uri, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -277,8 +311,8 @@ function validar() {
         messageDialog.innerText = "Ingrese un fecha"
         DialogNotificacion.showModal();
         return false;
-    } else if (selectOptionEstado.value == 1) {
-        messageDialog.innerText = "Seleccione un estado"
+    } else if (inputDireccion.value == "") { //inputDireccion.value
+        messageDialog.innerText = "Introduzca la direccion"
         DialogNotificacion.showModal();
         return false;
     }
