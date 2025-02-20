@@ -119,7 +119,6 @@ function formatoFechaSelectTask(_fechaVecimineto) {
 function clearVariable() {
     tareaId = 0;
     idSelectUser = 0;
-    //selectOptionEstado.value = optionSelectEstadoSelectTask(0);
     inputFechaVencimiento.value = "";
     nombreUserForNewTask.innerText = "";
     inputDescripcion.value = "";
@@ -167,6 +166,9 @@ async function getUserForTask() {
     contenedorCarta.innerHTML = `   `;
     listUser = [];
     var usuario = await buscarUsuario();
+
+    if (usuario.codigoEmpresa == "")
+        return
 
     const uri = 'https://controltarea.azurewebsites.net/Usuario/' + usuario.codigoEmpresa;
     //se poner le cursor en progress
