@@ -2,7 +2,7 @@
 const name = document.getElementById('name')
 const lastName = document.getElementById('lastName')
 const userName = document.getElementById('userName')
-const license = document.getElementById('license')
+const codigoEmpresa = document.getElementById('codigoEmpresa')
 const password = document.getElementById('password')
 const passwordConfirmation = document.getElementById('passwordConfirmation')
 
@@ -13,7 +13,7 @@ function enviarDataToApi() {
         apellido: lastName.value,
         nombreUsuario: userName.value,
         password: password.value,
-        numeroLicencia: license.value
+        codigoEmpresa: codigoEmpresa.value
     };
 
     const uri = 'https://controltarea.azurewebsites.net/Usuario';
@@ -44,7 +44,7 @@ function clean() {
     name.value = "";
     lastName.value = "";
     userName.value = "";
-    license.value = "";
+    codigoEmpresa.value = "";
     password.value = "";
     passwordConfirmation.value = "";
 }
@@ -75,7 +75,7 @@ function validadData() {
         esValido = false;
     }
 
-    else if (license.value == "") {
+    else if (codigoEmpresa.value == "") {
         alert("error when saving. I need the license");
         esValido = false;
     }
