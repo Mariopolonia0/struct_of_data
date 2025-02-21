@@ -38,7 +38,7 @@ function login() {
             .then(function (dataObject) {
 
                 //codigo para quitar el loading
-                conternerForm.style.display = "flex";
+                conternerForm.style.display = "block";
                 loader.style.display = "none";
 
                 if (dataObject.usuarioId == 0) {
