@@ -22,7 +22,7 @@ function login() {
         };
 
         const uri = 'https://controltarea.azurewebsites.net/Usuario/login'
-        
+
         //codigo para mostra  el loading
         conternerForm.style.display = "none";
         loader.style.display = "block";
