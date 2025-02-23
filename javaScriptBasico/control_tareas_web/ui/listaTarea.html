@@ -12,11 +12,21 @@
 
 <body id="bodyMain">
 
-    <img class="imgcontainer" src="../icon/logoSoluctionPolonia.png" alt="Soluction_Polonia">
-    <label class="labelTitulo"><b>Task manager </b></label>
-    <label class="labelTitulo"><b>List Task</b></label>
-
     <div class="containerMain">
+        <div class="containerTitulo">
+            <div class="divTitulo">
+                <label class="labelTitulo"><b>List task of </b></label>
+                <label  type="text" id="nombreUsuario" class="labelTitulo"></label>
+            </div>
+            <div class="divTituloIcono">
+                <button class="buttonIconUsuario" type="button" onclick="formTask()">
+                    <img class="imgIconUsuario" src="../icon/usuarioIcon.png" alt="add">
+                </button>
+                <button class="buttonIconUsuario" type="button" onclick="formTask()">
+                    <img class="imgIconUsuario" src="../icon/salirIcon.png" alt="add">
+                </button>
+            </div>
+        </div>
         <div class="container">
             <div class="containerTipoBusqueda">
                 <label for="selectOption" class="labelTipoBusqueda">Buscar por</label>
@@ -106,19 +116,6 @@
                 </span>
                 <input class="fechaInputRegistroTask" id="inputFechaVencimiento" type="date" placeholder=" " required>
             </div>
-
-            <!--div class="divDialgoRegistroTask">
-                <span class="label_nameRegistroTask">
-                    <b>Select state</b>
-                </span>
-
-                <select id="selectOptionEstado" name="select" class="selectBusquedaEstado">
-                    <option value="1">Select</option>
-                    <option value="2">To do</option>
-                    <option value="3">Process</option>
-                    <option value="4">Finished </option>
-                </select>
-            </div-->
         </div>
 
         <card class="cardButtonRegistroTask">

@@ -59,6 +59,16 @@ async function obtenerListaOfTarea() {
             console.log(error)
             alert("Tenemos un error en el Server")
         })
+
+    await llenarNombreUsuario();
+}
+
+async function llenarNombreUsuario() {
+
+    var usuario = await buscarUsuario()
+    var nombre = ' :' + usuario.nombre
+    document.getElementById('nombreUsuario').innerHTML = `<b> ${nombre}</b>`;
+
 }
 
 function buscarFiltrado() {
@@ -69,10 +79,9 @@ function buscarFiltrado() {
 }
 
 function llenarListTask(task) {
-    console.log(task)
     _listTask.push(task)
     listTask.innerHTML += ` 
-        <div class="cardTareaItem" ">
+        <div class="cardTareaItem">
             <div class="divRowArriba">
                 <h3 class="card-title">${task.nombreAndApellido}</h3>
                 <h3 class="card-title">${task.fechaVecimineto}</h3>
@@ -93,7 +102,6 @@ function llenarListTask(task) {
     `
 }
 
-
 function selectTarea(_tareaId) {
     clearVariable();
 
@@ -101,7 +109,6 @@ function selectTarea(_tareaId) {
     tareaId = _tareaId;
     idSelectUser = selectTarea.usuarioId;
 
-    // selectOptionEstado.value = optionSelectEstadoSelectTask(selectTarea.estado);
     inputFechaVencimiento.value = selectTarea.fechaVecimineto;
     nombreUserForNewTask.innerText = selectTarea.nombreAndApellido;
     inputDescripcion.value = selectTarea.descripcion;
