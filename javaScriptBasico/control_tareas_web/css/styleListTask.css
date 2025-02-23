@@ -305,17 +305,6 @@ button:hover {
     width: 100%;
 }
 
-.cardTareaItem {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    border: 1px solid transparent;
-    box-shadow: 2px 2px 8px 4px #9d9d9d;
-    border-radius: 15px;
-    padding: 10px;
-}
-
 .divTitulo {
     display: flex;
     margin: 2.2%;
@@ -340,19 +329,54 @@ button:hover {
     display: flex;
     margin: 10px;
     border: 1px solid transparent;
+    justify-content: space-between;
+}
+
+.cardTareaItem {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    border: 1px solid transparent;
     box-shadow: 2px 2px 8px 4px #9d9d9d;
-    border-radius: 5px;
+    border-radius: 15px;
+    padding: 10px;
     justify-content: space-between;
 }
 
-.divRowArriba {
+.divIzquierdaItem {
     display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.divDerechaItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     justify-content: space-between;
 }
 
-.divRowAbajo {
+.divDerechaItemButton {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+}
+
+.itemTaskNombre {
+    font-size: large;
+}
+
+.itemTaskDireccion {
+    font-size: large;
+}
+
+.itemTaskDescripcion {
+    font-size: large;
+}
+
+.itemTaskFechaVencimiento {
+    margin: 10% 4%;
+    font-size: large;
 }
 
 /* dialog   */

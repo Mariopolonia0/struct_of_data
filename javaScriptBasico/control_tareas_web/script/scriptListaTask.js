@@ -8,6 +8,7 @@ const nombreUserForNewTask = document.getElementById('nombreUserForNewTask');
 const bodyMain = document.getElementById('bodyMain');//bodyMain
 const inputDescripcion = document.getElementById('inputDescripcion');//inputDescripcion
 const inputFechaVencimiento = document.getElementById('inputFechaVencimiento'); //inputFechaVencimiento
+const inputCliente = document.getElementById('inputCliente'); //inputFechaVencimiento
 
 const inputDireccion = document.getElementById('inputDireccion'); //inputDireccion
 const tiempoTranscurrido = Date.now();
@@ -25,13 +26,18 @@ var idSelectUser = 0;
 var _listTask = [];
 var tareaId = 0;
 
+llenarNombreUsuario();
 obtenerListaOfTarea();
+
 
 async function obtenerListaOfTarea() {
     var loader = document.getElementById('loader');
     listTask.innerHTML = `   `;
     _listTask = [];
     const uri = 'https://controltarea.azurewebsites.net/api/Tareas/' + userLoginId;
+    
+    console.log(uri)
+
 
     loader.style.display = "flex";
 
@@ -56,19 +62,13 @@ async function obtenerListaOfTarea() {
             }
         })
         .catch((error) => {
-            console.log(error)
             alert("Tenemos un error en el Server")
         })
-
-    await llenarNombreUsuario();
 }
 
 async function llenarNombreUsuario() {
-
     var usuario = await buscarUsuario()
-    var nombre = ' :' + usuario.nombre
-    document.getElementById('nombreUsuario').innerHTML = `<b> ${nombre}</b>`;
-
+    document.getElementById('nombreUsuario').innerHTML = `<b> ${usuario.nombre} tasks </b>`;
 }
 
 function buscarFiltrado() {
@@ -82,14 +82,13 @@ function llenarListTask(task) {
     _listTask.push(task)
     listTask.innerHTML += ` 
         <div class="cardTareaItem">
-            <div class="divRowArriba">
-                <h3 class="card-title">${task.nombreAndApellido}</h3>
-                <h3 class="card-title">${task.fechaVecimineto}</h3>
-                <h3 class="card-title">${task.direccion}</h3>
+            <div class="divIzquierdaItem">
+                <label class="itemTaskDireccion">${task.direccion}</label>
+                <label class="itemTaskDescripcion">${task.descripcion}</label>
             </div>
-            <div class="divRowAbajo">
-                <h3 class="card-title">${task.descripcion}</h3>
-                <div class="divRowAbajo">
+            <div class="divDerechaItem">
+                <label class="itemTaskFechaVencimiento">${task.fechaVecimineto}</label>
+                <div class="divDerechaItemButton">
                     <button type="button" class="buttonItem" onclick="">
                         <img class="imgIconButon" src="../icon/play.png" alt="play">
                     </button>
@@ -113,6 +112,7 @@ function selectTarea(_tareaId) {
     nombreUserForNewTask.innerText = selectTarea.nombreAndApellido;
     inputDescripcion.value = selectTarea.descripcion;
     inputDireccion.value = selectTarea.direccion;
+    inputCliente.value = selectTarea.cliente;
     inputFechaVencimiento.value = formatoFechaSelectTask(selectTarea.fechaVecimineto);
 
     dialogoFormTask.showModal();
@@ -130,6 +130,7 @@ function clearVariable() {
     nombreUserForNewTask.innerText = "";
     inputDescripcion.value = "";
     inputDireccion.value = "";
+    inputCliente.value = "";
     inputFechaVencimiento.value = "";
 }
 
@@ -253,6 +254,7 @@ async function savedata() {
             "fechaTerminada": "",
             "fechaVecimineto": formatoFecha(),
             "direccion": inputDireccion.value,
+            "cliente": inputCliente.value,
             "estado": optionEstado
         }
 
@@ -320,8 +322,12 @@ function validar() {
         messageDialog.innerText = "Ingrese un fecha"
         DialogNotificacion.showModal();
         return false;
-    } else if (inputDireccion.value == "") { //inputDireccion.value
+    } else if (inputDireccion.value == "") {
         messageDialog.innerText = "Introduzca la direccion"
+        DialogNotificacion.showModal();
+        return false;
+    } else if (inputCliente.value == "") {
+        messageDialog.innerText = "Introduzca la cliente"
         DialogNotificacion.showModal();
         return false;
     }
