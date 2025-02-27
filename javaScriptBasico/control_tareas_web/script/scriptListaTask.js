@@ -28,6 +28,7 @@ var tareaId = 0;
 
 llenarNombreUsuario();
 obtenerListaOfTarea();
+//bueno
 
 
 async function obtenerListaOfTarea() {
