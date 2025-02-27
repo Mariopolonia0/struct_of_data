@@ -19,15 +19,21 @@
                 <label class="labelTitulo"></label>
             </div>
             <div class="divTituloIcono">
-                <button class="buttonIconUsuario" type="button" onclick="">
+                <button type="button" onclick="formTask()">
+                    <img class="imgIconButon" src="../icon/addIcon.png" alt="add">
+                </button>
+                <button type="button" onclick="buscarFiltrado()">
+                    <img class="imgIconButon" src="../icon/buscarIcon.png" alt="buscar">
+                </button>
+                <button type="button" onclick="">
                     <img class="imgIconUsuario" src="../icon/usuarioIcon.png" alt="add">
                 </button>
-                <button class="buttonIconUsuario" type="button" onclick="">
+                <button type="button" onclick="">
                     <img class="imgIconUsuario" src="../icon/salirIcon.png" alt="add">
                 </button>
             </div>
         </div>
-        <div class="container">
+        <div class="containerBuscar">
             <div class="containerTipoBusqueda">
                 <label for="selectOption" class="labelTipoBusqueda">Buscar por</label>
 
@@ -46,13 +52,11 @@
                     <b>Buscar</b>
                 </span>
             </label>
-
             <button type="button" onclick="buscarFiltrado()">
-                <img class="imgIconButon" src="../icon/buscar.png" alt="buscar">
+                <img class="imgIconButon" src="../icon/buscarIcon.png" alt="buscar">
             </button>
-
-            <button type="button" onclick="formTask()">
-                <img class="imgIconButon" src="../icon/add.png" alt="add">
+            <button type="button" onclick="buscarFiltrado()">
+                <img class="imgIconButon" src="../icon/CancelIcon.png" alt="buscar">
             </button>
         </div>
 

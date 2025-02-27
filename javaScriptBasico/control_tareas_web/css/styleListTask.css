@@ -22,10 +22,9 @@ img {
 
 /* Set a style for all buttons */
 button {
-    background-color: #1815A3;
-    color: #c9c9c9;
+    background-color: #c9c9c9;
     padding: 10px 10px;
-    margin: 8px 8px 8px 0px;
+    margin: 8px 8px 8px 8px;
     border: none;
     cursor: pointer;
     border-radius: 10px;
@@ -46,18 +45,23 @@ select {
     font-size: x-large;
 }
 
-.container {
-    display: flex;
+.containerBuscar {
+    display: none;
     margin: 10px;
     border: 1px solid transparent;
     box-shadow: 2px 2px 8px 4px #9d9d9d;
     border-radius: 15px;
+
 }
 
 .containerTituloSelectUser {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.containerMain {
+    width: 50%;
 }
 
 .containerBuscarListForUser {
@@ -330,6 +334,7 @@ button:hover {
     margin: 10px;
     border: 1px solid transparent;
     justify-content: space-between;
+    align-items: center;
 }
 
 .cardTareaItem {
@@ -505,4 +510,44 @@ option {
         padding: 5%;
         margin-top: 0%;
     }
+
+    .containerMain {
+        width: 0%;
+    }
+
+    button {
+        margin: 0
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    .label {
+        width: 50%;
+    }
+
+    .input {
+        width: 50%;
+    }
+
+    img {
+        height: 80px;
+        width: 80px;
+    }
+
+    dialog[open] {
+        width: 100%;
+        height: 100%;
+        padding: 5%;
+        margin-top: 0%;
+    }
+
+    button {
+        margin: 0
+    }
+
+    .containerMain {
+        width: 100%;
+    }
+
 }
