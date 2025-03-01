@@ -9,7 +9,6 @@ const bodyMain = document.getElementById('bodyMain');//bodyMain
 const inputDescripcion = document.getElementById('inputDescripcion');//inputDescripcion
 const inputFechaVencimiento = document.getElementById('inputFechaVencimiento'); //inputFechaVencimiento
 const inputCliente = document.getElementById('inputCliente'); //inputFechaVencimiento
-
 const inputDireccion = document.getElementById('inputDireccion'); //inputDireccion
 const tiempoTranscurrido = Date.now();
 const hoy = new Date(tiempoTranscurrido);
@@ -28,15 +27,13 @@ var tareaId = 0;
 
 llenarNombreUsuario();
 obtenerListaOfTarea();
-//bueno
-
 
 async function obtenerListaOfTarea() {
     var loader = document.getElementById('loader');
     listTask.innerHTML = `   `;
     _listTask = [];
     const uri = 'https://controltarea.azurewebsites.net/api/Tareas/' + userLoginId;
-    
+
     console.log(uri)
 
 
@@ -84,6 +81,7 @@ function llenarListTask(task) {
     listTask.innerHTML += ` 
         <div class="cardTareaItem">
             <div class="divIzquierdaItem">
+                <label class="itemTaskCliente">${task.cliente}</label>
                 <label class="itemTaskDireccion">${task.direccion}</label>
                 <label class="itemTaskDescripcion">${task.descripcion}</label>
             </div>
@@ -125,8 +123,7 @@ function formatoFechaSelectTask(_fechaVecimineto) {
 }
 
 function clearVariable() {
-    tareaId = 0;
-    idSelectUser = 0;
+    //tareaId = 0;
     inputFechaVencimiento.value = "";
     nombreUserForNewTask.innerText = "";
     inputDescripcion.value = "";
@@ -239,7 +236,7 @@ function userSelect(id) {
 }
 
 function clean() {
-
+    clearVariable()
 }
 
 async function savedata() {
@@ -249,19 +246,20 @@ async function savedata() {
             "tareaId": tareaId,
             "usuarioId": idSelectUser,
             "descripcion": inputDescripcion.value,
+            "cliente": inputCliente.value,
             "notaTerminada": "",
             "fechaEmpezada": "",
             "fechaCreada": hoy.toLocaleDateString("en-US"),
             "fechaTerminada": "",
             "fechaVecimineto": formatoFecha(),
             "direccion": inputDireccion.value,
-            "cliente": inputCliente.value,
             "estado": optionEstado
         }
 
         await enviarDataApi();
     }
 }
+
 
 function formatoFecha() {
     var date = inputFechaVencimiento.value;
@@ -281,11 +279,7 @@ async function enviarDataApi() {
     })
         .then((res) => res.json())
         .then(function (dataObject) {
-            var buttonDialogNtificacionId = document.getElementById('buttonDialogNtificacionId');
-            buttonDialogNtificacionId.style.background = "#1815A3";
-            buttonDialogNtificacionId.innerText = "Aceptar";
-            messageDialog.innerText = dataObject.dataResult;
-            DialogNotificacion.showModal();
+            mostrarDialog();
             obtenerListaOfTarea();
             cancel();
         })
@@ -293,6 +287,14 @@ async function enviarDataApi() {
             messageDialog.innerText = "We have this error on the Server : " + error;
             DialogNotificacion.showModal();
         })
+}
+
+function mostrarDialog() {
+    var buttonDialogNtificacionId = document.getElementById('buttonDialogNtificacionId');
+    buttonDialogNtificacionId.style.background = "#1815A3";
+    buttonDialogNtificacionId.innerText = "Aceptar";
+    messageDialog.innerText = dataObject.dataResult;
+    DialogNotificacion.showModal();
 }
 
 function optionSelectEstado() {
@@ -328,7 +330,7 @@ function validar() {
         DialogNotificacion.showModal();
         return false;
     } else if (inputCliente.value == "") {
-        messageDialog.innerText = "Introduzca la cliente"
+        messageDialog.innerText = "Introduzca el cliente"
         DialogNotificacion.showModal();
         return false;
     }

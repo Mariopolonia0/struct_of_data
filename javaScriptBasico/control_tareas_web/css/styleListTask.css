@@ -371,8 +371,14 @@ button:hover {
     font-size: large;
 }
 
+.itemTaskCliente {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .itemTaskDireccion {
-    font-size: large;
+    font-size: 18px;
+    font-weight: bolder;
 }
 
 .itemTaskDescripcion {
