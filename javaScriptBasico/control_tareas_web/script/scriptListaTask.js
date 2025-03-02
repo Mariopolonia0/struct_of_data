@@ -100,6 +100,10 @@ function llenarListTask(task) {
     `
 }
 
+function salirUsuario() {
+    history.back();
+}
+
 function selectTarea(_tareaId) {
     clearVariable();
 
