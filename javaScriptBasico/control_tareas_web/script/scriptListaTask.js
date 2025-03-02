@@ -34,9 +34,6 @@ async function obtenerListaOfTarea() {
     _listTask = [];
     const uri = 'https://controltarea.azurewebsites.net/api/Tareas/' + userLoginId;
 
-    console.log(uri)
-
-
     loader.style.display = "flex";
 
     await fetch(uri, {
@@ -50,7 +47,7 @@ async function obtenerListaOfTarea() {
             loader.style.display = "none";
             dataObject.forEach(task => llenarListTask(task))
 
-            //aqui ponermos el mensaje de que no hay tarea
+            //aqui ponemos el mensaje de que no hay tarea
             if (dataObject.length == 0) {
                 var labelInfo = document.getElementById('labelInfo');
                 labelInfo.style.display = "flex";
@@ -99,16 +96,14 @@ function llenarListTask(task) {
         </div>   
     `
 }
-
-function editarUsuario() {
-    window.location = "registroUsuario.html?Id=" + userLoginId;
+//listaUsuario()
+function listaUsuario() {
+    window.location = "listaUsuario.html?Id=" + userLoginId;
 }
-
-// window.location = "ui/listaTarea.html?Id=" + dataObject.usuarioId;
 
 function salirUsuario() {
     window.location = "../index.html";
-   // history.back();
+    // history.back();
 }
 
 function selectTarea(_tareaId) {
@@ -270,7 +265,6 @@ async function savedata() {
         await enviarDataApi();
     }
 }
-
 
 function formatoFecha() {
     var date = inputFechaVencimiento.value;

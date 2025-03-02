@@ -39,12 +39,11 @@ async function enviarDataToApi() {
         })
 }
 
-
 function cancel() {
     if (userLoginId == null) {
         window.location = "../index.html";
     } else {
-        window.location = "listaTarea.html?Id=" + userLoginId;
+        window.location = "listaUsuario.html?Id=" + userLoginId;
     }
 
 }

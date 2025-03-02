@@ -16,6 +16,43 @@ body {
     background-color: #c9c9c9;
 }
 
+.containerTitulo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 8px 4px #9d9d9d;
+    border-radius: 15px;
+    margin: 2% 0%;
+    padding: 0% 0% 0% 2%;
+}
+
+.divTitulo {
+    display: flex;
+    flex-direction: row;
+}
+
+.divTituloIcono {
+    display: flex;
+    flex-direction: row;
+}
+
+.imgIconButon {
+    height: 30px;
+    width: 30px;
+}
+
+.iconButton {
+    background-color: #c9c9c9;
+    padding: 10px 10px;
+    margin: 8px 8px 8px 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
 .input {
     grid-area: input;
     width: 300px;
@@ -56,6 +93,7 @@ input[type=password] {
     box-sizing: border-box;
     outline: none;
 }
+
 /* Set a style for all buttons */
 
 .cardButton {
