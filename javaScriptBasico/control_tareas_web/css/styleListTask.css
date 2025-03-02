@@ -10,6 +10,15 @@ body {
     align-items: center;
 }
 
+.divContainerFormTask {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
 img {
     height: 130px;
     width: 130px;
@@ -202,7 +211,7 @@ option {
     background-color: #c9c9c9;
     display: flex;
     justify-content: space-between;
-    margin: 5% 0%
+    margin: 5px 0%;
 }
 
 .divBuscarUserTwo {
@@ -270,6 +279,7 @@ button:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 50%;
 }
 
 .buttonNewRegistroTask {
@@ -429,6 +439,8 @@ dialog[open] {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    width: 50%;
+    flex-wrap: wrap;
 }
 
 /*input bonito  */
@@ -436,7 +448,7 @@ dialog[open] {
     display: grid;
     grid-template-areas: "input";
     background-color: #c9c9c9;
-    margin: 5% 0%;
+    margin: 10px 0%;
 }
 
 .inputRegistroTask {
@@ -470,8 +482,9 @@ dialog[open] {
     display: grid;
     grid-template-areas: "input";
     background-color: #c9c9c9;
-    margin: 5% 0%;
+    margin: 5px 0%;
     border-radius: 10px;
+    padding: 10px 0px;
     border: 2px solid #1815A3;
 }
 
@@ -485,8 +498,8 @@ dialog[open] {
 }
 
 .fechaInputRegistroTask {
-    margin: 0% 10% 5% 10%;
-    padding: 2%;
+    margin: 0% 10px 10px 25px;
+    padding: 5px;
 }
 
 .selectBusquedaEstado {
@@ -520,6 +533,21 @@ option {
 
     button {
         margin: 0
+    }
+
+    .containerFormDialogo {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        flex-wrap: wrap;
+    }
+
+    .cardButtonRegistroTask {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 90%;
     }
 
 }
