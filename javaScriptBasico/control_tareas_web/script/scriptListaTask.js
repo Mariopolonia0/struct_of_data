@@ -100,8 +100,15 @@ function llenarListTask(task) {
     `
 }
 
+function editarUsuario() {
+    window.location = "registroUsuario.html?Id=" + userLoginId;
+}
+
+// window.location = "ui/listaTarea.html?Id=" + dataObject.usuarioId;
+
 function salirUsuario() {
-    history.back();
+    window.location = "../index.html";
+   // history.back();
 }
 
 function selectTarea(_tareaId) {

@@ -25,7 +25,7 @@
                 <button type="button" onclick="buscarFiltrado()">
                     <img class="imgIconButon" src="../icon/buscarIcono.png" alt="buscar">
                 </button>
-                <button type="button" onclick="">
+                <button type="button" onclick="editarUsuario()">
                     <img class="imgIconUsuario" src="../icon/usuarioIcon.png" alt="add">
                 </button>
                 <button type="button" onclick="salirUsuario()">
@@ -80,6 +80,8 @@
     </dialog>
 
     <dialog class="dialogFormTask" id="DialogFormTask">
+
+
         <div class="containerTituloSelectUser">
             <img class="imgcontainerDialog" src="../icon/formIcon.png" alt="Soluction_Polonia">
             <label class="labelTituloRegistroTask"><b>Register Task</b></label>
@@ -128,7 +130,6 @@
                 <input class="fechaInputRegistroTask" id="inputFechaVencimiento" type="date" placeholder=" " required>
             </div>
         </div>
-
         <card class="cardButtonRegistroTask">
             <button class="buttonNewRegistroTask" type="button" onclick="clean()">New</button>
             <button class="buttonSaveRegistroTask" type="button" onclick="savedata()">Save</button>

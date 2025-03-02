@@ -6,7 +6,11 @@ const codigoEmpresa = document.getElementById('codigoEmpresa')
 const password = document.getElementById('password')
 const passwordConfirmation = document.getElementById('passwordConfirmation')
 
-function enviarDataToApi() {
+//obtener el valor usuarioId del usuario que esta logueado que se pase por la URL
+const urlParams = new URLSearchParams(window.location.search);
+const userLoginId = urlParams.get('Id');
+
+async function enviarDataToApi() {
     const data = {
         usuarioId: 0,
         nombre: name.value,
@@ -18,7 +22,7 @@ function enviarDataToApi() {
 
     const uri = 'https://controltarea.azurewebsites.net/Usuario';
 
-    fetch(uri, {
+    await fetch(uri, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -37,7 +41,17 @@ function enviarDataToApi() {
 
 
 function cancel() {
-    window.location = "../index.html";
+    if (userLoginId == null) {
+        window.location = "../index.html";
+    } else {
+        window.location = "listaTarea.html?Id=" + userLoginId;
+    }
+
+}
+
+//'https://controltarea.azurewebsites.net/Usuario/100' 
+async function buscarUsuario() {
+
 }
 
 function clean() {
