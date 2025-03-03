@@ -528,7 +528,7 @@ option {
     }
 
     .containerMain {
-        width: 0%;
+        width: 100%;
     }
 
     button {
@@ -551,4 +551,3 @@ option {
     }
 
 }
-
