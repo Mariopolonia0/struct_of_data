@@ -513,7 +513,7 @@ option {
     font-size: 131%;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 700px) {
     .label {
         width: 50%;
     }
@@ -552,26 +552,3 @@ option {
 
 }
 
-@media screen and (max-width: 1000px) {
-    .label {
-        width: 50%;
-    }
-
-    .input {
-        width: 50%;
-    }
-
-    img {
-        height: 80px;
-        width: 80px;
-    }
-
-    button {
-        margin: 0
-    }
-
-    .containerMain {
-        width: 100%;
-    }
-
-}
