@@ -16,11 +16,28 @@ getUserForTask()
 
 function llenarListaUsuarioForTask(user) {
     listUser.push(user)
-    contenedorCarta.innerHTML += ` 
-        <div class="cardItemUser" onclick="userSelect(${user.usuarioId})">
-            <h3 class="card-title">${user.nombreAndApellido}</h3>
-        </div>   
-    `
+    var item = ``;
+
+    if (user.usuarioId == userLoginId) {
+        item = `
+            <div class="cardItemUser" onclick="userSelect(${user.usuarioId})">
+                <h3 class="card-title">${user.nombreAndApellido + " Yo"}</h3>
+                <button class="iconButton" type="button" onclick="">
+                    <img class="imgIconButon" src="../icon/editar.png" alt="add">
+                </button>
+            </div>   
+        `
+    } else {
+        item = `
+            <div class="cardItemUser" onclick="userSelect(${user.usuarioId})">
+                <h3 class="card-title">${user.nombreAndApellido}</h3>
+                <button class="iconButton" type="button" onclick="">
+                    <img class="imgIconButon" src="../icon/editar.png" alt="add">
+                </button>
+            </div>   
+        `
+    }
+    contenedorCarta.innerHTML += item;
 }
 
 //funcion para buscar los usuarios en la api rest
