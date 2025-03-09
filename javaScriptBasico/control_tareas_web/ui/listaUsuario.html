@@ -10,26 +10,28 @@
 
 <body>
     <div class="container">
-    <div class="containerTitulo">
-        <div class="divTitulo">
-            <label class="labelTitulo"><b>Lista Usuario</b></label>
+        <div class="containerTitulo">
+            <div class="divTitulo">
+                <label class="labelTitulo"><b>Lista Usuario</b></label>
+            </div>
+            <div class="divTituloIcono">
+                <button class="iconButton" type="button" onclick="">
+                    <img class="imgIconButon" src="../icon/addIcon.png" alt="add">
+                </button>
+                <button class="iconButton" type="button" onclick="">
+                    <img class="imgIconButon" src="../icon/buscarIcono.png" alt="add">
+                </button>
+                <button class="iconButton" type="button" onclick="editarUsuario()">
+                    <img class="imgIconButon" src="../icon/usuarioIcon.png" alt="add">
+                </button>
+                <button class="iconButton" type="button" onclick="salir()">
+                    <img class="imgIconButon" src="../icon/salirIcon.png" alt="add">
+                </button>
+            </div>
         </div>
-        <div class="divTituloIcono">
-            <button class="iconButton" type="button" onclick="">
-                <img class="imgIconButon" src="../icon/addIcon.png" alt="add">
-            </button>
-            <button class="iconButton" type="button" onclick="">
-                <img class="imgIconButon" src="../icon/buscarIcono.png" alt="add">
-            </button>
-            <button class="iconButton" type="button" onclick="editarUsuario()">
-                <img class="imgIconButon" src="../icon/usuarioIcon.png" alt="add">
-            </button>
-            <button class="iconButton" type="button" onclick="salir()">
-                <img class="imgIconButon" src="../icon/salirIcon.png" alt="add">
-            </button>
-        </div>
-    </div>
+        <section class="containerBuscarListForUser" id="listCard">
 
+        </section>
     </div>
 
     <script src="../script/scriptListaUsuario.js"></script>
