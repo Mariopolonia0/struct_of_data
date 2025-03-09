@@ -5,10 +5,20 @@ const userName = document.getElementById('userName')
 const codigoEmpresa = document.getElementById('codigoEmpresa')
 const password = document.getElementById('password')
 const passwordConfirmation = document.getElementById('passwordConfirmation')
+const tituloRegistroUsuiario = document.getElementById('tituloRegistroUsuiario')
 
 //obtener el valor usuarioId del usuario que esta logueado que se pase por la URL
 const urlParams = new URLSearchParams(window.location.search);
-const userLoginId = urlParams.get('Id');
+const userLoginId = urlParams.get('IdLogin');
+const IdUsedEdit = urlParams.get('UsuarioEdit');
+
+if (IdUsedEdit == 0) {
+    tituloRegistroUsuiario.innerText = "Register user"
+} else {
+    tituloRegistroUsuiario.innerText = "Edit user"
+}
+
+console.log(userLoginId + " - " + IdUsedEdit)
 
 async function enviarDataToApi() {
     const data = {
