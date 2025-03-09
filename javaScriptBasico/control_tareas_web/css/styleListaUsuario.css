@@ -59,10 +59,9 @@ body {
 }
 
 .cardItemUser {
-    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
 }
-
-.card-title {}
 
 .containerBuscarListForUser {
     display: flex;
@@ -75,7 +74,6 @@ body {
 }
 
 @media screen and (max-width: 755px) {
-    body {}
 
     .container {
         display: flex;
