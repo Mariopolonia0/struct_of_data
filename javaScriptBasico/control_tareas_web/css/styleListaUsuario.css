@@ -3,13 +3,16 @@ body {
     height: 100%;
     background-color: #c9c9c9;
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Add padding to containers */
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
 }
 
 .containerTitulo {
@@ -50,6 +53,11 @@ body {
     font-weight: bolder;
 }
 
+.labelTitulo {
+    width: 120px;
+    margin: 0px 100px 0px 0px;
+}
+
 .cardItemUser {
     cursor: pointer;
 }
@@ -67,12 +75,15 @@ body {
 }
 
 @media screen and (max-width: 755px) {
+    body {}
+
     .container {
         display: flex;
         flex-direction: column;
         align-items: stretch;
         margin: 2%;
         flex-wrap: wrap;
+        width: 100%;
     }
 
     .iconButton {
@@ -83,4 +94,10 @@ body {
         border-radius: 10px;
         font-weight: bolder;
     }
+
+    .labelTitulo {
+        width: 120px;
+        margin: 0;
+    }
+
 }
