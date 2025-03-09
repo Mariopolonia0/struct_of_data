@@ -56,7 +56,7 @@ select {
 }
 
 .labelTitulo {
-    font-size: x-large;
+    font-size: large;
 }
 
 .containerBuscar {
@@ -65,7 +65,6 @@ select {
     border: 1px solid transparent;
     box-shadow: 2px 2px 8px 4px #9d9d9d;
     border-radius: 15px;
-
 }
 
 .containerTituloSelectUser {
