@@ -21,8 +21,8 @@ function llenarListaUsuarioForTask(user) {
     if (user.usuarioId == userLoginId) {
         item = `
             <div class="cardItemUser" onclick="userSelect(${user.usuarioId})">
-                <h3 class="card-title">${user.nombreAndApellido + " Yo"}</h3>
-                <button class="iconButton" type="button" onclick="">
+                <h3 class="card-title">${user.nombreAndApellido + " ( Yo )"}</h3>
+                <button class="iconButton" type="button" onclick="editarUsuario()">
                     <img class="imgIconButon" src="../icon/editar.png" alt="add">
                 </button>
             </div>   
@@ -31,7 +31,7 @@ function llenarListaUsuarioForTask(user) {
         item = `
             <div class="cardItemUser" onclick="userSelect(${user.usuarioId})">
                 <h3 class="card-title">${user.nombreAndApellido}</h3>
-                <button class="iconButton" type="button" onclick="">
+                <button class="iconButton" type="button" onclick="editarUsuario()">
                     <img class="imgIconButon" src="../icon/editar.png" alt="add">
                 </button>
             </div>   

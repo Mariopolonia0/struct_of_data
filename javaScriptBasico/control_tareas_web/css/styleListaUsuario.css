@@ -22,8 +22,8 @@ body {
     align-items: center;
     border: 1px solid transparent;
     box-shadow: 2px 2px 8px 4px #9d9d9d;
-    border-radius: 15px;
-    margin: 2% 0%;
+    border-radius: 5px;
+    margin: 0%;
     padding: 0% 0% 0% 2%;
 }
 
@@ -61,6 +61,7 @@ body {
 .cardItemUser {
     display: flex;
     justify-content: space-between;
+    border-bottom: groove;
 }
 
 .containerBuscarListForUser {
