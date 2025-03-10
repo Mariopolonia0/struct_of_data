@@ -12,13 +12,16 @@ const urlParams = new URLSearchParams(window.location.search);
 const userLoginId = urlParams.get('IdLogin');
 const IdUsedEdit = urlParams.get('UsuarioEdit');
 
-if (IdUsedEdit == 0) {
-    tituloRegistroUsuiario.innerText = "Register user"
-} else {
-    tituloRegistroUsuiario.innerText = "Edit user"
-}
+init()
 
-console.log(userLoginId + " - " + IdUsedEdit)
+function init() {
+    if (IdUsedEdit == 0) {
+        tituloRegistroUsuiario.innerText = "Register user"
+    } else {
+        tituloRegistroUsuiario.innerText = "Edit user"
+        buscarUsuario()
+    }
+}
 
 async function enviarDataToApi() {
     const data = {
@@ -55,12 +58,36 @@ function cancel() {
     } else {
         window.location = "listaUsuario.html?Id=" + userLoginId;
     }
-
 }
 
 //'https://controltarea.azurewebsites.net/Usuario/100' 
 async function buscarUsuario() {
+    var uri = "https://controltarea.azurewebsites.net/Usuario/" + IdUsedEdit;
 
+    await fetch(uri, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    })
+        .then((res) => res.json())
+        .then(function (dataObject) {
+            llenarFormulario(dataObject)
+        })
+        .catch((error) => {
+            console.log(error)
+            alert("Tenemos un error en el Server")
+        })
+}
+
+function llenarFormulario(user) {
+    name.value = user.nombre
+    lastName.value = user.apellido
+    userName.value = user.nombreUsuario
+    codigoEmpresa.value = user.codigoEmpresa
+    password.value = user.password
+    passwordConfirmation.value = user.password
+    
 }
 
 function clean() {
