@@ -283,8 +283,8 @@ async function enviarDataApi() {
         body: JSON.stringify(dataTask)
     })
         .then((res) => res.json())
-        .then(function (dataObject) {
-            mostrarDialog();
+        .then((dataObject) => {
+            mostrarDialog(dataObject.dataResult);
             obtenerListaOfTarea();
             cancel();
         })
@@ -294,11 +294,11 @@ async function enviarDataApi() {
         })
 }
 
-function mostrarDialog() {
+function mostrarDialog(dataResult) {
     var buttonDialogNtificacionId = document.getElementById('buttonDialogNtificacionId');
     buttonDialogNtificacionId.style.background = "#1815A3";
     buttonDialogNtificacionId.innerText = "Aceptar";
-    messageDialog.innerText = dataObject.dataResult;
+    messageDialog.innerText = dataResult;
     DialogNotificacion.showModal();
 }
 
