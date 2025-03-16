@@ -2,6 +2,7 @@ var dialogoFormTask = document.getElementById('DialogFormTask');
 var dialogoBuscarUsetTask = document.getElementById('DialogBuscarUser');
 var dialogMensaje = document.getElementById('dialogMensaje');
 var DialogNotificacion = document.getElementById('DialogNotificacion');
+
 const messageDialog = document.getElementById('messageDialog');//messageDialog
 const contenedorCarta = document.getElementById('listCard');
 const listTask = document.getElementById('listTask');//containerListTask
@@ -128,6 +129,7 @@ function selectTarea(_tareaId) {
 
 function formTask() {
     clearVariable();
+    tareaId = 0;
 
     const tituloForm = document.getElementById('tituloForm');
     tituloForm.innerText = "Register task";
@@ -151,11 +153,6 @@ function clearVariable() {
     inputFechaVencimiento.value = "";
 }
 
-function buscarUserForTask() {
-    getUserForTask();
-    dialogoBuscarUsetTask.showModal();
-}
-
 function cancel() {
     dialogoFormTask.close();
 }
@@ -166,6 +163,16 @@ function cancelBuscarUserForTask() {
 
 function cancelNotificacion() {
     DialogNotificacion.close();
+}
+
+function buscarUserForTask() {
+    if (tareaId == 0) {
+        getUserForTask();
+        dialogoBuscarUsetTask.showModal();
+    }else{
+        messageDialog.innerText = "No puede modificar el usuario de la tarea"
+        DialogNotificacion.showModal();
+    }
 }
 
 //funcion para buscar los usuarios en la api rest
