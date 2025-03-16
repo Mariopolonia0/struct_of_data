@@ -1,6 +1,8 @@
 var dialogoFormTask = document.getElementById('DialogFormTask');
 var dialogoBuscarUsetTask = document.getElementById('DialogBuscarUser');
+var dialogMensaje = document.getElementById('dialogMensaje');
 var DialogNotificacion = document.getElementById('DialogNotificacion');
+
 const messageDialog = document.getElementById('messageDialog');//messageDialog
 const contenedorCarta = document.getElementById('listCard');
 const listTask = document.getElementById('listTask');//containerListTask
@@ -103,23 +105,36 @@ function listaUsuario() {
 
 function salirUsuario() {
     window.location = "../index.html";
-    // history.back();
 }
 
 function selectTarea(_tareaId) {
     clearVariable();
 
-    var selectTarea = _listTask.find(task => task.tareaId == _tareaId)
+    const tituloForm = document.getElementById('tituloForm');
+    tituloForm.innerText = "Edit task";
+
+    var selectTarea = _listTask.find(task => task.tareaId == _tareaId);
+
     tareaId = _tareaId;
     idSelectUser = selectTarea.usuarioId;
 
-    inputFechaVencimiento.value = selectTarea.fechaVecimineto;
     nombreUserForNewTask.innerText = selectTarea.nombreAndApellido;
     inputDescripcion.value = selectTarea.descripcion;
     inputDireccion.value = selectTarea.direccion;
     inputCliente.value = selectTarea.cliente;
     inputFechaVencimiento.value = formatoFechaSelectTask(selectTarea.fechaVecimineto);
 
+    dialogoFormTask.showModal();
+}
+
+function formTask() {
+    clearVariable();
+    tareaId = 0;
+
+    const tituloForm = document.getElementById('tituloForm');
+    tituloForm.innerText = "Register task";
+
+    inputFechaVencimiento.value = hoy.toString();
     dialogoFormTask.showModal();
 }
 
@@ -138,30 +153,8 @@ function clearVariable() {
     inputFechaVencimiento.value = "";
 }
 
-function optionSelectEstadoSelectTask(_value) {
-
-    switch (_value) {
-        case "To do": return 2;
-        case "Process": return 3;
-        case "Finished": return 4;
-        default:
-            return 1;
-    }
-}
-
-function formTask() {
-    clearVariable();
-    inputFechaVencimiento.value = hoy.toString();
-    dialogoFormTask.showModal();
-}
-
 function cancel() {
     dialogoFormTask.close();
-}
-
-function buscarUserForTask() {
-    getUserForTask();
-    dialogoBuscarUsetTask.showModal();
 }
 
 function cancelBuscarUserForTask() {
@@ -172,6 +165,15 @@ function cancelNotificacion() {
     DialogNotificacion.close();
 }
 
+function buscarUserForTask() {
+    if (tareaId == 0) {
+        getUserForTask();
+        dialogoBuscarUsetTask.showModal();
+    }else{
+        messageDialog.innerText = "No puede modificar el usuario de la tarea"
+        DialogNotificacion.showModal();
+    }
+}
 
 //funcion para buscar los usuarios en la api rest
 async function getUserForTask() {
@@ -283,8 +285,8 @@ async function enviarDataApi() {
         body: JSON.stringify(dataTask)
     })
         .then((res) => res.json())
-        .then(function (dataObject) {
-            mostrarDialog();
+        .then((dataObject) => {
+            mostrarDialog(dataObject.dataResult);
             obtenerListaOfTarea();
             cancel();
         })
@@ -294,11 +296,11 @@ async function enviarDataApi() {
         })
 }
 
-function mostrarDialog() {
+function mostrarDialog(dataResult) {
     var buttonDialogNtificacionId = document.getElementById('buttonDialogNtificacionId');
     buttonDialogNtificacionId.style.background = "#1815A3";
     buttonDialogNtificacionId.innerText = "Aceptar";
-    messageDialog.innerText = dataObject.dataResult;
+    messageDialog.innerText = dataResult;
     DialogNotificacion.showModal();
 }
 
@@ -310,6 +312,17 @@ function optionSelectEstado() {
         case '4': return "Finished";
         default:
             return "select";
+    }
+}
+
+function optionSelectEstadoSelectTask(_value) {
+
+    switch (_value) {
+        case "To do": return 2;
+        case "Process": return 3;
+        case "Finished": return 4;
+        default:
+            return 1;
     }
 }
 
