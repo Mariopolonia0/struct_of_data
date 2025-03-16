@@ -21,6 +21,8 @@ function newUsuario() {
 getUserForTask()
 
 function llenarListaUsuarioForTask(user) {
+
+
     listUser.push(user)
     var item = ``;
 
@@ -44,10 +46,13 @@ function llenarListaUsuarioForTask(user) {
         `
     }
     contenedorCarta.innerHTML += item;
+
 }
 
 //funcion para buscar los usuarios en la api rest
 async function getUserForTask() {
+    var loader = document.getElementById('loader');
+    loader.style.display = "flex";
     contenedorCarta.innerHTML = `   `;
     listUser = [];
     var usuario = await buscarUsuario();
@@ -74,6 +79,7 @@ async function getUserForTask() {
         .catch((error) => {
             console.log(error)
         })
+    loader.style.display = "none";
 }
 
 async function buscarUsuario() {
