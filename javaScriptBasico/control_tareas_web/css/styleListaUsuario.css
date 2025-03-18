@@ -23,14 +23,13 @@ body {
     border: 1px solid transparent;
     box-shadow: 2px 2px 8px 4px #9d9d9d;
     border-radius: 5px;
-    margin: 0%;
-    padding: 0% 0% 0% 2%;
 }
 
 .divTitulo {
     font-size: larger;
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .divTituloIcono {
@@ -47,6 +46,16 @@ body {
     background-color: #c9c9c9;
     padding: 10px 10px;
     margin: 8px 8px 8px 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+.buttonBack {
+    background-color: #c9c9c9;
+    padding: 10px 10px;
+    margin: 8px 0px 8px 0px;
     border: none;
     cursor: pointer;
     border-radius: 10px;
@@ -90,6 +99,7 @@ body {
     margin: 20px;
     display: none;
 }
+
 /*aqui se hace la rotacion del loader y se poner en animation */
 @keyframes spin {
     0% {
