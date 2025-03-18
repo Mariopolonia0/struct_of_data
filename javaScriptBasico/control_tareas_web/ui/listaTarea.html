@@ -15,6 +15,9 @@
     <div class="containerMain">
         <div class="containerTitulo">
             <div class="divTitulo">
+                <button type="button" class="buttonBack" onclick="salirUsuario()">
+                    <img class="imgIconButon" src="../icon/backIcon.png" alt="back">
+                </button>
                 <label type="text" id="nombreUsuario" class="labelTitulo"></label>
                 <label class="labelTitulo"></label>
             </div>
@@ -27,9 +30,6 @@
                 </button>
                 <button type="button" onclick="listaUsuario()">
                     <img class="imgIconUsuario" src="../icon/listaIcon.png" alt="add">
-                </button>
-                <button type="button" onclick="salirUsuario()">
-                    <img class="imgIconUsuario" src="../icon/salirIcon.png" alt="add">
                 </button>
             </div>
         </div>
@@ -179,10 +179,10 @@
         </section>
     </dialog>
 
-    
+
     <dialog id="dialogMensaje" class="dialogMensaje">
-        <label  class="">Informacion</label>
-        <label  class="">Buscar por</label>
+        <label class="">Informacion</label>
+        <label class="">Buscar por</label>
     </dialog>
 
     <script src="../script/scriptListaTask.js"></script>

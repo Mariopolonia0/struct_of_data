@@ -20,13 +20,12 @@ body {
 .containerTitulo {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     border: 1px solid transparent;
     box-shadow: 2px 2px 8px 4px #9d9d9d;
     border-radius: 5px;
     margin: 15px 0px;
-    padding: 0% 0% 0% 10px;
 }
 
 .divTitulo {
@@ -103,7 +102,7 @@ input[type=password] {
     flex-direction: row;
 }
 
-button {
+.buttonSave {
     background-color: #04AA6D;
     color: white;
     padding: 14px 20px;
@@ -153,6 +152,7 @@ button:hover {
 
 .labelTitulo {
     font-size: large;
+    font-weight: bold;
 }
 
 /* Center the avatar image inside this container */

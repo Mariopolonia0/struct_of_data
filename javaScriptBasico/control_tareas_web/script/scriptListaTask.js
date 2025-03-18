@@ -169,7 +169,7 @@ function buscarUserForTask() {
     if (tareaId == 0) {
         getUserForTask();
         dialogoBuscarUsetTask.showModal();
-    }else{
+    } else {
         messageDialog.innerText = "No puede modificar el usuario de la tarea"
         DialogNotificacion.showModal();
     }
@@ -244,7 +244,13 @@ function userSelect(id) {
 }
 
 function clean() {
-    clearVariable()
+
+    if (tareaId == 0) {
+        clearVariable()
+    } else {
+        messageDialog.innerText = "No puede limpiar todos lo campos"
+        DialogNotificacion.showModal();
+    }
 }
 
 async function savedata() {
