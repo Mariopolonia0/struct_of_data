@@ -2,6 +2,7 @@ var dialogoFormTask = document.getElementById('DialogFormTask');
 var dialogoBuscarUsetTask = document.getElementById('DialogBuscarUser');
 var dialogMensaje = document.getElementById('dialogMensaje');
 var DialogNotificacion = document.getElementById('DialogNotificacion');
+var DialogNotificacionOption = document.getElementById('DialogNotificacionOption');//DialogNotificacionOption
 
 const messageDialog = document.getElementById('messageDialog');//messageDialog
 const contenedorCarta = document.getElementById('listCard');
@@ -22,6 +23,8 @@ const userLoginId = urlParams.get('Id');
 
 //lista para entrar los usuarios para que se pueden seleccionar
 var optionEstado = "to do"
+var progress = false;
+var taskProgressId = false;
 var listUser = [];
 var idSelectUser = 0;
 var _listTask = [];
@@ -78,26 +81,70 @@ function buscarFiltrado() {
 function llenarListTask(task) {
     _listTask.push(task)
     listTask.innerHTML += ` 
-        <div class="cardTareaItem">
-            <div class="divIzquierdaItem">
-                <label class="itemTaskCliente">${task.cliente}</label>
-                <label class="itemTaskDireccion">${task.direccion}</label>
-                <label class="itemTaskDescripcion">${task.descripcion}</label>
+      
+        <div id="item${task.tareaId}" class="cardTareaItem">
+            <div class="cardContenido">
+                <div class="divIzquierdaItem">
+                    <label class="itemTaskCliente">${task.cliente}</label>
+                    <label class="itemTaskDireccion">${task.direccion}</label>
+                    <label class="itemTaskDescripcion">${task.descripcion}</label>
+                </div>
+                <div class="divDerechaItem">
+                    <label class="itemTaskFechaVencimiento">${task.fechaVecimineto}</label>
+                    <div class="divDerechaItemButton">
+                        <button  type="button" class="buttonItem" onclick="starTask(${task.tareaId})">
+                            <img id="buttonStarTask${task.tareaId}" class="imgIconButon" src="../icon/play.png" alt="play">
+                        </button>
+                        <button type="button" class="buttonItem" onclick="selectTarea(${task.tareaId})">
+                            <img class="imgIconButon" src="../icon/editar.png" alt="editar">
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="divDerechaItem">
-                <label class="itemTaskFechaVencimiento">${task.fechaVecimineto}</label>
-                <div class="divDerechaItemButton">
-                    <button type="button" class="buttonItem" onclick="">
-                        <img class="imgIconButon" src="../icon/play.png" alt="play">
-                    </button>
-                    <button type="button" class="buttonItem" onclick="selectTarea(${task.tareaId})">
-                        <img class="imgIconButon" src="../icon/editar.png" alt="editar">
-                    </button>
-                <div>
+            <div id="itemState${task.tareaId}" class="progressText"> 
+                <label id="itemStateText${task.tareaId}" class="itemTaskDescripcion"></label>
             </div>
-        </div>   
+        </div>
     `
 }
+
+function starTask(tareaId) {
+
+    if (progress == false) {
+        const itemId = "item" + tareaId;
+        var cardStateTest = document.getElementById("itemState" + tareaId);
+        var itemStateText = document.getElementById("itemStateText" + tareaId);
+        cardStateTest.style.display = "flex";
+        itemStateText.innerText = "Progress";
+        taskProgressId = tareaId;
+        document.getElementById("buttonStarTask" + tareaId).src = "../icon/pausaIcon.png";
+        progress = true;
+    } else {
+        if (tareaId == taskProgressId) {
+            DialogNotificacionOption.showModal();
+        } else {
+            messageDialog.innerText = "Esta realizando otra tarea"
+            DialogNotificacion.showModal();
+        }
+    }
+}
+
+function saveDialogNotificacionOption() {
+
+}
+
+function saveLateDialogNotificacionOption() {
+    const itemId = "item" + taskProgressId;
+    var cardStateTest = document.getElementById("itemState" + taskProgressId);
+    var itemStateText = document.getElementById("itemStateText" + taskProgressId);
+    document.getElementById("buttonStarTask" + taskProgressId).src = "../icon/play.png";
+    cardStateTest.style.display = "none";
+    itemStateText.innerText = "";
+    taskProgressId = 0;
+    progress = false;
+    cancelDialogNotificacionOption();
+}
+
 //listaUsuario()
 function listaUsuario() {
     window.location = "listaUsuario.html?Id=" + userLoginId;
@@ -163,6 +210,10 @@ function cancelBuscarUserForTask() {
 
 function cancelNotificacion() {
     DialogNotificacion.close();
+}
+
+function cancelDialogNotificacionOption() {
+    DialogNotificacionOption.close();
 }
 
 function buscarUserForTask() {
