@@ -78,10 +78,14 @@ function buscarFiltrado() {
     DialogNotificacion.showModal();
 }
 
+var _fecha = ""
+
 function llenarListTask(task) {
     _listTask.push(task)
-    listTask.innerHTML += ` 
-      
+
+    if (_fecha == task.fechaVecimineto) {
+        listTask.innerHTML += ` 
+        
         <div id="item${task.tareaId}" class="cardTareaItem">
             <div class="cardContenido">
                 <div class="divIzquierdaItem">
@@ -106,6 +110,39 @@ function llenarListTask(task) {
             </div>
         </div>
     `
+    } else {
+        listTask.innerHTML += ` 
+        <div class="cardItemFecha" >
+            <label class="labelItemFecha">${task.fechaVecimineto}</label>
+        </div>
+        <div id="item${task.tareaId}" class="cardTareaItem">
+            <div class="cardContenido">
+                <div class="divIzquierdaItem">
+                    <label class="itemTaskCliente">${task.cliente}</label>
+                    <label class="itemTaskDireccion">${task.direccion}</label>
+                    <label class="itemTaskDescripcion">${task.descripcion}</label>
+                </div>
+                <div class="divDerechaItem">
+                    <label class="itemTaskFechaVencimiento">${task.fechaVecimineto}</label>
+                    <div class="divDerechaItemButton">
+                        <button  type="button" class="buttonItem" onclick="starTask(${task.tareaId})">
+                            <img id="buttonStarTask${task.tareaId}" class="imgIconButon" src="../icon/play.png" alt="play">
+                        </button>
+                        <button type="button" class="buttonItem" onclick="selectTarea(${task.tareaId})">
+                            <img class="imgIconButon" src="../icon/editar.png" alt="editar">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="itemState${task.tareaId}" class="progressText"> 
+                <label id="itemStateText${task.tareaId}" class="itemTaskDescripcion"></label>
+            </div>
+        </div>
+    `
+    }
+
+    _fecha = task.fechaVecimineto;
+
 }
 
 function starTask(tareaId) {
@@ -305,6 +342,7 @@ function clean() {
 }
 
 async function savedata() {
+
     if (validar()) {
 
         dataTask = {
@@ -323,6 +361,7 @@ async function savedata() {
 
         await enviarDataApi();
     }
+
 }
 
 function formatoFecha() {
@@ -385,27 +424,27 @@ function optionSelectEstadoSelectTask(_value) {
 
 function validar() {
     if (idSelectUser == 0) {
-        messageDialog.innerText = "Seleccione un usuario para asignarle la tarea"
+        messageDialog.innerText = "Seleccione un usuario para asignarle la tarea";
         DialogNotificacion.showModal();
         return false;
     } else if (inputDescripcion.value == "") {
-        messageDialog.innerText = "Ingrese una descripcion de la tarea"
+        messageDialog.innerText = "Ingrese una descripcion de la tarea";
         DialogNotificacion.showModal();
         return false;
     } else if (inputFechaVencimiento.value == "") {
-        messageDialog.innerText = "Ingrese un fecha"
+        messageDialog.innerText = "Ingrese un fecha";
         DialogNotificacion.showModal();
         return false;
     } else if (inputFechaVencimiento.value == "") {
-        messageDialog.innerText = "Ingrese un fecha"
+        messageDialog.innerText = "Ingrese un fecha";
         DialogNotificacion.showModal();
         return false;
     } else if (inputDireccion.value == "") {
-        messageDialog.innerText = "Introduzca la direccion"
+        messageDialog.innerText = "Introduzca la direccion";
         DialogNotificacion.showModal();
         return false;
     } else if (inputCliente.value == "") {
-        messageDialog.innerText = "Introduzca el cliente"
+        messageDialog.innerText = "Introduzca el cliente";
         DialogNotificacion.showModal();
         return false;
     }
