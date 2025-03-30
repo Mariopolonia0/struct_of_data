@@ -124,7 +124,7 @@ function llenarListTask(task) {
                 </div>
                 <div class="divDerechaItem">
                     <label class="itemTaskFechaVencimiento">${task.fechaVecimineto}</label>
-                    <div class="divDerechaItemButton">
+                    <div id="cardIdButton${task.tareaId}" class="divDerechaItemButton">
                         <button  type="button" class="buttonItem" onclick="starTask(${task.tareaId})">
                             <img id="buttonStarTask${task.tareaId}" class="imgIconButon" src="../icon/play.png" alt="play">
                         </button>
@@ -170,14 +170,16 @@ function saveDialogNotificacionOption() {
 }
 
 function finishTask(tareaId) {
-    if(taskProgressId == 0)
+    if (taskProgressId == 0)
         taskProgressId = tareaId;
 
     const itemId = "item" + taskProgressId;
     var cardStateTest = document.getElementById("itemState" + taskProgressId);
     var itemStateText = document.getElementById("itemStateText" + taskProgressId);
 
-    document.getElementById("buttonStarTask" + taskProgressId).style.display = "none";
+    var cardIdButtonId = document.getElementById("cardIdButton" + taskProgressId);
+    cardIdButtonId.style.display = "none";
+
     cardStateTest.style.display = "flex";
     cardStateTest.style.background = "#1815A3";
     itemStateText.innerText = "Finish";
@@ -195,8 +197,6 @@ async function setFinish(_tareaId) {
         "fechaTerminada": hoy.toLocaleString(),
         "estado": "finish"
     };
-
-    console.log(dataEmpezarTask)
 
     await fetch(uri, {
         method: "POST",
