@@ -24,7 +24,7 @@ const userLoginId = urlParams.get('Id');
 //lista para entrar los usuarios para que se pueden seleccionar
 var optionEstado = "to do"
 var progress = false;
-var taskProgressId = false;
+var taskProgressId = 0;
 var listUser = [];
 var idSelectUser = 0;
 var _listTask = [];
@@ -143,6 +143,71 @@ function llenarListTask(task) {
 
     _fecha = task.fechaVecimineto;
 
+    if (task.estado == 'progress')
+        setEstado(task.tareaId);
+
+    if (task.estado == 'finish')
+        finishTask(task.tareaId);
+}
+
+function setEstado(tareaId) {
+    const itemId = "item" + tareaId;
+    var cardStateTest = document.getElementById("itemState" + tareaId);
+    var itemStateText = document.getElementById("itemStateText" + tareaId);
+    cardStateTest.style.display = "flex";
+    itemStateText.innerText = "Progress";
+    taskProgressId = tareaId;
+    document.getElementById("buttonStarTask" + tareaId).src = "../icon/pausaIcon.png";
+    progress = true;
+}
+
+function saveDialogNotificacionOption() {
+
+    finishTask();
+    setFinish(taskProgressId);
+    taskProgressId = 0;
+    progress = false;
+}
+
+function finishTask(tareaId) {
+    if(taskProgressId == 0)
+        taskProgressId = tareaId;
+
+    const itemId = "item" + taskProgressId;
+    var cardStateTest = document.getElementById("itemState" + taskProgressId);
+    var itemStateText = document.getElementById("itemStateText" + taskProgressId);
+
+    document.getElementById("buttonStarTask" + taskProgressId).style.display = "none";
+    cardStateTest.style.display = "flex";
+    cardStateTest.style.background = "#1815A3";
+    itemStateText.innerText = "Finish";
+    itemStateText.style.color = "white";
+}
+
+async function setFinish(_tareaId) {
+    const uri = 'https://controltarea.azurewebsites.net/api/Tareas/ActualizarFinalizar';
+
+    const inputNota = document.getElementById('inputNota');
+
+    var dataEmpezarTask = {
+        "id": _tareaId,
+        "nota": inputNota.value,
+        "fechaTerminada": hoy.toLocaleString(),
+        "estado": "finish"
+    };
+
+    console.log(dataEmpezarTask)
+
+    await fetch(uri, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataEmpezarTask)
+    }).catch((error) => {
+        messageDialog.innerText = "We have this error on the Server : " + error;
+        DialogNotificacion.showModal();
+    })
 }
 
 function starTask(tareaId) {
@@ -156,6 +221,7 @@ function starTask(tareaId) {
         taskProgressId = tareaId;
         document.getElementById("buttonStarTask" + tareaId).src = "../icon/pausaIcon.png";
         progress = true;
+        setProgress(tareaId)
     } else {
         if (tareaId == taskProgressId) {
             DialogNotificacionOption.showModal();
@@ -166,8 +232,46 @@ function starTask(tareaId) {
     }
 }
 
-function saveDialogNotificacionOption() {
+async function setProgress(_tareaId) {
+    const uri = 'https://controltarea.azurewebsites.net/api/Tareas/ActualizarEmpezar';
 
+    var dataEmpezarTask = {
+        "id": _tareaId,
+        "fechaEmpezar": hoy.toLocaleString(),
+        "estado": "progress"
+    };
+
+    await fetch(uri, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataEmpezarTask)
+    }).catch((error) => {
+        messageDialog.innerText = "We have this error on the Server : " + error;
+        DialogNotificacion.showModal();
+    })
+}
+
+async function setStop(_tareaId, _fechaEmpezas) {
+    const uri = 'https://controltarea.azurewebsites.net/api/Tareas/ActualizarEmpezar';
+
+    var dataEmpezarTask = {
+        "id": _tareaId,
+        "fechaEmpezar": _fechaEmpezas,
+        "estado": "stop"
+    };
+
+    await fetch(uri, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataEmpezarTask)
+    }).catch((error) => {
+        messageDialog.innerText = "We have this error on the Server : " + error;
+        DialogNotificacion.showModal();
+    })
 }
 
 function saveLateDialogNotificacionOption() {
@@ -177,8 +281,12 @@ function saveLateDialogNotificacionOption() {
     document.getElementById("buttonStarTask" + taskProgressId).src = "../icon/play.png";
     cardStateTest.style.display = "none";
     itemStateText.innerText = "";
+
+    var task = _listTask.find((task) => task.tareaId == taskProgressId);
+    setStop(taskProgressId, task.fechaEmpezada);
     taskProgressId = 0;
     progress = false;
+
     cancelDialogNotificacionOption();
 }
 
