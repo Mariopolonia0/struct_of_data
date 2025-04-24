@@ -21,5 +21,8 @@ With love,
 Codey
 
 */
-  print("Dear Learner 👋,\n\nI hope you're enjoying the Learn Kotlin course.\nYou've made tremendous progress. Keep going!\nAnd remember, \"Knowledge is power.\" (Frances Beacon). \n\nWith love, \nCodey")
+  print("Dear Learner 👋,\n\nI hope you're enjoying the Learn Kotlin course.
+        \nYou've made tremendous progress. Keep going!\nAnd remember,
+        \"Knowledge is power.\" (Frances Beacon). \n\nWith love, \nCodey")
+        
 }
