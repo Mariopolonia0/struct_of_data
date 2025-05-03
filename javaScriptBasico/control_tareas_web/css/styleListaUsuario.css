@@ -52,6 +52,10 @@ body {
     font-weight: bolder;
 }
 
+.cardButtonItem {
+    display: flex;
+}
+
 .buttonBack {
     background-color: #c9c9c9;
     padding: 10px 10px;
@@ -71,12 +75,19 @@ body {
     display: flex;
     justify-content: space-between;
     border-bottom: groove;
+    margin: 15px;
+}
+
+.iconButtonItem {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0px 0px 0px 20px;
 }
 
 .containerBuscarListForUser {
     display: flex;
     margin-top: 10px;
-    padding: 15px;
     border: 1px solid transparent;
     box-shadow: 2px 2px 8px 4px #9d9d9d;
     border-radius: 15px;
