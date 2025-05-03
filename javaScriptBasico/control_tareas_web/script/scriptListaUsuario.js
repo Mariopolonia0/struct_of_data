@@ -30,23 +30,32 @@ function llenarListaUsuarioForTask(user) {
         item = `
             <div class="cardItemUser" onclick="">
                 <h3 class="card-title">${user.nombreAndApellido + " ( Yo )"}</h3>
-                <button class="iconButton" type="button" onclick="editarUsuario(${user.usuarioId})">
-                    <img class="imgIconButon" src="../icon/editar.png" alt="add">
-                </button>
+                <card class="cardButtonItem">
+                    <button class="iconButtonItem" type="button" onclick="">
+                        <img class="imgIconButon" src="../icon/listaIcon.png" alt="add">
+                    </button>
+                    <button class="iconButtonItem" type="button" onclick="editarUsuario(${user.usuarioId})">
+                        <img class="imgIconButon" src="../icon/editar.png" alt="add">
+                    </button>
+                </card>
             </div>   
         `
     } else {
         item = `
             <div class="cardItemUser" onclick="">
                 <h3 class="card-title">${user.nombreAndApellido}</h3>
-                <button class="iconButton" type="button" onclick="editarUsuario(${user.usuarioId})">
-                    <img class="imgIconButon" src="../icon/editar.png" alt="add">
-                </button>
+                <card class="cardButtonItem">
+                    <button class="iconButtonItem" type="button" onclick="">
+                        <img class="imgIconButon" src="../icon/listaIcon.png" alt="add">
+                    </button>
+                    <button class="iconButtonItem" type="button" onclick="editarUsuario(${user.usuarioId})">
+                        <img class="imgIconButon" src="../icon/editar.png" alt="add">
+                    </button>
+                </card>
             </div>   
         `
     }
     contenedorCarta.innerHTML += item;
-
 }
 
 //funcion para buscar los usuarios en la api rest
