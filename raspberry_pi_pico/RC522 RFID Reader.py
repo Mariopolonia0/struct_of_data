@@ -3,9 +3,7 @@ import mfrc522
 import time
 
 #inicializo la clase de reader rc522
-#reader = MFRC522(sck=4,miso=5,mosi=6,cs=7,rst=1)
-
-reader = mfrc522.MFRC522("GP14", "GP16", "GP15", "GP22", "GP17")
+reader = MFRC522(sck=4,miso=5,mosi=6,cs=7,rst=1)
 
 #Inicilizo la variable para el motor servo
 pwm = PWM(Pin(0))
