@@ -20,13 +20,23 @@
         <button style="font-size: larger;" type="submit" onclick="">Light off</button>
     </form>
 
-    <form style="margin: 1% 0%;" action="./lighton">
+    <form style="margin: 1% 0%; animation: progressBar 3s ease-in-out;" action="./lighton">
         <button style="font-size: larger;" type="submit">Light on</button>
     </form>
 
     <p>Switch state: {state}</p>
 
+    <label id="text" type="text" id="nombreUsuario" class="labelTitulo">Hola</label>
+    <button style="font-size: larger;" type="submit" onclick="cambiar()">Cambiar</button>
+    <progress id="progress" style="margin: 1% 0%;" max="100" ></progress>
+
     <h3>Raspberry Pi Pico</h3>
 </body>
+<script>
+    function cambiar(){
+        document.getElementById("text").innerHTML = "New text!";
+    }
+    
+</script>
 
 </html>
