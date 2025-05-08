@@ -37,17 +37,21 @@ template = '''
     
     <script>
         function apagar_led(){
-            document.getElementById("estado_led").innerHTML = "Estado del LED: Apagado";
             fetch('/apagar')
             .then(response => response.json())
-            .then(data => alert("Estado: " + data.estado));
+            .then(data =>{
+                    alert("Estado: " + data.estado)
+                    document.getElementById("estado_led").innerHTML = "Estado del LED:" +  data.estado;
+            });
         }
         
         function enceder_led(){
-            document.getElementById("estado_led").innerHTML = "Estado del LED: Encedido";
             fetch('/enceder')
             .then(response => response.json())
-            .then(data => alert("Estado: " + data.estado));
+            .then(data =>{
+                    alert("Estado: " + data.estado)
+                    document.getElementById("estado_led").innerHTML = "Estado del LED:" +  data.estado;
+            });
         }
     </script>
     
