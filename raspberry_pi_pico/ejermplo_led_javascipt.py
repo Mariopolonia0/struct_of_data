@@ -8,55 +8,8 @@ estado_led = "Encedido"
 
 led_pin = Pin(21, Pin.OUT)
 
-template = '''
-<html>
-    <head>
-        <title>Ejemplo</title>
-    </head>
-    <body style="
-        background: darkgray;
-        display: flex;
-        flex-direction: column;
-        align-items: center;">
-        
-        <h1 id="estado_led">Estado del led : {estado_led} </h1>
-        
-        <label id="text" type="text" id="nombreUsuario" style="font-size: xx-large;margin: 30px;" >solo HTML</label>
-        
-        <form action="/off_led" method="post">
-            <button style="font-size: xx-large;margin: 30px;">Apagar LED</button>
-        </form>
-        <form action="/on_led" method="post">
-            <button style="font-size: xx-large;margin: 30px;">Enceder LED</button>
-        </form>
-        
-        <label style="font-size: xx-large;margin: 30px;" id="text" type="text" id="nombreUsuario" >JavaScript</label>
-        <button style="font-size: xx-large;margin: 30px;" type="submit" onclick="apagar_led()">Apagar</button>
-        <button style="font-size: xx-large;margin: 30px;" type="submit" onclick="enceder_led()">Enceder</button>
-    </body>
-    
-    <script>
-        function apagar_led(){
-            fetch('/apagar')
-            .then(response => response.json())
-            .then(data =>{
-                    alert("Estado: " + data.estado)
-                    document.getElementById("estado_led").innerHTML = "Estado del LED:" +  data.estado;
-            });
-        }
-        
-        function enceder_led(){
-            fetch('/enceder')
-            .then(response => response.json())
-            .then(data =>{
-                    alert("Estado: " + data.estado)
-                    document.getElementById("estado_led").innerHTML = "Estado del LED:" +  data.estado;
-            });
-        }
-    </script>
-    
-</html>
-'''
+with open('index.html', 'r') as archivo:
+    template = archivo.read()
 
 @app.route('/')
 def index(request):
@@ -86,4 +39,4 @@ def cambiar_nombre(request: Request):
     estado_led = "Encedidio"
     return Response.redirect('/')
 
-app.run()
+app.run(port=8080)
