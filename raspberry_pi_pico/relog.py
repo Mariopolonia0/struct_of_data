@@ -3,16 +3,13 @@ import network
 import ntptime
 import utime
 
-led = Pin(0, Pin.OUT)
-ledError = Pin(3, Pin.OUT)
-ledBlue = Pin(2, Pin.OUT)
+ledError = Pin(0, Pin.OUT)
 button = Pin(21, Pin.IN, Pin.PULL_DOWN)
 buttonTwo = Pin(20, Pin.IN, Pin.PULL_DOWN)
-relay = Pin(1,Pin.OUT)  #relay = Pin(relay_pin, Pin.OUT)/
+relay = Pin(9,Pin.OUT)  #relay = Pin(relay_pin, Pin.OUT)/
 
-led.value(0)
 ledError.value(0)
-ledBlue.value(0)
+
 
 #configuration wifi 
 ssid = 'SpectrumSetup-BA'
@@ -38,7 +35,7 @@ except OSError as e:
 # Convertir UTC a tu zona horaria (por ejemplo, UTC-5)
 utc_offset = -5 * 3600
 
-relay.value(0)#relay is on (se enciende el relog)
+relay.value(1)#relay is on (se enciende el relog) defaut is 0
 
 # Mostrar la hora ajustada
 while True:
@@ -49,17 +46,21 @@ while True:
             relay.value(0)#relay is on (se apaga el relog)
             utime.sleep(1)
             
-        if local_time[3] == 06 and local_time[4] == 30:
+        if local_time[3] == 6 and local_time[4] == 30:
             relay.value(1)#relay is off (se enciede el relog)
             utime.sleep(1)
         
         if button.value() == 1:
+            print("relay is on (se apaga el relog)")
             relay.value(0)#relay is on (se apaga el relog)
             utime.sleep(1)
 
         if buttonTwo.value() == 1:
+            print("relay is off (se enciede el relog)")
             relay.value(1)#relay is off (se enciede el relog)
             utime.sleep(1)
 
     except OSError as e:
         led.value(1)
+
+
